@@ -11,6 +11,10 @@ public class Proxy {
         this.ownerID = ownerID;
     }
 
+    public boolean isOwner(int ownerID) {
+        return this.ownerID == ownerID;
+    }
+
     public Card instantiate() {
         //retrieve data
         //create appropriate card
