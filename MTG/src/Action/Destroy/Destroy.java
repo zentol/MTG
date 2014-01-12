@@ -7,7 +7,7 @@ import static Game.Game.*;
 import static Game.Game.graveyard;
 
 public class Destroy extends Action {
-    public void destroyAll(Condition[] conditions) {
+    public static void destroyAll(Condition[] conditions) {
         for (int x = 0; x < battlefield.size(); x++) {
             boolean allConditionsMet = true;
             for (int y = 0; x < conditions.length; y++) {
@@ -20,7 +20,7 @@ public class Destroy extends Action {
         }
     }
 
-    private void destroyPermanent(Permanent p) {
+    private static void destroyPermanent(Permanent p) {
         battlefield.remove(p);
         graveyard.get(p.ownerID).sendToGraveyard(p);
     }
