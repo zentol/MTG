@@ -33,6 +33,12 @@ public abstract class Card<A extends Aspect> extends Proxy {
         this.controllerID = controllerID;
     }
 
+//Misc--------------------------------------------------------------------------
+    
+    public boolean isController(int controllerID){
+        return this.controllerID==controllerID;
+    }
+    
 //Type--------------------------------------------------------------------------
     public boolean isPermanent() {
         return aspects.getClass().isInstance(PermanentAspect.class);
