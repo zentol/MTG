@@ -1,0 +1,25 @@
+package Collection;
+
+import Card.Proxy;
+import java.util.ArrayList;
+
+public abstract class Collection<E extends Proxy> {
+    protected ArrayList<E> collection;
+    public int ownerID;
+
+    public E get(int index) {
+        return collection.get(index);
+    }
+
+    public void add(E item) {
+        collection.add(item);
+    }
+
+    public int size() {
+        return collection.size();
+    }
+
+    public void remove(E item) {
+        collection.remove(item);
+    }
+}
