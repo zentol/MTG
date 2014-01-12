@@ -7,6 +7,10 @@ import static Game.Game.*;
 import static Game.Game.graveyard;
 
 public class Destroy extends Action {
+    /**
+    Destroys every permanent for whom ALL conditions are met.
+    @param conditions conditions to meet
+    */
     public static void destroyAll(Condition[] conditions) {
         for (int x = 0; x < battlefield.size(); x++) {
             boolean allConditionsMet = true;
