@@ -9,11 +9,14 @@ import Card.Aspect.Permanent.PermanentAspect;
 import Effect.Effect;
 
 public class Permanent extends Card<PermanentAspect> {
+    private boolean untapped;
 
     public Permanent(int cardID, int instanceID, int ownerID, int controllerID, String name, String cost, String colors, boolean legendary) {
         super(cardID, instanceID, ownerID, controllerID, name, cost, colors, legendary);
+        this.untapped = true;
     }
-       
+
+//AddAspect---------------------------------------------------------------------
     public void addArtifactAspect(String[] types) {
         aspects.add(new ArtifactAspect(types));
     }
@@ -32,6 +35,19 @@ public class Permanent extends Card<PermanentAspect> {
 
     public void addPlaneswalkerAspect(String[] types) {
         aspects.add(new PlaneswalkerAspect(types));
+    }
+
+//Tap---------------------------------------------------------------------------
+    public boolean isTapped() {
+        return !untapped;
+    }
+
+    public void tap() {
+        untapped = false;
+    }
+
+    public void untap() {
+        untapped = true;
     }
 
 }
