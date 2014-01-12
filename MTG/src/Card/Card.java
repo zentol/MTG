@@ -34,11 +34,10 @@ public abstract class Card<A extends Aspect> extends Proxy {
     }
 
 //Misc--------------------------------------------------------------------------
-    
-    public boolean isController(int controllerID){
-        return this.controllerID==controllerID;
+    public boolean isController(int controllerID) {
+        return this.controllerID == controllerID;
     }
-    
+
 //Type--------------------------------------------------------------------------
     public boolean isPermanent() {
         return aspects.getClass().isInstance(PermanentAspect.class);
@@ -60,6 +59,10 @@ public abstract class Card<A extends Aspect> extends Proxy {
 //Color-------------------------------------------------------------------------
     public boolean hasColor(String color) {
         return colors.contains(color);
+    }
+
+    public boolean isMulticolored() {
+        return colors.length() > 1;
     }
 
     public boolean isColorless() {
