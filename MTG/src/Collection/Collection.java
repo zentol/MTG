@@ -6,7 +6,11 @@ import java.util.ArrayList;
 public abstract class Collection<E extends Proxy> {
     protected ArrayList<E> collection;
     public int ownerID;
-
+    
+    public Collection(){
+        collection = new ArrayList();
+    }
+    
     public E get(int index) {
         return collection.get(index);
     }

@@ -16,7 +16,6 @@ public class Destroy extends Action {
             boolean allConditionsMet = true;
             for (int y = 0; x < conditions.length; y++) {
                 allConditionsMet &= conditions[y].evaluate(battlefield.get(x));
-
             }
             if (allConditionsMet) {
                 destroyPermanent(battlefield.get(x));
