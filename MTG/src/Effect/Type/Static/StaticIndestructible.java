@@ -1,5 +1,6 @@
 package Effect.Type.Static;
 
+import static Action.temp.makeIndestructible.makeIndestructible;
 import Card.Card;
 import Card.Permanent;
 
@@ -10,5 +11,9 @@ public class StaticIndestructible extends Static {
     public StaticIndestructible(Card source, Permanent target) {
         this.source = source;
         this.target = target;
+    }
+    
+    public void execute(){
+        makeIndestructible(source,target);
     }
 }

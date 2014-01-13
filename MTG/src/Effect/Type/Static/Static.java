@@ -2,6 +2,6 @@ package Effect.Type.Static;
 
 import Effect.Effect;
 
-public class Static extends Effect<Static> {
+public abstract class Static extends Effect<Static> {
 
 }
