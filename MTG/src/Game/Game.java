@@ -6,7 +6,7 @@ import Collection.Graveyard;
 import Collection.Hand;
 import Collection.Library;
 import Collection.Stack;
-import Condition.TargetProperties.ConditionController;
+import Condition.Card.ConditionController;
 import Effect.Effect;
 import java.util.ArrayList;
 import static Action.Destroy.Destroy.destroyAll;

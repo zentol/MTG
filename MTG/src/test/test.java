@@ -5,9 +5,9 @@ import Card.Permanent;
 import static Card.Aspect.Permanent.Type.CreatureType.MYR;
 import static Card.Aspect.Permanent.Type.CreatureType.SOLDIER;
 import Condition.Condition;
-import Condition.Conditions.ConditionAspect;
-import Condition.Conditions.ConditionColor;
-import Condition.Conditions.ConditionSubType;
+import Condition.Card.ConditionAspect;
+import Condition.Card.ConditionColor;
+import Condition.Card.ConditionSubType;
 
 public class test {
     public static void main(String[] args) {
