@@ -3,10 +3,10 @@ package Condition.Card;
 import Card.Card;
 import Condition.Condition;
 
-public class ConditionColor extends Condition<Card> {
+public class ConditionColorPositive extends Condition<Card> {
     private final String colors;
 
-    public ConditionColor(String colors) {
+    public ConditionColorPositive(String colors) {
         this.colors = colors;
     }
 
