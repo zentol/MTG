@@ -36,7 +36,7 @@ public class Permanent extends Card<PermanentAspect> {
     public void addPlaneswalkerAspect(String[] types) {
         aspects.add(new PlaneswalkerAspect(types));
     }
-    
+
     public PermanentAspect getAspect(Class<? extends PermanentAspect> aspect) {
         for (int x = 0; x < aspects.size(); x++) {
             if (aspects.get(x).getClass().equals(aspect)) {
@@ -57,5 +57,15 @@ public class Permanent extends Card<PermanentAspect> {
 
     public void untap() {
         untapped = true;
+    }
+
+//------------------------------------------------------------------------------
+    public boolean hasEffect(Class<? extends Effect> e) {
+        for (int x = 0; x < modifiers.size(); x++) {
+            if (modifiers.get(x).getClass().equals(e)) {
+                return true;
+            }
+        }
+        return false;
     }
 }

@@ -9,7 +9,7 @@ import Collection.Stack;
 import Condition.Card.ConditionController;
 import Effect.Effect;
 import java.util.ArrayList;
-import static Action.Destroy.Destroy.destroyAll;
+import static Action.Destroy.DestroyAll.destroyAll;
 import Condition.Condition;
 
 public class Game {

@@ -3,10 +3,13 @@ package Action.Destroy;
 import Action.Action;
 import Card.Permanent;
 import Condition.Condition;
+import Condition.Permanent.ConditionDestructible;
 import static Game.Game.*;
 import static Game.Game.graveyard;
 
-public class Destroy extends Action {
+public class DestroyAll extends Action {
+    private static ConditionDestructible destructible = new ConditionDestructible();
+    
     /**
     Destroys every permanent for whom ALL conditions are met.
     @param conditions conditions to meet
@@ -17,6 +20,7 @@ public class Destroy extends Action {
             for (int y = 0; x < conditions.length; y++) {
                 allConditionsMet &= conditions[y].evaluate(battlefield.get(x));
             }
+            allConditionsMet &= destructible.evaluate(battlefield.get(x));
             if (allConditionsMet) {
                 destroyPermanent(battlefield.get(x));
             }

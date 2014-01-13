@@ -1,7 +1,7 @@
 package Effect.Type.Activated;
 
-import Effect.Type.EffectType;
+import Effect.Effect;
 
-public class Activated extends EffectType<Activated> {
+public class Activated extends Effect<Activated> {
 
 }
