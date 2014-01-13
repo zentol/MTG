@@ -20,8 +20,11 @@ public class test {
         Game g = new Game(2);
 
         Permanent c = new Permanent(1, 1, 1, 1, "Footsoldier", "W", "W", false);
-        battlefield.add(c);
         c.addCreatureAspect(1, 1, new String[]{SOLDIER, MYR}, null);
+        battlefield.add(c);        
+        c.effects.add(new StaticIndestructible(c, c));
+        c.effects.get(0).execute();
+        
         /*c.addArtifactAspect(new String[]{"Equipment"});
          Creature q = new Creature(1,1,null,null);
          */
@@ -32,8 +35,7 @@ public class test {
         System.out.println(p1.evaluate(c));
         System.out.println(p2.evaluate(c));
         System.out.println(st1.evaluate(c));
-        c.effects.add(new StaticIndestructible(c, c));
-        c.effects.get(0).execute();
+        
         destroyAll(new Condition[0]);
         System.out.println(battlefield.size());
     }
