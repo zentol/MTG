@@ -17,7 +17,15 @@ public class CreatureAspect extends PermanentAspect {
         this.effects = effects;
     }
 
-    public void disableSumminingSickness() {
+    public void disableSummoningSickness() {
         summoningSickness = false;
+    }
+    
+    public int getAttack(){
+        return attack;
+    }
+    
+    public int getDefense(){
+        return defense;
     }
 }
