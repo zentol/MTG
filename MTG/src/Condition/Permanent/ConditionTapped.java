@@ -1,4 +1,4 @@
-package Condition.TargetProperties;
+package Condition.Permanent;
 
 import Card.Permanent;
 import Condition.Condition;

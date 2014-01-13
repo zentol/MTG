@@ -1,4 +1,4 @@
-package Condition.TargetProperties;
+package Condition.Card;
 
 import Card.Card;
 import Condition.Condition;

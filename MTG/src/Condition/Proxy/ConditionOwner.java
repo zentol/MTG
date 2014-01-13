@@ -1,4 +1,4 @@
-package Condition.TargetProperties;
+package Condition.Proxy;
 
 import Card.Proxy;
 import Condition.Condition;

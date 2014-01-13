@@ -1,4 +1,4 @@
-package Condition.TargetProperties;
+package Condition.Creature;
 
 import Card.Aspect.Permanent.CreatureAspect;
 import Card.Permanent;
