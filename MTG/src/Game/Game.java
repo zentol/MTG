@@ -6,7 +6,7 @@ import Collection.Graveyard;
 import Collection.Hand;
 import Collection.Library;
 import Collection.Stack;
-import Condition.Conditions.ConditionController;
+import Condition.TargetProperties.ConditionController;
 import Effect.Effect;
 import java.util.ArrayList;
 import static Action.Destroy.Destroy.destroyAll;
@@ -51,6 +51,7 @@ public class Game {
          mainPhase();
          endPhase();
          */
+        endTurn();
     }
 
     public static void endTurn() {

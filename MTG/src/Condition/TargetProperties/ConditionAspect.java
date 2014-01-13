@@ -1,4 +1,4 @@
-package Condition.Conditions;
+package Condition.TargetProperties;
 
 import Card.Card;
 import Card.Aspect.Aspect;
@@ -15,5 +15,4 @@ public class ConditionAspect extends Condition<Card> {
     public boolean evaluate(Card card) {
         return card.hasAspect(aspect);
     }
-
 }

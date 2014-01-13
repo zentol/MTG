@@ -1,4 +1,4 @@
-package Condition.Conditions;
+package Condition.TargetProperties;
 
 import Card.Card;
 import Condition.Condition;
@@ -23,5 +23,4 @@ public class ConditionSubType extends Condition<Card> {
         }
         return true;
     }
-
 }
