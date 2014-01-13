@@ -16,7 +16,8 @@ public abstract class Card<A extends Aspect> extends Proxy {
     public String name;
     public String cost;
     public String colors;
-    public Effect[] modifiers;
+    public ArrayList<Effect> modifiers;
+    public ArrayList<Effect> effects;
     public boolean legendary;
     public ArrayList<A> aspects;
     public int controllerID;
