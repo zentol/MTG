@@ -29,6 +29,8 @@ public abstract class Card<A extends Aspect> extends Proxy {
         this.name = name;
         this.cost = cost;
         this.colors = colors;
+        this.modifiers = new ArrayList();
+        this.effects = new ArrayList();
         this.legendary = legendary;
         this.aspects = new ArrayList();
         this.controllerID = controllerID;
