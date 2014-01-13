@@ -8,7 +8,7 @@ import Effect.Type.Static.StaticIndestructible;
 
 public class makeIndestructible extends Action{
     
-    public void makeIndestructible(Card source, Permanent target){
+    public static void makeIndestructible(Card source, Permanent target){
         target.modifiers.add(new StaticIndestructible(source,target));
     }
 }
