@@ -17,8 +17,8 @@ public class DestroyAll extends Action {
     public static void destroyAll(Condition[] conditions) {
         for (int x = 0; x < battlefield.size(); x++) {
             boolean allConditionsMet = true;
-            for (int y = 0; x < conditions.length; y++) {
-                allConditionsMet &= conditions[y].evaluate(battlefield.get(x));
+            for (Condition condition : conditions) {
+                allConditionsMet &= condition.evaluate(battlefield.get(x));
             }
             allConditionsMet &= destructible.evaluate(battlefield.get(x));
             if (allConditionsMet) {

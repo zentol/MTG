@@ -13,13 +13,12 @@ public class DestroyTarget {
      */
     public static void destroyTarget(Permanent permanent, Condition[] conditions) {
         boolean allConditionsMet = true;
-        for (int y = 0; y < conditions.length; y++) {
-            allConditionsMet &= conditions[y].evaluate(permanent);
+        for (Condition condition : conditions) {
+            allConditionsMet &= condition.evaluate(permanent);
         }
         if (allConditionsMet) {
             destroyPermanent(permanent);
         }
-
     }
 
     /**
@@ -27,13 +26,13 @@ public class DestroyTarget {
      @param conditions conditions to meet
      */
     public static void destroyTargets(Permanent[] permanents, Condition[] conditions) {
-        for (int x = 0; x < permanents.length; x++) {
+        for (Permanent permanent : permanents) {
             boolean allConditionsMet = true;
-            for (int y = 0; y < conditions.length; y++) {
-                allConditionsMet &= conditions[y].evaluate(permanents[x]);
+            for (Condition condition : conditions) {
+                allConditionsMet &= condition.evaluate(permanent);
             }
             if (allConditionsMet) {
-                destroyPermanent(permanents[x]);
+                destroyPermanent(permanent);
             }
         }
     }
