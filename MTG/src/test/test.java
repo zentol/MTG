@@ -1,6 +1,5 @@
 package test;
 
-import static Action.Destroy.DestroyAll.destroyAll;
 import Card.Aspect.Permanent.CreatureAspect;
 import Card.Permanent;
 import static Card.Aspect.Permanent.Type.CreatureType.MYR;
