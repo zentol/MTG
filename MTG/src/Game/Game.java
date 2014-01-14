@@ -10,6 +10,7 @@ import Condition.Card.ConditionController;
 import Effect.Effect;
 import java.util.ArrayList;
 import static Action.Destroy.DestroyAll.destroyAll;
+import Collection.Manapool;
 import Condition.Condition;
 
 public class Game {
@@ -18,6 +19,7 @@ public class Game {
     public static ArrayList<Library> library;
     public static ArrayList<Graveyard> graveyard;
     public static ArrayList<Exile> exile;
+    public static ArrayList<Manapool> manapool;
     public static ArrayList<Integer> lifepoints;
     public static Battlefield battlefield;
     public static Stack stack;
