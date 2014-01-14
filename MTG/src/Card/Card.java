@@ -44,7 +44,7 @@ public abstract class Card<A extends Aspect> {
         this.aspects = new ArrayList();
     }
 
-//Misc--------------------------------------------------------------------------
+//Meta--------------------------------------------------------------------------
     public boolean isCard(int cardID) {
         return this.cardID == cardID;
     }
@@ -61,7 +61,7 @@ public abstract class Card<A extends Aspect> {
         return this.controllerID == controllerID;
     }
 
-//Type--------------------------------------------------------------------------
+//(Sub)Type---------------------------------------------------------------------
     public boolean isPermanent() {
         return aspects.getClass().isInstance(PermanentAspect.class);
     }
@@ -73,6 +73,15 @@ public abstract class Card<A extends Aspect> {
     public boolean hasAspect(Class<? extends Aspect> a) {
         for (int x = 0; x < aspects.size(); x++) {
             if (aspects.get(x).getClass() == a) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean hasType(String type) {
+        for (Aspect aspect : aspects) {
+            if (aspect.hasType(type)) {
                 return true;
             }
         }
@@ -92,12 +101,4 @@ public abstract class Card<A extends Aspect> {
         return colors.isEmpty();
     }
 
-    public boolean hasType(String type) {
-        for (Aspect aspect : aspects) {
-            if (aspect.hasType(type)) {
-                return true;
-            }
-        }
-        return false;
-    }
 }
