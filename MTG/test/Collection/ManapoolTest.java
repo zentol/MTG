@@ -47,12 +47,12 @@ public class ManapoolTest {
     public void testManapool() {
         String addition = "2RRWGUB";
         manapool.addMana(addition);
-        Assert.assertEquals("2BUGRRW", manapool.check());
+        Assert.assertEquals("2BUGRRW", manapool.checkMana());
         Assert.assertTrue(manapool.contains("1W"));
         Assert.assertFalse(manapool.contains("3GG"));
         manapool.useMana("1W");
-        Assert.assertEquals("1BUGRR", manapool.check());
+        Assert.assertEquals("1BUGRR", manapool.checkMana());
         manapool.empty();
-        Assert.assertEquals("", manapool.check());
+        Assert.assertEquals("", manapool.checkMana());
     }
 }

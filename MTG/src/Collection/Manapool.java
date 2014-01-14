@@ -113,18 +113,18 @@ public class Manapool {
             }
         }
         if (black <= manaBlack & blue <= manaBlue & green <= manaGreen & red <= manaRed & white <= manaWhite) {
-            if (colorless <= manaColorless | colorless <= sumColored() - black - blue - green - red - white) {
+            if (colorless <= manaColorless | colorless <= sumMana() - black - blue - green - red - white) {
                 return true;
             }
         }
         return false;
     }
 
-    private int sumColored() {
-        return manaBlack + manaBlue + manaGreen + manaRed + manaWhite;
+    private int sumMana() {
+        return manaBlack + manaBlue + manaGreen + manaRed + manaWhite + manaColorless;
     }
 
-    public String check() {
+    public String checkMana() {
         StringBuilder result = new StringBuilder();
         if (manaColorless > 0) {
             result.append(manaColorless);
