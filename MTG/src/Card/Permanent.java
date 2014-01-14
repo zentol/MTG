@@ -61,6 +61,15 @@ public class Permanent extends Card<PermanentAspect> {
 
 //------------------------------------------------------------------------------
     public boolean hasEffect(Class<? extends Effect> e) {
+        for (int x = 0; x < effects.size(); x++) {
+            if (effects.get(x).getClass().equals(e)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean hasModifier(Class<? extends Effect> e) {
         for (int x = 0; x < modifiers.size(); x++) {
             if (modifiers.get(x).getClass().equals(e)) {
                 return true;
