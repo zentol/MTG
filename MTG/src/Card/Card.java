@@ -13,9 +13,9 @@ public abstract class Card<A extends Aspect> {
     public static String COLOR_RED = "R";
     public static String COLOR_WHITE = "W";
 
-    public int cardID;
-    public int instanceID;
-    public int ownerID;
+    public final int cardID;
+    public final int instanceID;
+    public final int ownerID;
 
     public String name;
     public String cost;
@@ -32,18 +32,27 @@ public abstract class Card<A extends Aspect> {
         this.cardID = cardID;
         this.instanceID = instanceID;
         this.ownerID = ownerID;
+        this.controllerID = controllerID;
 
         this.name = name;
         this.cost = cost;
         this.colors = colors;
+        this.legendary = legendary;
+
         this.modifiers = new ArrayList();
         this.effects = new ArrayList();
-        this.legendary = legendary;
         this.aspects = new ArrayList();
-        this.controllerID = controllerID;
     }
 
 //Misc--------------------------------------------------------------------------
+    public boolean isCard(int cardID) {
+        return this.cardID == cardID;
+    }
+
+    public boolean isInstance(int instanceID) {
+        return this.instanceID == instanceID;
+    }
+
     public boolean isOwner(int ownerID) {
         return this.ownerID == ownerID;
     }
@@ -61,7 +70,7 @@ public abstract class Card<A extends Aspect> {
         return aspects.getClass().isInstance(SpellAspect.class);
     }
 
-    public boolean hasAspect(Class a) {
+    public boolean hasAspect(Class<? extends Aspect> a) {
         for (int x = 0; x < aspects.size(); x++) {
             if (aspects.get(x).getClass() == a) {
                 return true;
