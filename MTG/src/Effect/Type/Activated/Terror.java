@@ -15,6 +15,6 @@ public class Terror extends Activated{
     }
     
     public void execute(Permanent target){
-        destroyTarget(target, new Condition[]{new ConditionColorNegative("B")/*,new ConditionTargetable()*/, new ConditionVulnerableColor(source.colors)});
+        destroyTarget(target, new Condition[]{new ConditionColorNegative("B")/*,new ConditionTargetable(Spell.class)*/, new ConditionVulnerableColor(source.colors)});
     }
 }
