@@ -1,6 +1,8 @@
 package Collection;
 
 import Card.Card;
+import java.util.ArrayList;
+import java.util.Random;
 
 public abstract class Staple extends Collection<Card> {
 
@@ -17,7 +19,10 @@ public abstract class Staple extends Collection<Card> {
     }
 
     public void putRandom(Card[] cards) {
-
+        Random positionPicker = new Random();
+        for (Card card : cards) {
+            collection.add(positionPicker.nextInt(collection.size()), card);
+        }
     }
 
     public Card[] look(int count) {
@@ -26,5 +31,13 @@ public abstract class Staple extends Collection<Card> {
             cards[x] = collection.get(x);
         }
         return cards;
+    }
+    
+    public void shuffle() {
+        ArrayList<Card> collectionCopy = (ArrayList<Card>) collection.clone();
+        Random cardPicker = new Random();
+        for (int x = 0; x < collection.size(); x++) {
+            collection.set(x, collectionCopy.remove(cardPicker.nextInt(collectionCopy.size())));
+        }
     }
 }
