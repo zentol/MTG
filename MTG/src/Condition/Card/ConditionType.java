@@ -11,7 +11,7 @@ public class ConditionType extends Condition<Card> {
     }
 
     @Override
-    public boolean evaluate(Card card) {
-        return card.getClass().equals(type);
+    public boolean evaluate(Card target) {
+        return target.getClass().equals(type);
     }
 }

@@ -11,7 +11,7 @@ public class ConditionOwner extends Condition<Card>{
     }
     
     @Override
-    public boolean evaluate(Card o) {
-        return o.isOwner(ownerID);
+    public boolean evaluate(Card target) {
+        return target.isOwner(ownerID);
     }
 }

@@ -11,13 +11,13 @@ public class ConditionSubType extends Condition<Card> {
     }
 
     @Override
-    public boolean evaluate(Card card) {
+    public boolean evaluate(Card target) {
         if (subTypes.length == 0) {
             return false;
         }
         for (String subType : subTypes) {
-            card.hasType(subType);
-            if (!card.hasType(subType)) {
+            target.hasType(subType);
+            if (!target.hasType(subType)) {
                 return false;
             }
         }

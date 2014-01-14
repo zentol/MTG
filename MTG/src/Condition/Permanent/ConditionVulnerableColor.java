@@ -12,10 +12,10 @@ public class ConditionVulnerableColor extends Condition<Permanent> {
     }
 
     @Override
-    public boolean evaluate(Permanent permanent) {
-        for (int x = 0; x < permanent.modifiers.size(); x++) {
-            if (permanent.modifiers.get(x).getClass().equals(StaticProtectionColor.class)) {
-                return !((StaticProtectionColor) permanent.modifiers.get(x)).protectsAgainst(colors);
+    public boolean evaluate(Permanent target) {
+        for (int x = 0; x < target.modifiers.size(); x++) {
+            if (target.modifiers.get(x).getClass().equals(StaticProtectionColor.class)) {
+                return !((StaticProtectionColor) target.modifiers.get(x)).protectsAgainst(colors);
             }
         }
         return true;

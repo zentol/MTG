@@ -11,12 +11,12 @@ public class ConditionColorNegative extends Condition<Card> {
     }
 
     @Override
-    public boolean evaluate(Card card) {
+    public boolean evaluate(Card target) {
         if (colors.isEmpty()) {
             return false;
         }
         for (int x = 0; x < colors.length(); x++) {
-            if (card.hasColor(Character.toString(colors.charAt(x)))) {
+            if (target.hasColor(Character.toString(colors.charAt(x)))) {
                 return false;
             }
 

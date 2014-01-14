@@ -12,7 +12,7 @@ public class ConditionAspect extends Condition<Card> {
     }
 
     @Override
-    public boolean evaluate(Card card) {
-        return card.hasAspect(aspect);
+    public boolean evaluate(Card target) {
+        return target.hasAspect(aspect);
     }
 }

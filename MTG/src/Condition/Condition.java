@@ -12,5 +12,5 @@ package Condition;
  */
 public abstract class Condition<E> {
     
-    public abstract boolean evaluate(E o);
+    public abstract boolean evaluate(E target);
 }

@@ -11,11 +11,11 @@ public class ConditionTapped extends Condition<Permanent> {
     }
 
     @Override
-    public boolean evaluate(Permanent o) {
+    public boolean evaluate(Permanent target) {
         if (tapped) {
-            return o.isTapped();
+            return target.isTapped();
         } else {
-            return !o.isTapped();
+            return !target.isTapped();
         }
     }
 
