@@ -1,0 +1,1 @@
+reset card modifiers when sent to hand/graveyard/exile/library
