@@ -8,7 +8,16 @@ public class Manapool {
     private int manaWhite;
     private int manaColorless;
 
-    public void add(String addition) {
+    public Manapool() {
+        manaBlack = 0;
+        manaBlue = 0;
+        manaGreen = 0;
+        manaRed = 0;
+        manaWhite = 0;
+        manaColorless = 0;
+    }
+
+    public void addMana(String addition) {
         int startIndexColored = 0;
         try {
             manaColorless += Integer.parseInt(Character.toString(addition.charAt(0)));
@@ -16,63 +25,69 @@ public class Manapool {
         } catch (NumberFormatException nfe) {
         }
         for (int x = startIndexColored; x < addition.length(); x++) {
-            switch (addition.charAt(x)) {
-                case 'B':
-                    manaBlack++;
-                    break;
-                case 'G':
-                    manaGreen++;
-                    break;
-                case 'R':
-                    manaRed++;
-                    break;
-                case 'W':
-                    manaWhite++;
-                    break;
-                case 'U':
-                    manaBlue++;
-                    break;
-            }
+            add(addition.charAt(x));
         }
     }
 
-    public void use(String cost) {
-        int startIndexColored = 0;
-        try {
-            manaColorless -= Integer.parseInt(Character.toString(cost.charAt(0)));
-            startIndexColored = 1;
-        } catch (NumberFormatException nfe) {
+    private void add(char mana) {
+        switch (mana) {
+            case 'B':
+                manaBlack++;
+                break;
+            case 'G':
+                manaGreen++;
+                break;
+            case 'R':
+                manaRed++;
+                break;
+            case 'W':
+                manaWhite++;
+                break;
+            case 'U':
+                manaBlue++;
+                break;
         }
-        for (int x = startIndexColored; x < cost.length(); x++) {
-            switch (cost.charAt(x)) {
-                case 'B':
-                    manaBlack--;
-                    break;
-                case 'G':
-                    manaGreen--;
-                    break;
-                case 'R':
-                    manaRed--;
-                    break;
-                case 'W':
-                    manaWhite--;
-                    break;
-                case 'U':
-                    manaBlue--;
-                    break;
+    }
+
+    public void useMana(String cost) {
+        if (contains(cost)) {
+            int startIndexColored = 0;
+            try {
+                manaColorless -= Integer.parseInt(Character.toString(cost.charAt(0)));
+                startIndexColored = 1;
+            } catch (NumberFormatException nfe) {
+            }
+            for (int x = startIndexColored; x < cost.length(); x++) {
+                switch (cost.charAt(x)) {
+                    case 'B':
+                        manaBlack--;
+                        break;
+                    case 'G':
+                        manaGreen--;
+                        break;
+                    case 'R':
+                        manaRed--;
+                        break;
+                    case 'W':
+                        manaWhite--;
+                        break;
+                    case 'U':
+                        manaBlue--;
+                        break;
+                }
             }
         }
-
     }
 
     public boolean contains(String cost) {
-        int startIndexColored = 0;
         int colorless = 0;
         int black = 0;
         int blue = 0;
         int green = 0;
         int red = 0;
         int white = 0;
+
+        int startIndexColored = 0;
         try {
             colorless = Integer.parseInt(Character.toString(cost.charAt(0)));
             startIndexColored = 1;
@@ -130,5 +145,14 @@ public class Manapool {
             result.append("W");
         }
         return result.toString();
+    }
+
+    public void empty() {
+        manaBlack = 0;
+        manaBlue = 0;
+        manaGreen = 0;
+        manaRed = 0;
+        manaWhite = 0;
+        manaColorless = 0;
     }
 }
