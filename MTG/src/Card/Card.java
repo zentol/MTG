@@ -6,12 +6,16 @@ import Card.Aspect.Spell.SpellAspect;
 import Effect.Effect;
 import java.util.ArrayList;
 
-public abstract class Card<A extends Aspect> extends Proxy {
+public abstract class Card<A extends Aspect> {
     public static String COLOR_BLACK = "B";
     public static String COLOR_BLUE = "U";
     public static String COLOR_GREEN = "G";
     public static String COLOR_RED = "R";
     public static String COLOR_WHITE = "W";
+
+    public int cardID;
+    public int instanceID;
+    public int ownerID;
 
     public String name;
     public String cost;
@@ -25,7 +29,10 @@ public abstract class Card<A extends Aspect> extends Proxy {
     public Card(int cardID, int instanceID, int ownerID, int controllerID,
             String name, String cost, String colors, boolean legendary
     ) {
-        super(cardID, instanceID, ownerID);
+        this.cardID = cardID;
+        this.instanceID = instanceID;
+        this.ownerID = ownerID;
+
         this.name = name;
         this.cost = cost;
         this.colors = colors;
@@ -37,6 +44,10 @@ public abstract class Card<A extends Aspect> extends Proxy {
     }
 
 //Misc--------------------------------------------------------------------------
+    public boolean isOwner(int ownerID) {
+        return this.ownerID == ownerID;
+    }
+
     public boolean isController(int controllerID) {
         return this.controllerID == controllerID;
     }

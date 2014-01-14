@@ -9,14 +9,12 @@ import Card.Aspect.Permanent.ArtifactAspect;
 import Card.Aspect.Permanent.CreatureAspect;
 import Card.Aspect.Permanent.EnchantmentAspect;
 import Card.Aspect.Permanent.LandAspect;
-import Card.Aspect.Permanent.PermanentAspect;
 import Card.Aspect.Permanent.PlaneswalkerAspect;
-import static Card.Aspect.Permanent.Type.ArtifactType.EQUIPMENT;
-import static Card.Aspect.Permanent.Type.CreatureType.MYR;
-import static Card.Aspect.Permanent.Type.CreatureType.SOLDIER;
-import static Card.Aspect.Permanent.Type.EnchantmentType.AURA;
-import static Card.Aspect.Permanent.Type.LandType.GATE;
-import static Card.Aspect.Permanent.Type.PlaneswalkerType.JACE;
+import static Card.Aspect.Permanent.Type.ArtifactType.*;
+import static Card.Aspect.Permanent.Type.CreatureType.*;
+import static Card.Aspect.Permanent.Type.EnchantmentType.*;
+import static Card.Aspect.Permanent.Type.LandType.*;
+import static Card.Aspect.Permanent.Type.PlaneswalkerType.*;
 import Effect.Effect;
 import Effect.Type.Static.StaticIndestructible;
 import Effect.Type.Static.StaticProtectionColor;
@@ -26,7 +24,6 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *

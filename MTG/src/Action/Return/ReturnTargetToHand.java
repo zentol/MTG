@@ -2,7 +2,7 @@ package Action.Return;
 
 import Action.Action;
 import Card.Permanent;
-import Card.Proxy;
+import Card.Card;
 import Condition.Condition;
 import static Game.Game.battlefield;
 import static Game.Game.graveyard;
@@ -20,13 +20,13 @@ public class ReturnTargetToHand extends Action{
         }
     }
     
-    public static void returnTargetToHandFromGraveyard(Proxy proxy, Condition[] conditions) {
+    public static void returnTargetToHandFromGraveyard(Card Card, Condition[] conditions) {
         boolean allConditionsMet = true;
         for (Condition condition : conditions) {
-            allConditionsMet &= condition.evaluate(proxy);
+            allConditionsMet &= condition.evaluate(Card);
         }
         if (allConditionsMet) {
-            returnToHand(proxy);
+            returnToHand(Card);
         }
     }
     
@@ -35,8 +35,8 @@ public class ReturnTargetToHand extends Action{
         hand.get(permanent.ownerID).add(permanent);
     }
     
-    private static void returnToHand(Proxy proxy){
-        graveyard.get(proxy.ownerID).remove(proxy);
-        hand.get(proxy.ownerID).add(proxy);
+    private static void returnToHand(Card Card){
+        graveyard.get(Card.ownerID).remove(Card);
+        hand.get(Card.ownerID).add(Card);
     }
 }

@@ -5,7 +5,7 @@ import static Card.Aspect.Permanent.Type.CreatureType.SOLDIER;
 import Card.Permanent;
 import Condition.Card.ConditionSubType;
 import Condition.Condition;
-import Condition.Proxy.ConditionOther;
+import Condition.Card.ConditionOther;
 
 public class destroyother extends Activated {
     private final Permanent source;

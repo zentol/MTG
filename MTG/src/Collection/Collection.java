@@ -1,9 +1,9 @@
 package Collection;
 
-import Card.Proxy;
+import Card.Card;
 import java.util.ArrayList;
 
-public abstract class Collection<E extends Proxy> {
+public abstract class Collection<E extends Card> {
     protected ArrayList<E> collection;
     public int ownerID;
     

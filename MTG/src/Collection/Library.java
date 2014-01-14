@@ -1,11 +1,10 @@
 package Collection;
 
-import Card.Proxy;
-import java.util.ArrayList;
+import Card.Card;
 
 public class Library extends Staple {
-    public Proxy[] draw(int count) {
-        Proxy[] cards = new Proxy[count];
+    public Card[] draw(int count) {
+        Card[] cards = new Card[count];
         for (int x = 0; x < count; x++) {
             cards[x] = collection.remove(0);
         }

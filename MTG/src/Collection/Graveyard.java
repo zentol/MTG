@@ -1,9 +1,9 @@
 package Collection;
 
-import Card.Proxy;
+import Card.Card;
 
 public class Graveyard extends Staple {
-    public void sendToGraveyard(Proxy p){
+    public void sendToGraveyard(Card p){
         this.collection.add(p);
     }
 }

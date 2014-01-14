@@ -1,27 +1,27 @@
 package Collection;
 
-import Card.Proxy;
+import Card.Card;
 
-public abstract class Staple extends Collection<Proxy> {
+public abstract class Staple extends Collection<Card> {
 
-    public void putOnTop(Proxy[] cards) {
+    public void putOnTop(Card[] cards) {
         for (int x = cards.length - 1; x > 0; x--) {
             collection.add(0, cards[x]);
         }
     }
 
-    public void putOnBottom(Proxy[] cards) {
+    public void putOnBottom(Card[] cards) {
         for (int x = 0; x < cards.length; x--) {
             collection.add(cards[x]);
         }
     }
 
-    public void putRandom(Proxy[] cards) {
+    public void putRandom(Card[] cards) {
 
     }
 
-    public Proxy[] look(int count) {
-        Proxy[] cards = new Proxy[count];
+    public Card[] look(int count) {
+        Card[] cards = new Card[count];
         for (int x = 0; x < count; x++) {
             cards[x] = collection.get(x);
         }

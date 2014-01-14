@@ -1,9 +1,9 @@
-package Condition.Proxy;
+package Condition.Card;
 
-import Card.Proxy;
+import Card.Card;
 import Condition.Condition;
 
-public class ConditionOther extends Condition<Proxy> {
+public class ConditionOther extends Condition<Card> {
     private final int instanceID;
 
     public ConditionOther(int instanceID) {
@@ -11,7 +11,7 @@ public class ConditionOther extends Condition<Proxy> {
     }
 
     @Override
-    public boolean evaluate(Proxy o) {
+    public boolean evaluate(Card o) {
         return o.instanceID == instanceID;
     }
 }

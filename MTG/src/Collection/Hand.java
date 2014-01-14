@@ -1,9 +1,9 @@
 package Collection;
 
-import Card.Proxy;
+import Card.Card;
 
-public class Hand extends Collection<Proxy> {
-    public Proxy[] reveal() {
-        return (Proxy[]) collection.toArray();
+public class Hand extends Collection<Card> {
+    public Card[] reveal() {
+        return (Card[]) collection.toArray();
     }
 }
