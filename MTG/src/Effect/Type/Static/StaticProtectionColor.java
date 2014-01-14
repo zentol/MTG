@@ -1,6 +1,6 @@
 package Effect.Type.Static;
 
-import static Action.temp.Protection.addProtectionColor;
+import static Action.Static.Protection.addProtectionColor;
 import Card.Card;
 import Card.Permanent;
 

@@ -1,5 +1,5 @@
 
-package Action.temp;
+package Action.Static;
 
 import Action.Action;
 import Card.Card;
