@@ -2,8 +2,9 @@ package Collection;
 
 import Card.Card;
 import java.util.ArrayList;
+import java.util.Arrays;
 
-public abstract class Collection<E extends Card> {
+public abstract class Collection<E> {
     protected ArrayList<E> collection;
     public int ownerID;
     
@@ -17,6 +18,10 @@ public abstract class Collection<E extends Card> {
 
     public void add(E item) {
         collection.add(item);
+    }
+    
+    public void add(E[] items) {
+        collection.addAll(Arrays.asList(items));
     }
 
     public int size() {
