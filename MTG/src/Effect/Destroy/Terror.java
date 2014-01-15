@@ -1,4 +1,4 @@
-package Effect.Type.Activated;
+package Effect.Destroy;
 
 import static Action.Destroy.DestroyTarget.destroyTarget;
 import Card.Permanent;
@@ -6,6 +6,7 @@ import Card.Spell;
 import Condition.Card.ConditionColorNegative;
 import Condition.Condition;
 import Condition.Permanent.ConditionVulnerableColor;
+import Effect.Type.Activated.Activated;
 
 public class Terror extends Activated{
     private final Spell source;

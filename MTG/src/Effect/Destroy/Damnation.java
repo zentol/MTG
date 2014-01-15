@@ -1,10 +1,11 @@
 
-package Effect.Type.Activated;
+package Effect.Destroy;
 
 import static Action.Destroy.DestroyAll.destroyAll;
 import Card.Permanent;
 import Card.Spell;
 import Condition.Condition;
+import Effect.Type.Activated.Activated;
 
 public class Damnation extends Activated{
 private final Spell source;
