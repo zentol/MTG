@@ -10,8 +10,15 @@ import Condition.Card.ConditionController;
 import Effect.Effect;
 import java.util.ArrayList;
 import static Action.Destroy.DestroyAll.destroyAll;
+import static Action.Play.Play.play;
+import static Card.Aspect.Permanent.Type.CreatureType.MYR;
+import static Card.Aspect.Permanent.Type.CreatureType.SOLDIER;
+import Card.Permanent;
 import Collection.Manapool;
 import Condition.Condition;
+import Effect.Resolve.Resolve;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Game {
     public static ArrayList<Integer> player;
@@ -42,20 +49,42 @@ public class Game {
             addPlayer();
         }
     }
-
+    
+//turn--------------------------------------------------------------------------
     public static void turn() {
-        /*
-         supplyPhase();
+        
+         //supplyPhase();
          untapPhase();
+         
          drawPhase();
          mainPhase();
-         combatPhase();
+         /*combatPhase();
          mainPhase();
          endPhase();
          */
-        endTurn();
+        //endTurn();
     }
-
+    
+    public static void untapPhase(){
+        for(int x=0;x<battlefield.size();x++){
+            if(battlefield.get(x).isController(activePlayer)){
+                battlefield.get(x).untap();
+            }
+        }
+    }
+    
+    public static void drawPhase(){
+        hand.get(activePlayer).add(library.get(activePlayer).draw(1));
+        //discard
+        
+    }
+    
+    public static void mainPhase(){
+        play(hand.get(activePlayer).get(0));
+        play(hand.get(activePlayer).get(1));
+        stack.resolveStack();
+    }
+    
     public static void endTurn() {
         activePlayer++;
         activePlayer %= lifepoints.size();
@@ -80,5 +109,25 @@ public class Game {
         exile.remove(playerID);
         lifepoints.remove(playerID);
         destroyAll(new Condition[]{new ConditionController(playerID)});
+    }
+
+    public static void dummyLoadLibrary() {
+        Permanent c;
+        for (int x = 0; x < 25; x++) {
+            c = new Permanent(1, 1, 0, 1, "Footsoldier", "W", "W", false);
+            c.addCreatureAspect(1, 1, new String[]{SOLDIER, MYR}, null);
+            library.get(0).add(c);
+        }
+        for (int x = 0; x < 25; x++) {
+            c = new Permanent(1, 1, 0, 1, "Footsoldier", "W", "W", false);
+            c.addCreatureAspect(1, 1, new String[]{SOLDIER, MYR}, null);
+            library.get(1).add(c);
+        }
+    }
+
+    public static void initGame() {
+        for (int x = 0; x < lifepoints.size(); x++) {
+            hand.get(x).add(library.get(x).draw(7));
+        }
     }
 }
