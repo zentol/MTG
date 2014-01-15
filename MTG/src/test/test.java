@@ -5,6 +5,7 @@ import Card.Permanent;
 import static Card.Aspect.Permanent.Type.CreatureType.MYR;
 import static Card.Aspect.Permanent.Type.CreatureType.SOLDIER;
 import Card.Spell;
+import Collection.Battlefield;
 import Condition.Condition;
 import Condition.Card.ConditionAspect;
 import Condition.Card.ConditionColorPositive;
@@ -15,10 +16,20 @@ import Effect.Type.Static.StaticIndestructible;
 import Effect.Type.Static.StaticProtectionColor;
 import Game.Game;
 import static Game.Game.battlefield;
+import static Game.Game.dummyLoadLibrary;
+import static Game.Game.initGame;
+import static Game.Game.turn;
 
 public class test {
     public static void main(String[] args) {
         Game g = new Game(2);
+
+        dummyLoadLibrary();
+        initGame();
+        System.out.println(battlefield.size());
+
+        turn();
+        System.out.println(battlefield.size());
 
         Permanent c = new Permanent(1, 1, 0, 1, "Footsoldier", "W", "W", false);
         c.addCreatureAspect(1, 1, new String[]{SOLDIER, MYR}, null);
@@ -32,7 +43,7 @@ public class test {
         Permanent q = new Permanent(2, 2, 1, 2, "Footsoldier", "W", "W", false);
         q.addCreatureAspect(1, 1, new String[]{SOLDIER, MYR}, null);
         battlefield.add(q);
-        
+
         q.effects.add(new destroyother(q));
         ((destroyother) q.effects.get(0)).execute();
 
@@ -43,16 +54,16 @@ public class test {
 
         /*c.addArtifactAspect(new String[]{"Equipment"});
          Creature q = new Creature(1,1,null,null);
-         */
-        Condition q1 = new ConditionAspect(CreatureAspect.class);
-        Condition p1 = new ConditionColorPositive("W");
-        Condition p2 = new ConditionColorPositive("WR");
-        Condition st1 = new ConditionSubType(new String[]{"Soldier", MYR});
-        System.out.println(p1.evaluate(c));
-        System.out.println(p2.evaluate(c));
-        System.out.println(st1.evaluate(c));
+         *//*
+         Condition q1 = new ConditionAspect(CreatureAspect.class);
+         Condition p1 = new ConditionColorPositive("W");
+         Condition p2 = new ConditionColorPositive("WR");
+         Condition st1 = new ConditionSubType(new String[]{"Soldier", MYR});
+         System.out.println(p1.evaluate(c));
+         System.out.println(p2.evaluate(c));
+         System.out.println(st1.evaluate(c));
 
-        //destroyAll(new Condition[0]);
-        System.out.println(battlefield.size());
+         //destroyAll(new Condition[0]);
+         System.out.println(battlefield.size());*/
     }
 }
