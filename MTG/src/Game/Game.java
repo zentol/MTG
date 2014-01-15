@@ -50,43 +50,44 @@ public class Game {
             addPlayer();
         }
     }
-    
+
 //turn--------------------------------------------------------------------------
     public static void turn() {
-        
-         //supplyPhase();
-         untapPhase();
-         
-         drawPhase();
-         mainPhase();
-         /*combatPhase();
+
+        //supplyPhase();
+        untapPhase();
+
+        drawPhase();
+        mainPhase();
+        /*combatPhase();
          mainPhase();
          endPhase();
          */
         //endTurn();
     }
-    
-    public static void untapPhase(){
-        for(int x=0;x<battlefield.size();x++){
-            if(battlefield.get(x).isController(activePlayer)){
+
+    public static void untapPhase() {
+        for (int x = 0; x < battlefield.size(); x++) {
+            if (battlefield.get(x).isController(activePlayer)) {
                 battlefield.get(x).untap();
             }
         }
     }
-    
-    public static void drawPhase(){
+
+    public static void drawPhase() {
         hand.get(activePlayer).add(library.get(activePlayer).draw(1));
-        //discard
-        
+        if (hand.get(activePlayer).size() > 7) {
+            //hand.get(activePlayer).discard(hand.get(activePlayer).size() - 7);
+        }
     }
-    
-    public static void mainPhase(){
+
+    public static void mainPhase() {
         addMana(hand.get(activePlayer).get(0).cost);
         play(hand.get(activePlayer).get(0));
         play(hand.get(activePlayer).get(1));
         stack.resolveStack();
     }
-    
+
     public static void endTurn() {
         activePlayer++;
         activePlayer %= lifepoints.size();
