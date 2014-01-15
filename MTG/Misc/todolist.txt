@@ -1,2 +1,11 @@
-reset card modifiers when sent to hand/graveyard/exile/library
 get back on track -> start from creating a new game and see what is needed next!
+
+mandatory discard when size>7 into drawPhase()
+
+resolve spell
+
+reset card modifiers when sent to hand/graveyard/exile/library
+
+----------------
+
+remove Permanent.clone()
