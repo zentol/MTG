@@ -10,6 +10,7 @@ import Condition.Card.ConditionController;
 import Effect.Effect;
 import java.util.ArrayList;
 import static Action.Destroy.DestroyAll.destroyAll;
+import static Action.Mana.AddMana.addMana;
 import static Action.Play.Play.play;
 import static Card.Aspect.Permanent.Type.CreatureType.MYR;
 import static Card.Aspect.Permanent.Type.CreatureType.SOLDIER;
@@ -40,10 +41,10 @@ public class Game {
         library = new ArrayList();
         graveyard = new ArrayList();
         exile = new ArrayList();
+        manapool = new ArrayList();
         lifepoints = new ArrayList();
         battlefield = new Battlefield();
         stack = new Stack();
-        hand = new ArrayList();
 
         for (int x = 0; x < playerCount; x++) {
             addPlayer();
@@ -80,6 +81,7 @@ public class Game {
     }
     
     public static void mainPhase(){
+        addMana(hand.get(activePlayer).get(0).cost);
         play(hand.get(activePlayer).get(0));
         play(hand.get(activePlayer).get(1));
         stack.resolveStack();
@@ -96,6 +98,7 @@ public class Game {
         library.add(new Library());
         graveyard.add(new Graveyard());
         exile.add(new Exile());
+        manapool.add(new Manapool());
         lifepoints.add(20);
     }
 
