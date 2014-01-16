@@ -17,12 +17,9 @@ import static Card.Aspect.Permanent.Type.CreatureType.SOLDIER;
 import Card.Permanent;
 import Collection.Manapool;
 import Condition.Condition;
-import Effect.Resolve.Resolve;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class Game {
-    public static ArrayList<Integer> player;
+    public static ArrayList<Boolean> player;
     public static ArrayList<Hand> hand;
     public static ArrayList<Library> library;
     public static ArrayList<Graveyard> graveyard;
@@ -91,10 +88,13 @@ public class Game {
     public static void endTurn() {
         activePlayer++;
         activePlayer %= lifepoints.size();
+        if(!player.get(activePlayer)){
+            endTurn();
+        }
     }
 
     public static void addPlayer() {
-        player.add(player.size());
+        player.add(true);
         hand.add(new Hand());
         library.add(new Library());
         graveyard.add(new Graveyard());
@@ -104,15 +104,14 @@ public class Game {
     }
 
     public static void removePlayer(int playerID) {
-        for (int x = playerID + 1; x < player.size(); x++) {
-            player.set(x, player.get(x) - 1);
-        }
+        player.set(playerID,false);
+        destroyAll(new Condition[]{new ConditionController(playerID)});
         hand.remove(playerID);
         library.remove(playerID);
         graveyard.remove(playerID);
         exile.remove(playerID);
         lifepoints.remove(playerID);
-        destroyAll(new Condition[]{new ConditionController(playerID)});
+        manapool.remove(playerID);
     }
 
     public static void dummyLoadLibrary() {
