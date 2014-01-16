@@ -1,5 +1,8 @@
 package Collection;
 
+import Card.Color.Color.COLORS;
+import static Card.Color.Color.COLORS.*;
+
 public class Manapool {
     private int manaBlack;
     private int manaBlue;
@@ -30,20 +33,20 @@ public class Manapool {
     }
 
     private void add(char mana) {
-        switch (mana) {
-            case 'B':
+        switch (COLORS.valueOf(String.valueOf(mana))) {
+            case B:
                 manaBlack++;
                 break;
-            case 'G':
+            case G:
                 manaGreen++;
                 break;
-            case 'R':
+            case R:
                 manaRed++;
                 break;
-            case 'W':
+            case W:
                 manaWhite++;
                 break;
-            case 'U':
+            case U:
                 manaBlue++;
                 break;
             default:
@@ -60,20 +63,20 @@ public class Manapool {
             } catch (NumberFormatException nfe) {
             }
             for (int x = startIndexColored; x < cost.length(); x++) {
-                switch (cost.charAt(x)) {
-                    case 'B':
+                switch (COLORS.valueOf(String.valueOf(cost.charAt(x)))) {
+                    case B:
                         manaBlack--;
                         break;
-                    case 'G':
+                    case G:
                         manaGreen--;
                         break;
-                    case 'R':
+                    case R:
                         manaRed--;
                         break;
-                    case 'W':
+                    case W:
                         manaWhite--;
                         break;
-                    case 'U':
+                    case U:
                         manaBlue--;
                         break;
                     default:
@@ -98,36 +101,45 @@ public class Manapool {
         } catch (NumberFormatException nfe) {
         }
         for (int x = startIndexColored; x < cost.length(); x++) {
-            switch (cost.charAt(x)) {
-                case 'B':
+            switch (COLORS.valueOf(String.valueOf(cost.charAt(x)))) {
+                case B:
                     black++;
                     break;
-                case 'G':
+                case G:
                     green++;
                     break;
-                case 'R':
+                case R:
                     red++;
                     break;
-                case 'W':
+                case W:
                     white++;
                     break;
-                case 'U':
+                case U:
                     blue++;
                     break;
                 default:
                     break;
             }
         }
-        if (black <= manaBlack && blue <= manaBlue && green <= manaGreen && red <= manaRed && white <= manaWhite) {
-            if (colorless <= manaColorless || colorless <= sumMana() - black - blue - green - red - white) {
-                return true;
-            }
+        if (black <= manaBlack
+                && blue <= manaBlue
+                && green <= manaGreen
+                && red <= manaRed
+                && white <= manaWhite
+                && (colorless <= manaColorless
+                || colorless <= sumMana() - black - blue - green - red - white)) {
+            return true;
         }
         return false;
     }
 
     private int sumMana() {
-        return manaBlack + manaBlue + manaGreen + manaRed + manaWhite + manaColorless;
+        return manaBlack
+                + manaBlue
+                + manaGreen
+                + manaRed
+                + manaWhite
+                + manaColorless;
     }
 
     public String checkMana() {
@@ -136,19 +148,19 @@ public class Manapool {
             result.append(manaColorless);
         }
         for (int x = 0; x < manaBlack; x++) {
-            result.append("B");
+            result.append(B);
         }
         for (int x = 0; x < manaBlue; x++) {
-            result.append("U");
+            result.append(U);
         }
         for (int x = 0; x < manaGreen; x++) {
-            result.append("G");
+            result.append(G);
         }
         for (int x = 0; x < manaRed; x++) {
-            result.append("R");
+            result.append(R);
         }
         for (int x = 0; x < manaWhite; x++) {
-            result.append("W");
+            result.append(W);
         }
         return result.toString();
     }
