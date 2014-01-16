@@ -1,5 +1,4 @@
-
 package Action;
 
-public class ActionTarget extends Action{
+public class ActionTarget extends Action {
 }

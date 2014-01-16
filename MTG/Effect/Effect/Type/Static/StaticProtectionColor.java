@@ -10,7 +10,7 @@ public class StaticProtectionColor extends Static {
     private final Permanent target;
 
     public StaticProtectionColor(Card source, Permanent target, String color) {
-        this.color=color;
+        this.color = color;
         this.source = source;
         this.target = target;
     }
@@ -18,10 +18,10 @@ public class StaticProtectionColor extends Static {
     public void execute() {
         addProtectionColor(source, target, color);
     }
-    
-    public boolean protectsAgainst(String color){
-        for(int x=0;x<color.length();x++){
-            if(this.color.contains(Character.toString(color.charAt(x)))){
+
+    public boolean protectsAgainst(String color) {
+        for (int x = 0; x < color.length(); x++) {
+            if (this.color.contains(Character.toString(color.charAt(x)))) {
                 return true;
             }
         }

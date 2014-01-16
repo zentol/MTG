@@ -8,11 +8,11 @@ import static Game.Game.*;
 
 public class DestroyAll extends Action {
     private static ConditionDestructible destructible = new ConditionDestructible();
-    
+
     /**
-    Destroys every permanent for whom ALL conditions are met.
-    @param conditions conditions to meet
-    */
+     Destroys every permanent for whom ALL conditions are met.
+     @param conditions conditions to meet
+     */
     public static void destroyAll(Condition[] conditions) {
         for (int x = 0; x < battlefield.size(); x++) {
             boolean allConditionsMet = true;

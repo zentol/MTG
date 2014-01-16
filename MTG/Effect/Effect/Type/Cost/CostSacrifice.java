@@ -12,9 +12,9 @@ public class CostSacrifice extends Effect {
         this.count = count;
         this.type = type;
     }
-    
-    public void pay(Card[] sacrifices){
-        for(Card sacrifice : sacrifices){
+
+    public void pay(Card[] sacrifices) {
+        for (Card sacrifice : sacrifices) {
             //sacrifice(sacrifice);
         }
     }

@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package Condition;
 
 /**
@@ -11,6 +10,6 @@ package Condition;
  * @author Zento
  */
 public abstract class Condition<E> {
-    
+
     public abstract boolean evaluate(E target);
 }

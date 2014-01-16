@@ -6,11 +6,11 @@ import java.util.Arrays;
 public abstract class Collection<E> {
     protected ArrayList<E> collection;
     public int ownerID;
-    
-    public Collection(){
+
+    public Collection() {
         collection = new ArrayList();
     }
-    
+
     public E get(int index) {
         return collection.get(index);
     }
@@ -18,7 +18,7 @@ public abstract class Collection<E> {
     public void add(E item) {
         collection.add(item);
     }
-    
+
     public void add(E[] items) {
         collection.addAll(Arrays.asList(items));
     }

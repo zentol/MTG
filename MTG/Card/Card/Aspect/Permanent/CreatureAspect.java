@@ -15,12 +15,12 @@ public class CreatureAspect extends PermanentAspect {
     public void disableSummoningSickness() {
         summoningSickness = false;
     }
-    
-    public int getAttack(){
+
+    public int getAttack() {
         return attack;
     }
-    
-    public int getDefense(){
+
+    public int getDefense() {
         return defense;
     }
 }

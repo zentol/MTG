@@ -32,7 +32,7 @@ public abstract class Staple extends Collection<Card> {
         }
         return cards;
     }
-    
+
     public void shuffle() {
         ArrayList<Card> collectionCopy = (ArrayList<Card>) collection.clone();
         Random cardPicker = new Random();

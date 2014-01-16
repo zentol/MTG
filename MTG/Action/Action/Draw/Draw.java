@@ -6,7 +6,7 @@ import static Game.Game.activePlayer;
 import static Game.Game.hand;
 import static Game.Game.library;
 
-public class Draw extends Action{
+public class Draw extends Action {
     public static void draw(int count) {
         Card[] drawnCards = library.get(activePlayer).draw(count);
         for (Card drawnCard : drawnCards) {

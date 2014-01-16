@@ -1,4 +1,4 @@
 package Card.Aspect.Spell.Type;
 
-public class InstantType{
+public class InstantType {
 }

@@ -8,8 +8,8 @@ public class CostMana extends Effect {
     public CostMana(String cost) {
         this.cost = cost;
     }
-    
-    public void pay(String payment){
-        
+
+    public void pay(String payment) {
+
     }
 }

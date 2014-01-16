@@ -12,8 +12,8 @@ public class StaticIndestructible extends Static {
         this.source = source;
         this.target = target;
     }
-    
-    public void execute(){
-        addIndestructible(source,target);
+
+    public void execute() {
+        addIndestructible(source, target);
     }
 }

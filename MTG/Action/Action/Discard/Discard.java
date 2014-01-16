@@ -13,7 +13,7 @@ public class Discard extends Action {
             graveyard.get(activePlayer).sendToGraveyard(card);
         }
     }
-    
+
     public static void discard(Card[] cards, int playerID) {
         for (Card card : cards) {
             hand.get(playerID).remove(card);

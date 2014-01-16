@@ -1,4 +1,3 @@
-
 package Effect.Resolve;
 
 import Card.Card;
@@ -15,7 +14,7 @@ public class Resolve extends Effect {
         this.target = target;
         this.ownerID = target.ownerID;
     }
-    
+
     public void execute() {
         if (target.getClass().equals(Permanent.class)) {
             battlefield.add((Permanent) target);

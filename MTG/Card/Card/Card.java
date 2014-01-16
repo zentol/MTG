@@ -7,11 +7,6 @@ import Effect.Effect;
 import java.util.ArrayList;
 
 public abstract class Card<A extends Aspect> {
-    public static final String COLOR_BLACK = "B";
-    public static final String COLOR_BLUE = "U";
-    public static final String COLOR_GREEN = "G";
-    public static final String COLOR_RED = "R";
-    public static final String COLOR_WHITE = "W";
 
     public final int cardID;
     public final int instanceID;
