@@ -32,9 +32,6 @@ import org.junit.Test;
 public class PermanentTest {
     private Permanent permanent;
 
-    public PermanentTest() {
-    }
-
     @BeforeClass
     public static void setUpClass() {
     }
@@ -72,8 +69,7 @@ public class PermanentTest {
         int attack = 1;
         int defense = 1;
         String[] types = {SOLDIER, MYR};
-        Effect[] effects = new Effect[0];
-        permanent.addCreatureAspect(attack, defense, types, effects);
+        permanent.addCreatureAspect(attack, defense, types);
         Assert.assertTrue(permanent.hasAspect(CreatureAspect.class));
         Assert.assertTrue(permanent.getAspect(CreatureAspect.class).hasType(SOLDIER));
         Assert.assertTrue(permanent.getAspect(CreatureAspect.class).hasType(MYR));

@@ -1,13 +1,11 @@
 package Card.Aspect.Permanent;
 
-import Effect.Effect;
-
 public class CreatureAspect extends PermanentAspect {
     private final int attack;
     private final int defense;
     private boolean summoningSickness;
 
-    public CreatureAspect(int attack, int defense, String[] types, Effect[] effects) {
+    public CreatureAspect(int attack, int defense, String[] types) {
         super(types);
         this.summoningSickness = true;
         this.attack = attack;

@@ -20,9 +20,6 @@ import static org.junit.Assert.*;
 public class ManapoolTest {
     private Manapool manapool;
 
-    public ManapoolTest() {
-    }
-
     @BeforeClass
     public static void setUpClass() {
     }

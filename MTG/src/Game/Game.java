@@ -14,26 +14,35 @@ import static Action.Mana.AddMana.addMana;
 import static Action.Play.Play.play;
 import static Card.Aspect.Permanent.Type.CreatureType.MYR;
 import static Card.Aspect.Permanent.Type.CreatureType.SOLDIER;
-import Card.Card;
 import Card.Permanent;
 import Collection.Manapool;
 import Condition.Condition;
 
 public class Game {
-    public static final ArrayList<Boolean> player = new ArrayList();
-    public static final ArrayList<Hand> hand = new ArrayList();
-    public static final ArrayList<Library> library = new ArrayList();
-    public static final ArrayList<Graveyard> graveyard = new ArrayList();
-    public static final ArrayList<Exile> exile = new ArrayList();
-    public static final ArrayList<Manapool> manapool = new ArrayList();
-    public static final ArrayList<Integer> lifepoints = new ArrayList();
-    public static final Battlefield battlefield = new Battlefield();
-    public static final Stack stack = new Stack();
-    public static final ArrayList<Effect> effects = new ArrayList();
+    public static ArrayList<Boolean> player;
+    public static ArrayList<Hand> hand;
+    public static ArrayList<Library> library;
+    public static ArrayList<Graveyard> graveyard;
+    public static ArrayList<Exile> exile;
+    public static ArrayList<Manapool> manapool;
+    public static ArrayList<Integer> lifepoints;
+    public static Battlefield battlefield;
+    public static Stack stack;
+    public static ArrayList<Effect> effects;
 
     public static int activePlayer = 0;
 
     public Game(int playerCount) {
+        player = new ArrayList();
+        hand = new ArrayList();
+        library = new ArrayList();
+        graveyard = new ArrayList();
+        exile = new ArrayList();
+        manapool = new ArrayList();
+        lifepoints = new ArrayList();
+        battlefield = new Battlefield();
+        stack = new Stack();
+
         for (int x = 0; x < playerCount; x++) {
             addPlayer();
         }
@@ -79,7 +88,7 @@ public class Game {
     public static void endTurn() {
         activePlayer++;
         activePlayer %= lifepoints.size();
-        if (!player.get(activePlayer)) {
+        if(!player.get(activePlayer)){
             endTurn();
         }
     }
@@ -95,7 +104,7 @@ public class Game {
     }
 
     public static void removePlayer(int playerID) {
-        player.set(playerID, false);
+        player.set(playerID,false);
         destroyAll(new Condition[]{new ConditionController(playerID)});
         hand.remove(playerID);
         library.remove(playerID);
@@ -106,16 +115,16 @@ public class Game {
     }
 
     public static void dummyLoadLibrary() {
-        Permanent card;
+        Permanent c;
         for (int x = 0; x < 25; x++) {
-            card = new Permanent(1, 1, 0, 1, "Footsoldier", "W", "W", false);
-            card.addCreatureAspect(1, 1, new String[]{SOLDIER, MYR});
-            library.get(0).add(card);
+            c = new Permanent(1, 1, 0, 1, "Footsoldier", "W", "W", false);
+            c.addCreatureAspect(1, 1, new String[]{SOLDIER, MYR}, null);
+            library.get(0).add(c);
         }
         for (int x = 0; x < 25; x++) {
-            card = new Permanent(1, 1, 0, 1, "Footsoldier", "W", "W", false);
-            card.addCreatureAspect(1, 1, new String[]{SOLDIER, MYR});
-            library.get(1).add(card);
+            c = new Permanent(1, 1, 0, 1, "Footsoldier", "W", "W", false);
+            c.addCreatureAspect(1, 1, new String[]{SOLDIER, MYR}, null);
+            library.get(1).add(c);
         }
     }
 

@@ -1,6 +1,5 @@
 package Card;
 
-import Card.Card;
 import Card.Aspect.Spell.SpellAspect;
 
 public class Spell extends Card<SpellAspect> {

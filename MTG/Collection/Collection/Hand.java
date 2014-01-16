@@ -4,6 +4,10 @@ import Card.Card;
 
 public class Hand extends Collection<Card> {
     public Card[] reveal() {
-        return (Card[]) collection.toArray();
+        Card[] revealedCards = new Card[collection.size()];
+        for (int x = 0; x < collection.size(); x++) {
+            revealedCards[x] = collection.get(x);
+        }
+        return revealedCards;
     }
 }

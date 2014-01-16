@@ -46,6 +46,8 @@ public class Manapool {
             case 'U':
                 manaBlue++;
                 break;
+            default:
+                break;
         }
     }
 
@@ -73,6 +75,8 @@ public class Manapool {
                         break;
                     case 'U':
                         manaBlue--;
+                        break;
+                    default:
                         break;
                 }
             }
@@ -110,10 +114,12 @@ public class Manapool {
                 case 'U':
                     blue++;
                     break;
+                default:
+                    break;
             }
         }
-        if (black <= manaBlack & blue <= manaBlue & green <= manaGreen & red <= manaRed & white <= manaWhite) {
-            if (colorless <= manaColorless | colorless <= sumMana() - black - blue - green - red - white) {
+        if (black <= manaBlack && blue <= manaBlue && green <= manaGreen && red <= manaRed && white <= manaWhite) {
+            if (colorless <= manaColorless || colorless <= sumMana() - black - blue - green - red - white) {
                 return true;
             }
         }

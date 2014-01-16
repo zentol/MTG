@@ -21,8 +21,8 @@ public class Permanent extends Card<PermanentAspect> {
         aspects.add(new ArtifactAspect(types));
     }
 
-    public void addCreatureAspect(int attack, int defense, String[] types, Effect[] effects) {
-        aspects.add(new CreatureAspect(attack, defense, types, effects));
+    public void addCreatureAspect(int attack, int defense, String[] types) {
+        aspects.add(new CreatureAspect(attack, defense, types));
     }
 
     public void addEnchantmentAspect(String[] types) {
@@ -60,18 +60,18 @@ public class Permanent extends Card<PermanentAspect> {
     }
 
 //------------------------------------------------------------------------------
-    public boolean hasEffect(Class<? extends Effect> e) {
+    public boolean hasEffect(Class<? extends Effect> effect) {
         for (int x = 0; x < effects.size(); x++) {
-            if (effects.get(x).getClass().equals(e)) {
+            if (effects.get(x).getClass().equals(effect)) {
                 return true;
             }
         }
         return false;
     }
 
-    public boolean hasModifier(Class<? extends Effect> e) {
+    public boolean hasModifier(Class<? extends Effect> modifier) {
         for (int x = 0; x < modifiers.size(); x++) {
-            if (modifiers.get(x).getClass().equals(e)) {
+            if (modifiers.get(x).getClass().equals(modifier)) {
                 return true;
             }
         }

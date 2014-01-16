@@ -15,15 +15,16 @@ public class ConditionDefense extends Condition<Permanent> {
 
     @Override
     public boolean evaluate(Permanent target) {
-        CreatureAspect c = (CreatureAspect) target.getAspect(CreatureAspect.class);
+        CreatureAspect creature = (CreatureAspect) target.getAspect(CreatureAspect.class);
         switch (mode) {
             case -1:
-                return c.getDefense() < value;
+                return creature.getDefense() < value;
             case 0:
-                return c.getDefense() == value;
+                return creature.getDefense() == value;
             case 1:
-                return c.getDefense() > value;
+                return creature.getDefense() > value;
+            default:
+                return false;
         }
-        return false;
     }
 }

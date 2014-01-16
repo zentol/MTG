@@ -5,8 +5,8 @@ import Card.Card;
 import Effect.Effect;
 
 public class CostSacrifice extends Effect {
-    private Class<? extends Aspect> type;
-    private int count;
+    private final Class<? extends Aspect> type;
+    private final int count;
 
     public CostSacrifice(int count, Class<? extends Aspect> type) {
         this.count = count;

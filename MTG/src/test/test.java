@@ -22,7 +22,7 @@ import static Game.Game.turn;
 
 public class test {
     public static void main(String[] args) {
-        Game game = new Game(2);
+        Game g = new Game(2);
 
         dummyLoadLibrary();
         initGame();
@@ -32,7 +32,7 @@ public class test {
         System.out.println(battlefield.size());
 
         Permanent c = new Permanent(1, 1, 0, 1, "Footsoldier", "W", "W", false);
-        c.addCreatureAspect(1, 1, new String[]{SOLDIER, MYR});
+        c.addCreatureAspect(1, 1, new String[]{SOLDIER, MYR}, null);
         battlefield.add(c);
 
         c.effects.add(new StaticIndestructible(c, c));
@@ -41,7 +41,7 @@ public class test {
         ((StaticProtectionColor) c.effects.get(1)).execute();
 
         Permanent q = new Permanent(2, 2, 1, 2, "Footsoldier", "W", "W", false);
-        q.addCreatureAspect(1, 1, new String[]{SOLDIER, MYR});
+        q.addCreatureAspect(1, 1, new String[]{SOLDIER, MYR}, null);
         battlefield.add(q);
 
         q.effects.add(new destroyother(q));

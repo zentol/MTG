@@ -1,5 +1,5 @@
 package Card.Aspect.Permanent.Type;
 
 public class PlaneswalkerType{
-    public static String JACE = "Jace";
+    public static final String JACE = "Jace";
 }

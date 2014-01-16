@@ -1,5 +1,5 @@
 package Card.Aspect.Permanent.Type;
 
 public class EnchantmentType{
-    public static String AURA = "Aura";
+    public static final String AURA = "Aura";
 }

@@ -37,8 +37,8 @@ public class DestroyTarget {
         }
     }
 
-    private static void destroyPermanent(Permanent p) {
-        battlefield.remove(p);
-        graveyard.get(p.ownerID).sendToGraveyard(p);
+    private static void destroyPermanent(Permanent target) {
+        battlefield.remove(target);
+        graveyard.get(target.ownerID).sendToGraveyard(target);
     }
 }

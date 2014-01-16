@@ -5,7 +5,6 @@ import Card.Permanent;
 import Condition.Condition;
 import Condition.Permanent.ConditionDestructible;
 import static Game.Game.*;
-import static Game.Game.graveyard;
 
 public class DestroyAll extends Action {
     private static ConditionDestructible destructible = new ConditionDestructible();
@@ -27,8 +26,8 @@ public class DestroyAll extends Action {
         }
     }
 
-    private static void destroyPermanent(Permanent p) {
-        battlefield.remove(p);
-        graveyard.get(p.ownerID).sendToGraveyard(p);
+    private static void destroyPermanent(Permanent target) {
+        battlefield.remove(target);
+        graveyard.get(target.ownerID).sendToGraveyard(target);
     }
 }

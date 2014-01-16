@@ -7,11 +7,11 @@ import Effect.Effect;
 import java.util.ArrayList;
 
 public abstract class Card<A extends Aspect> {
-    public static String COLOR_BLACK = "B";
-    public static String COLOR_BLUE = "U";
-    public static String COLOR_GREEN = "G";
-    public static String COLOR_RED = "R";
-    public static String COLOR_WHITE = "W";
+    public static final String COLOR_BLACK = "B";
+    public static final String COLOR_BLUE = "U";
+    public static final String COLOR_GREEN = "G";
+    public static final String COLOR_RED = "R";
+    public static final String COLOR_WHITE = "W";
 
     public final int cardID;
     public final int instanceID;
@@ -70,9 +70,9 @@ public abstract class Card<A extends Aspect> {
         return aspects.getClass().isInstance(SpellAspect.class);
     }
 
-    public boolean hasAspect(Class<? extends Aspect> a) {
+    public boolean hasAspect(Class<? extends Aspect> aspect) {
         for (int x = 0; x < aspects.size(); x++) {
-            if (aspects.get(x).getClass() == a) {
+            if (aspects.get(x).getClass() == aspect) {
                 return true;
             }
         }

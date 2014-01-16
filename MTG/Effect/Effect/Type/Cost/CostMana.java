@@ -3,7 +3,7 @@ package Effect.Type.Cost;
 import Effect.Effect;
 
 public class CostMana extends Effect {
-    private String cost;
+    private final String cost;
 
     public CostMana(String cost) {
         this.cost = cost;
