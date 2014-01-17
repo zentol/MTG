@@ -15,7 +15,6 @@ import static Card.Aspect.Permanent.Type.CreatureType.*;
 import static Card.Aspect.Permanent.Type.EnchantmentType.*;
 import static Card.Aspect.Permanent.Type.LandType.*;
 import static Card.Aspect.Permanent.Type.PlaneswalkerType.*;
-import Effect.Effect;
 import Effect.Type.Static.StaticIndestructible;
 import Effect.Type.Static.StaticProtectionColor;
 import junit.framework.Assert;
