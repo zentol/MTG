@@ -1,4 +1,4 @@
-package Action.Static;
+package Action;
 
 import Action.Action;
 import Card.Card;

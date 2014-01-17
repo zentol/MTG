@@ -1,4 +1,4 @@
-package Action.Destroy;
+package Action;
 
 import Action.Action;
 import Card.Permanent;
@@ -6,7 +6,7 @@ import Condition.Condition;
 import Condition.Permanent.ConditionDestructible;
 import static Game.Game.*;
 
-public class DestroyAll extends Action {
+public abstract class Destroy extends Action {
     private static ConditionDestructible destructible = new ConditionDestructible();
 
     /**
@@ -22,6 +22,33 @@ public class DestroyAll extends Action {
             allConditionsMet &= destructible.evaluate(battlefield.get(x));
             if (allConditionsMet) {
                 destroyPermanent(battlefield.get(x));
+            }
+        }
+    }
+    
+    public static void destroyTarget(Permanent permanent, Condition[] conditions) {
+        boolean allConditionsMet = true;
+        for (Condition condition : conditions) {
+            allConditionsMet &= condition.evaluate(permanent);
+        }
+        if (allConditionsMet) {
+            destroyPermanent(permanent);
+        }
+    }
+
+    /**
+     Destroys every target permanents for whom ALL conditions are met.
+     * @param permanents
+     @param conditions conditions to meet
+     */
+    public static void destroyTargets(Permanent[] permanents, Condition[] conditions) {
+        for (Permanent permanent : permanents) {
+            boolean allConditionsMet = true;
+            for (Condition condition : conditions) {
+                allConditionsMet &= condition.evaluate(permanent);
+            }
+            if (allConditionsMet) {
+                destroyPermanent(permanent);
             }
         }
     }

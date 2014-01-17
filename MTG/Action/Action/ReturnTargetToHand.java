@@ -1,4 +1,4 @@
-package Action.Return;
+package Action;
 
 import Action.Action;
 import Card.Permanent;
@@ -8,7 +8,7 @@ import static Game.Game.battlefield;
 import static Game.Game.graveyard;
 import static Game.Game.hand;
 
-public class ReturnTargetToHand extends Action {
+public abstract class ReturnTargetToHand extends Action {
 
     public static void returnTargetToHandFromBattlefield(Permanent permanent, Condition[] conditions) {
         boolean allConditionsMet = true;
