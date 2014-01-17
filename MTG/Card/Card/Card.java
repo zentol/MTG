@@ -11,15 +11,16 @@ public abstract class Card<A extends Aspect> {
     public final int cardID;
     public final int instanceID;
     public final int ownerID;
+    public int controllerID;
 
     public String name;
     public String cost;
     public String colors;
+    public boolean legendary;
+
     public ArrayList<Effect> modifiers;
     public ArrayList<Effect> effects;
-    public boolean legendary;
     public ArrayList<A> aspects;
-    public int controllerID;
 
     public Card(int cardID, int instanceID, int ownerID, int controllerID,
             String name, String cost, String colors, boolean legendary
