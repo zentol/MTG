@@ -1,7 +1,7 @@
 package Effect.Destroy;
 
-import static Action.Destroy.DestroyTarget.destroyTarget;
-import static Card.Color.Color.COLORS.B;
+import static Action.Destroy.destroyTarget;
+import static Card.Color.Color.B;
 import Card.Permanent;
 import Card.Spell;
 import Condition.Card.ConditionColorNegative;

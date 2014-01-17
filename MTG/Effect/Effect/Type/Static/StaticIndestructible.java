@@ -1,6 +1,6 @@
 package Effect.Type.Static;
 
-import static Action.Static.Indestructible.addIndestructible;
+import static Action.Indestructible.addIndestructible;
 import Card.Card;
 import Card.Permanent;
 

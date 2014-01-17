@@ -1,6 +1,6 @@
 package Effect.Destroy;
 
-import static Action.Destroy.DestroyAll.destroyAll;
+import static Action.Destroy.destroyAll;
 import Card.Permanent;
 import Card.Spell;
 import Condition.Condition;

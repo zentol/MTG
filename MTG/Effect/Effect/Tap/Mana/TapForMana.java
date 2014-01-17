@@ -1,6 +1,6 @@
 package Effect.Tap.Mana;
 
-import static Action.Mana.AddMana.addMana;
+import static Action.Mana.addMana;
 import Effect.Effect;
 import Effect.Type.Activated.Activated;
 

@@ -1,6 +1,6 @@
 package Effect.Destroy;
 
-import static Action.Destroy.DestroyAll.destroyAll;
+import static Action.Destroy.destroyAll;
 import static Card.Aspect.Permanent.Type.CreatureType.SOLDIER;
 import Card.Permanent;
 import Condition.Card.ConditionSubType;
