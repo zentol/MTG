@@ -3,8 +3,7 @@ package test;
 import Card.Permanent;
 import static Card.Aspect.Permanent.Type.CreatureType.MYR;
 import static Card.Aspect.Permanent.Type.CreatureType.SOLDIER;
-import static Card.Color.Color.COLORS.B;
-import static Card.Color.Color.COLORS.W;
+import static Card.Color.Color.*;
 import Card.Spell;
 import Effect.Destroy.Terror;
 import Effect.Destroy.destroyother;
@@ -27,13 +26,13 @@ public class test {
         turn();
         System.out.println(battlefield.size());
 
-        Permanent c = new Permanent(1, 1, 0, 1, "Footsoldier", "W", ""+W, false);
+        Permanent c = new Permanent(1, 1, 0, 1, "Footsoldier", "W", "" + W, false);
         c.addCreatureAspect(1, 1, new String[]{SOLDIER, MYR});
         battlefield.add(c);
 
         c.effects.add(new StaticIndestructible(c, c));
         //((StaticIndestructible) c.effects.get(0)).execute();
-        c.effects.add(new StaticProtectionColor(c, c, ""+B));
+        c.effects.add(new StaticProtectionColor(c, c, "" + B));
         ((StaticProtectionColor) c.effects.get(1)).execute();
 
         Permanent q = new Permanent(2, 2, 1, 2, "Footsoldier", "W", "W", false);
@@ -43,9 +42,9 @@ public class test {
         q.effects.add(new destroyother(q));
         ((destroyother) q.effects.get(0)).execute();
 
-        System.out.println(((StaticProtectionColor) c.modifiers.get(0)).protectsAgainst(""+B));
+        System.out.println(((StaticProtectionColor) c.modifiers.get(0)).protectsAgainst("" + B));
 
-        Spell s = new Spell(1, 1, 1, 1, "Terror", "1B", ""+B, false);
+        Spell s = new Spell(1, 1, 1, 1, "Terror", "1B", "" + B, false);
         new Terror(s).execute(c);
 
         /*c.addArtifactAspect(new String[]{"Equipment"});

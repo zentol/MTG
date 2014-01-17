@@ -1,11 +1,9 @@
 package Card.Color;
 
-public abstract class Color {
-    public enum COLORS {
-        B,
-        U,
-        G,
-        R,
-        W
-    }
+public enum Color {
+    B,
+    U,
+    G,
+    R,
+    W
 }
