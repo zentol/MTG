@@ -1,3 +1,19 @@
+Questions:
+is the effect of terror an activated effect?
+
+add a target action
+move action specific conditions into actions (i.e. destroy must check ConditionDestructible)
+what about color/type checking?
+    passing the source would be an option -> check inside action
+        only real way to avoid massive redundancy inside various effets
+            literally every effect would have to pass color/type specific conditions (shit!)
+    
+
+passed conditions would have to include the sources type(s), colors, names, attack/defense etc.
+maybe rather check against static effects.(this would require reflections though...)
+    Not necessarily, statics could have an abstract prohibits(card source) 
+    method that evaluates these conditions
+
 Phases
     draw Phase
         mandatory discard when size>7
