@@ -1,13 +1,16 @@
 package Action;
 
 import Action.Action;
+import Card.Card;
 import Card.Permanent;
 import Condition.Condition;
 import Condition.Permanent.ConditionDestructible;
+import Condition.Permanent.ConditionVulnerableColor;
 import static Game.Game.*;
 
 public abstract class Destroy extends Action {
     private static ConditionDestructible destructible = new ConditionDestructible();
+    //private static ConditionTargetable targetable = new ConditionTargetable();
 
     /**
      Destroys every permanent for whom ALL conditions are met.
@@ -19,18 +22,22 @@ public abstract class Destroy extends Action {
             for (Condition condition : conditions) {
                 allConditionsMet &= condition.evaluate(battlefield.get(x));
             }
-            allConditionsMet &= destructible.evaluate(battlefield.get(x));
+            allConditionsMet &= destroyConditions(battlefield.get(x), null);
+
             if (allConditionsMet) {
                 destroyPermanent(battlefield.get(x));
             }
         }
     }
-    
+
     public static void destroyTarget(Permanent permanent, Condition[] conditions) {
         boolean allConditionsMet = true;
         for (Condition condition : conditions) {
             allConditionsMet &= condition.evaluate(permanent);
         }
+
+        allConditionsMet &= destroyConditions(permanent, null);
+
         if (allConditionsMet) {
             destroyPermanent(permanent);
         }
@@ -47,10 +54,22 @@ public abstract class Destroy extends Action {
             for (Condition condition : conditions) {
                 allConditionsMet &= condition.evaluate(permanent);
             }
+
+            allConditionsMet &= destroyConditions(permanent, null);
+
             if (allConditionsMet) {
                 destroyPermanent(permanent);
             }
         }
+    }
+
+    private static boolean destroyConditions(Permanent target, Card source) {
+        boolean destroyConditionsMet = true;
+        destroyConditionsMet &= destructible.evaluate(target);
+        //destructible by type
+        //destructible by subtype
+        destroyConditionsMet &= new ConditionVulnerableColor(source.colors).evaluate(target);
+        return destroyConditionsMet;
     }
 
     private static void destroyPermanent(Permanent target) {
