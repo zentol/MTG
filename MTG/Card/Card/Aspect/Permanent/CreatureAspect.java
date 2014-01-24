@@ -4,12 +4,14 @@ public class CreatureAspect extends PermanentAspect {
     private final int attack;
     private final int defense;
     private boolean summoningSickness;
+    private int damageTaken;
 
     public CreatureAspect(int attack, int defense, String[] types) {
         super(types);
         this.summoningSickness = true;
         this.attack = attack;
         this.defense = defense;
+        this.damageTaken = 0;
     }
 
     public void disableSummoningSickness() {
@@ -22,5 +24,9 @@ public class CreatureAspect extends PermanentAspect {
 
     public int getDefense() {
         return defense;
+    }
+
+    public void dealDamage(int damage) {
+        this.damageTaken += damage;
     }
 }
