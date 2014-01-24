@@ -44,6 +44,12 @@ Effects
 
 Conditions
     isTargetable
+    isTargetable(type)
+    isTargetable(subtype)
+    isVulnerable(Type)
+    isVulnerable(subtype)
+    isDestructible(type)
+    isDestructible(subtype)
     is Multicolored
     ...    
 
