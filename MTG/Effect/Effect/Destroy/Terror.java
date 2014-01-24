@@ -11,12 +11,19 @@ import Effect.Type.Activated.Activated;
 
 public class Terror extends Activated {
     private final Spell source;
+    private final Condition[] conditions;
 
     public Terror(Spell source) {
         this.source = source;
+        conditions = new Condition[]{
+            new ConditionColorNegative(String.valueOf(B)) /*,new ConditionTargetable(Spell.class)*/,
+            new ConditionVulnerableColor(source.colors),
+        //new ConditionVUlnerableType(),
+            //new COnditionVulnerableSubType()...
+        };
     }
 
     public void execute(Permanent target) {
-        destroyTarget(target, new Condition[]{new ConditionColorNegative(String.valueOf(B))/*,new ConditionTargetable(Spell.class)*/, new ConditionVulnerableColor(source.colors)});
+        destroyTarget(target,conditions);
     }
 }
