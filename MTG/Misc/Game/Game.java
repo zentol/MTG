@@ -18,6 +18,12 @@ import Card.Card;
 import Card.Permanent;
 import Collection.Manapool;
 import Condition.Condition;
+import Game.Phase.*;
+import static Game.Phase.Beginning.phaseBeginning;
+import static Game.Phase.Combat.phaseCombat;
+import static Game.Phase.Ending.phaseEnding;
+import static Game.Phase.Main.phasePostMain;
+import static Game.Phase.Main.phasePreMain;
 
 public class Game {
     public static final ArrayList<Boolean> player = new ArrayList();
@@ -41,17 +47,11 @@ public class Game {
 
 //turn--------------------------------------------------------------------------
     public static void turn() {
-
-        //supplyPhase();
-        untapPhase();
-
-        drawPhase();
-        mainPhase();
-        /*combatPhase();
-         mainPhase();
-         endPhase();
-         */
-        //endTurn();
+        phaseBeginning();
+        phasePreMain();
+        phaseCombat();
+        phasePostMain();
+        phaseEnding();
     }
 
     public static void untapPhase() {
