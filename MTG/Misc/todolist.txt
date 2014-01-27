@@ -1,5 +1,6 @@
 Questions:
-is the effect of terror an activated effect?
+is the effect of terror an activated effect? NO!
+    (and thery called abilities...)
 
 add a target action
 move action specific conditions into actions (i.e. destroy must check ConditionDestructible)
@@ -24,7 +25,6 @@ Turn
             upkeepStep
                 trigger effects for beginning of the upkeep step
             draw step
-                draw a card => mandatory discard if cardcount > X
                 trigger effects for beginning of draw step
         Main
         Combat
@@ -38,6 +38,7 @@ Turn
                 trigger effects for beginning of end step
             cleanupStep
                 mandatory discard if carcount > X
+                    select cards
                 remove damage
                 end "until end of turn" effects
         

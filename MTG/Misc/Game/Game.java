@@ -54,13 +54,6 @@ public class Game {
         phaseEnding();
     }
 
-    public static void drawPhase() {
-        hand.get(activePlayer).add(library.get(activePlayer).draw(1));
-        if (hand.get(activePlayer).size() > 7) {
-            //hand.get(activePlayer).discard(hand.get(activePlayer).size() - 7);
-        }
-    }
-
     public static void mainPhase() {
         addMana(hand.get(activePlayer).get(0).cost);
         play(hand.get(activePlayer).get(0));
