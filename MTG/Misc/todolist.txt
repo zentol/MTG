@@ -14,13 +14,32 @@ maybe rather check against static effects.(this would require reflections though
     Not necessarily, statics could have an abstract prohibits(card source) 
     method that evaluates these conditions
 
-Phases
-    draw Phase
-        mandatory discard when size>7
-    main Phase
-        discern between mp1 and mp2
-    end phase
-        cleanup (manapool/damage)
+Turn
+    Phases
+        clear manapool after each step/phase
+        Beginning
+            untapStep
+                phase In/Out
+                select permanents to untap
+            upkeepStep
+                trigger effects for beginning of the upkeep step
+            draw step
+                draw a card => mandatory discard if cardcount > X
+                trigger effects for beginning of draw step
+        Main
+        Combat
+            stepBeginning
+            declareAttackers
+            declareBlockers
+            damage
+            ending
+        Ending
+            endStep
+                trigger effects for beginning of end step
+            cleanupStep
+                mandatory discard if carcount > X
+                remove damage
+                end "until end of turn" effects
         
 combat
     basic implementetation

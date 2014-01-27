@@ -54,14 +54,6 @@ public class Game {
         phaseEnding();
     }
 
-    public static void untapPhase() {
-        for (int x = 0; x < battlefield.size(); x++) {
-            if (battlefield.get(x).isController(activePlayer)) {
-                battlefield.get(x).untap();
-            }
-        }
-    }
-
     public static void drawPhase() {
         hand.get(activePlayer).add(library.get(activePlayer).draw(1));
         if (hand.get(activePlayer).size() > 7) {

@@ -1,5 +1,9 @@
 package Game.Phase;
 
+import Card.Permanent;
+import static Game.Game.activePlayer;
+import static Game.Game.battlefield;
+
 public class Beginning {
     public static void phaseBeginning() {
         stepUntap();
@@ -9,12 +13,19 @@ public class Beginning {
 
     private static void stepUntap() {
         triggerPhaseInOut();
-        untapChosen();
+        Permanent[] toUntap = selectPermanents();
+        untap(toUntap);
+    }
+    
+    private static void untap(Permanent[] permanents){
+        for (Permanent permanent:permanents) {
+            permanent.untap();
+        }
     }
 
     private static void stepUpkeep() {
         triggerBeginningOfUpkeep();
-        triggerBeginningOFNextUpkeep();
+        triggerBeginningOfNextUpkeep();
     }
 
     private static void stepDraw() {
