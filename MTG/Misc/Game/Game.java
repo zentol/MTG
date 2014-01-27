@@ -25,9 +25,7 @@ public class Game {
     public static final Battlefield battlefield = new Battlefield();
     public static final Stack stack = new Stack();
     public static final ArrayList<Effect> effects = new ArrayList();
-    
-    private static int playerRemoved=0;
-
+   
     public static int activePlayer = 0;
 
     public Game(int playerCount) {

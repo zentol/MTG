@@ -21,6 +21,7 @@ public class Resolve extends Effect {
         }
         if (target.getClass().equals(Spell.class)) {
             //target.effect.execute();
+            target.resetModifiers();
         }
     }
 }

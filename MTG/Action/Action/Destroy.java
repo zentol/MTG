@@ -72,6 +72,7 @@ public abstract class Destroy extends Action {
 
     private static void destroyPermanent(Permanent target) {
         battlefield.remove(target);
+        target.resetModifiers();
         graveyard.get(target.ownerID).sendToGraveyard(target);
     }
 }

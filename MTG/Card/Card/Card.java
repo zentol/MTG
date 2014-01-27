@@ -96,5 +96,10 @@ public abstract class Card<A extends Aspect> {
     public boolean isColorless() {
         return colors.isEmpty();
     }
+    
+//
+    public void resetModifiers(){
+        this.modifiers.clear();
+    }
 
 }

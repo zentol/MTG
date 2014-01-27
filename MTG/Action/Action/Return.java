@@ -30,6 +30,7 @@ public abstract class Return extends Action {
 
     private static void returnToHandFromBattlefield(Permanent permanent) {
         battlefield.remove(permanent);
+        permanent.resetModifiers();
         hand.get(permanent.ownerID).add(permanent);
     }
 

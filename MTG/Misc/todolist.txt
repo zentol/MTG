@@ -51,9 +51,6 @@ combat
             track which creature is getting blocked
     damage model
     
-Modifiers
-    reset card modifiers when sent to hand/graveyard/exile/library
-
 Stack
     spellspeed
     resolve spells
@@ -64,6 +61,13 @@ Effects
     triggers
         global triggers
     periodic effect validity checking
+
+Trigger
+    At the beginning of upkeep/combat/etc.
+    enter the battlefield(conditions (green creature/etc.))
+    card drawn/discarded
+    damage dealt
+    card played(conditions)
 
 Conditions
     isTargetable
@@ -81,3 +85,4 @@ Static Effects
     protection from spells/permanents
     protection from aspects
     ...
+
