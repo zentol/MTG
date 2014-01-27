@@ -1,6 +1,5 @@
 package Action;
 
-import Action.Action;
 import Card.Card;
 import Card.Permanent;
 import Condition.Condition;
@@ -10,7 +9,6 @@ import static Game.Game.*;
 
 public abstract class Destroy extends Action {
     private static ConditionDestructible destructible = new ConditionDestructible();
-    //private static ConditionTargetable targetable = new ConditionTargetable();
 
     /**
      Destroys every permanent for whom ALL conditions are met.

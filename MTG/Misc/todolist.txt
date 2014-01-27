@@ -1,8 +1,11 @@
 Questions:
 is the effect of terror an activated effect? NO!
-    (and thery called abilities...)
+    (and they're called abilities...)
 
 add a target action
+    untargetable exception
+add a (un)tap action
+
 move action specific conditions into actions (i.e. destroy must check ConditionDestructible)
 what about color/type checking?
     passing the source would be an option -> check inside action
@@ -46,6 +49,7 @@ combat
     basic implementetation
         attacking
         blocking
+            track which creature is getting blocked
     damage model
     
 Modifiers

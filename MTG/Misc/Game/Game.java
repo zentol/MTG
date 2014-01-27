@@ -1,24 +1,14 @@
 package Game;
 
-import Collection.Battlefield;
-import Collection.Exile;
-import Collection.Graveyard;
-import Collection.Hand;
-import Collection.Library;
-import Collection.Stack;
+import Collection.*;
 import Condition.Card.ConditionController;
 import Effect.Effect;
 import java.util.ArrayList;
 import static Action.Destroy.destroyAll;
-import static Action.Mana.addMana;
-import static Action.Play.play;
 import static Card.Aspect.Permanent.Type.CreatureType.MYR;
 import static Card.Aspect.Permanent.Type.CreatureType.SOLDIER;
-import Card.Card;
 import Card.Permanent;
-import Collection.Manapool;
 import Condition.Condition;
-import Game.Phase.*;
 import static Game.Phase.Beginning.phaseBeginning;
 import static Game.Phase.Combat.phaseCombat;
 import static Game.Phase.Ending.phaseEnding;
@@ -52,13 +42,6 @@ public class Game {
         phaseCombat();
         phasePostMain();
         phaseEnding();
-    }
-
-    public static void mainPhase() {
-        addMana(hand.get(activePlayer).get(0).cost);
-        play(hand.get(activePlayer).get(0));
-        play(hand.get(activePlayer).get(1));
-        stack.resolveStack();
     }
 
     public static void endTurn() {

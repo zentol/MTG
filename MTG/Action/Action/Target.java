@@ -8,10 +8,9 @@ public class Target extends Action{
         targetCondition(target,null);
     }
     
-    private static boolean targetCondition(Card target, Card source){
+    private static void targetCondition(Card target, Card source){
         //check type
         //check subtype
         //check color
-        return false;
     }
 }
