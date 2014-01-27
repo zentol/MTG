@@ -3,6 +3,8 @@ package Game.Phase;
 import Card.Permanent;
 import static Game.Game.activePlayer;
 import static Game.Game.battlefield;
+import static Game.Game.hand;
+import static Game.Game.library;
 
 public class Beginning {
     public static void phaseBeginning() {
@@ -31,6 +33,10 @@ public class Beginning {
     private static void stepDraw() {
         drawCard();
         triggerBeginningOfDraw();
+    }
+    
+    private static void drawCard() {
+        hand.get(activePlayer).add(library.get(activePlayer).draw(1));
     }
 
 }
