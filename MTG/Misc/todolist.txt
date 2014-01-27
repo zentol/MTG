@@ -42,7 +42,6 @@ Turn
             cleanupStep
                 mandatory discard if carcount > X
                     select cards
-                remove damage
                 end "until end of turn" effects
         
 combat

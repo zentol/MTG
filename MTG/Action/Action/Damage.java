@@ -3,7 +3,6 @@ package Action;
 import Card.Aspect.Permanent.CreatureAspect;
 import Card.Permanent;
 import static Game.Game.lifepoints;
-import static Game.Game.player;
 
 public class Damage {
 

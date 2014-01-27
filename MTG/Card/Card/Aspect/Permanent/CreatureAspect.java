@@ -29,4 +29,8 @@ public class CreatureAspect extends PermanentAspect {
     public void dealDamage(int damage) {
         this.damageTaken += damage;
     }
+
+    public void clearDamage() {
+        this.damageTaken = 0;
+    }
 }
