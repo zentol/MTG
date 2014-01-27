@@ -16,7 +16,6 @@ import static Game.Phase.Main.phasePostMain;
 import static Game.Phase.Main.phasePreMain;
 
 public class Game {
-    public static final ArrayList<Boolean> player = new ArrayList();
     public static final ArrayList<Hand> hand = new ArrayList();
     public static final ArrayList<Library> library = new ArrayList();
     public static final ArrayList<Graveyard> graveyard = new ArrayList();
@@ -26,6 +25,8 @@ public class Game {
     public static final Battlefield battlefield = new Battlefield();
     public static final Stack stack = new Stack();
     public static final ArrayList<Effect> effects = new ArrayList();
+    
+    private static int playerRemoved=0;
 
     public static int activePlayer = 0;
 
@@ -42,18 +43,15 @@ public class Game {
         phaseCombat();
         phasePostMain();
         phaseEnding();
+        endTurn();
     }
 
     public static void endTurn() {
         activePlayer++;
         activePlayer %= lifepoints.size();
-        if (!player.get(activePlayer)) {
-            endTurn();
-        }
     }
 
     public static void addPlayer() {
-        player.add(true);
         hand.add(new Hand());
         library.add(new Library());
         graveyard.add(new Graveyard());
@@ -63,7 +61,6 @@ public class Game {
     }
 
     public static void removePlayer(int playerID) {
-        player.set(playerID, false);
         destroyAll(new Condition[]{new ConditionController(playerID)});
         hand.remove(playerID);
         library.remove(playerID);
@@ -71,6 +68,13 @@ public class Game {
         exile.remove(playerID);
         lifepoints.remove(playerID);
         manapool.remove(playerID);
+        if(playerID<activePlayer){
+            activePlayer--;
+        }
+        if(playerID==activePlayer){
+            activePlayer--;
+            endTurn();
+        }
     }
 
     public static void dummyLoadLibrary() {
