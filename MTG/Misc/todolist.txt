@@ -4,14 +4,12 @@ is the effect of terror an activated effect? NO!
 
 add a target action
     untargetable exception
-add a (un)tap action
 
-move action specific conditions into actions (i.e. destroy must check ConditionDestructible)
 what about color/type checking?
     passing the source would be an option -> check inside action
         only real way to avoid massive redundancy inside various effets
             literally every effect would have to pass color/type specific conditions (shit!)
-    
+    occurs when targeting/damaging/destroying/attacking/blocking
 
 passed conditions would have to include the sources type(s), colors, names, attack/defense etc.
 maybe rather check against static effects.(this would require reflections though...)
@@ -61,6 +59,10 @@ Effects
     triggers
         global triggers
     periodic effect validity checking
+
+Actions
+    attack
+    block
 
 Trigger
     At the beginning of upkeep/combat/etc.
