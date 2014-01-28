@@ -16,8 +16,8 @@ public class Terror extends Effect {
     public Terror(Spell source) {
         this.source = source;
         conditions = new Condition[]{
-            new ConditionColorNegative(String.valueOf(B)) /*,new ConditionTargetable(Spell.class)*/,
-            new ConditionVulnerableColor(source.colors),
+            new ConditionColorNegative(B) /*,new ConditionTargetable(Spell.class)*/,
+            new ConditionVulnerableColor(B),
         //new ConditionVUlnerableType(),
             //new COnditionVulnerableSubType()...
         };

@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import static Action.Destroy.destroyAll;
 import static Card.Aspect.Permanent.Type.CreatureType.MYR;
 import static Card.Aspect.Permanent.Type.CreatureType.SOLDIER;
+import static Card.Color.Color.W;
 import Card.Permanent;
 import Condition.Condition;
 import static Game.Phase.Beginning.phaseBeginning;
@@ -78,12 +79,12 @@ public class Game {
     public static void dummyLoadLibrary() {
         Permanent card;
         for (int x = 0; x < 25; x++) {
-            card = new Permanent(1, 1, 0, 1, "Footsoldier", "W", "W", false);
+            card = new Permanent(1, 1, 0, 1, "Footsoldier", "W", W, false);
             card.addCreatureAspect(1, 1, new String[]{SOLDIER, MYR});
             library.get(0).add(card);
         }
         for (int x = 0; x < 25; x++) {
-            card = new Permanent(1, 1, 0, 1, "Footsoldier", "W", "W", false);
+            card = new Permanent(1, 1, 0, 1, "Footsoldier", "W", W, false);
             card.addCreatureAspect(1, 1, new String[]{SOLDIER, MYR});
             library.get(1).add(card);
         }

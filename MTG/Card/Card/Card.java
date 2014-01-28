@@ -4,6 +4,7 @@ import Card.Aspect.Aspect;
 import static Card.Aspect.Aspect.*;
 import Card.Aspect.Permanent.*;
 import Card.Aspect.Spell.*;
+import static Card.Color.Color.*;
 import Effect.Effect;
 import java.util.ArrayList;
 
@@ -16,7 +17,7 @@ public abstract class Card<A extends Aspect> {
 
     public String name;
     public String cost;
-    public String colors;
+    public int colors;
     public boolean legendary;
 
     public ArrayList<Effect> modifiers;
@@ -24,7 +25,7 @@ public abstract class Card<A extends Aspect> {
     public ArrayList<A> aspects;
 
     public Card(int cardID, int instanceID, int ownerID, int controllerID,
-            String name, String cost, String colors, boolean legendary
+            String name, String cost, int colors, boolean legendary
     ) {
         this.cardID = cardID;
         this.instanceID = instanceID;
@@ -149,16 +150,16 @@ public abstract class Card<A extends Aspect> {
     }
 
 //Color-------------------------------------------------------------------------
-    public boolean isColor(String color) {
-        return colors.contains(color);
+    public boolean isColor(int color) {
+        return (colors & color) == color;
     }
 
     public boolean isMulticolored() {
-        return colors.length() > 1;
+        return colors > 5;
     }
 
     public boolean isColorless() {
-        return colors.isEmpty();
+        return colors == 0;
     }
 
 //Misc--------------------------------------------------------------------------

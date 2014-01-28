@@ -5,9 +5,9 @@ import Condition.Condition;
 import Effect.Type.Static.StaticProtectionColor;
 
 public class ConditionVulnerableColor extends Condition<Permanent> {
-    private final String colors;
+    private final int colors;
 
-    public ConditionVulnerableColor(String colors) {
+    public ConditionVulnerableColor(int colors) {
         this.colors = colors;
     }
 

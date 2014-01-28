@@ -16,6 +16,8 @@ import static Card.Aspect.Permanent.Type.CreatureType.*;
 import static Card.Aspect.Permanent.Type.EnchantmentType.*;
 import static Card.Aspect.Permanent.Type.LandType.*;
 import static Card.Aspect.Permanent.Type.PlaneswalkerType.*;
+import static Card.Color.Color.B;
+import static Card.Color.Color.W;
 import Effect.Type.Static.StaticIndestructible;
 import Effect.Type.Static.StaticProtectionColor;
 import junit.framework.Assert;
@@ -42,7 +44,7 @@ public class PermanentTest {
 
     @Before
     public void setUp() {
-        permanent = new Permanent(1, 1, 0, 1, "Footsoldier", "W", "W", false);
+        permanent = new Permanent(1, 1, 0, 1, "Footsoldier", "W", W, false);
 
     }
 
@@ -105,7 +107,7 @@ public class PermanentTest {
     @Test
     public void testPlaneswalkerAspect() {
         String[] types = {JACE};
-        permanent.addPlaneswalkerAspect(types);
+        permanent.addPlaneswalkerAspect(types, 3);
         Assert.assertTrue(permanent.hasAspect(KEY_ASPECT_PLANESWALKER));
         Assert.assertTrue(permanent.getAspect(KEY_ASPECT_PLANESWALKER).hasType(JACE));
     }
@@ -137,6 +139,12 @@ public class PermanentTest {
         new StaticIndestructible(permanent, permanent).execute();
         Assert.assertTrue(permanent.hasModifier(StaticIndestructible.class));
         Assert.assertTrue(!permanent.hasModifier(StaticProtectionColor.class));
+    }
+    
+    @Test
+    public void testIsColor(){
+        Assert.assertTrue(permanent.isColor(W));
+        Assert.assertFalse(permanent.isColor(B));
     }
 
 }

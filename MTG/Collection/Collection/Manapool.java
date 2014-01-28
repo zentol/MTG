@@ -1,7 +1,8 @@
 package Collection;
 
 import Card.Color.Color;
-import static Card.Color.Color.*;
+
+
 
 public class Manapool {
     private int manaBlack;
@@ -33,7 +34,7 @@ public class Manapool {
     }
 
     private void add(char mana) {
-        switch (Color.valueOf(String.valueOf(mana))) {
+        switch (Color.Colors.valueOf(String.valueOf(mana))) {
             case B:
                 manaBlack++;
                 break;
@@ -63,7 +64,7 @@ public class Manapool {
             } catch (NumberFormatException nfe) {
             }
             for (int x = startIndexColored; x < cost.length(); x++) {
-                switch (Color.valueOf(String.valueOf(cost.charAt(x)))) {
+                switch (Color.Colors.valueOf(String.valueOf(cost.charAt(x)))) {
                     case B:
                         manaBlack--;
                         break;
@@ -101,7 +102,7 @@ public class Manapool {
         } catch (NumberFormatException nfe) {
         }
         for (int x = startIndexColored; x < cost.length(); x++) {
-            switch (Color.valueOf(String.valueOf(cost.charAt(x)))) {
+            switch (Color.Colors.valueOf(String.valueOf(cost.charAt(x)))) {
                 case B:
                     black++;
                     break;
@@ -148,19 +149,19 @@ public class Manapool {
             result.append(manaColorless);
         }
         for (int x = 0; x < manaBlack; x++) {
-            result.append(B);
+            result.append(Color.Colors.B.toString());
         }
         for (int x = 0; x < manaBlue; x++) {
-            result.append(U);
+            result.append(Color.Colors.U.toString());
         }
         for (int x = 0; x < manaGreen; x++) {
-            result.append(G);
+            result.append(Color.Colors.G.toString());
         }
         for (int x = 0; x < manaRed; x++) {
-            result.append(R);
+            result.append(Color.Colors.R.toString());
         }
         for (int x = 0; x < manaWhite; x++) {
-            result.append(W);
+            result.append(Color.Colors.W.toString());
         }
         return result.toString();
     }
