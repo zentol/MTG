@@ -33,8 +33,8 @@ public class Permanent extends Card<PermanentAspect> {
         aspects.add(new LandAspect(types));
     }
 
-    public void addPlaneswalkerAspect(String[] types) {
-        aspects.add(new PlaneswalkerAspect(types));
+    public void addPlaneswalkerAspect(String[] types, int loyalty) {
+        aspects.add(new PlaneswalkerAspect(types, loyalty));
     }
 
 //Tap---------------------------------------------------------------------------
