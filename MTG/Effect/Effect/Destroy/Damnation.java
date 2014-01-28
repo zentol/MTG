@@ -8,13 +8,13 @@ import Effect.Effect;
 
 public class Damnation extends Effect {
     private final Spell source;
-    int test = 4& 5;
+    int test = 4 & 5;
 
     public Damnation(Spell source) {
         this.source = source;
     }
 
     public void execute(Permanent target) {
-        destroyAll(new Condition[0]);
+        destroyAll(new Condition[0], source);
     }
 }

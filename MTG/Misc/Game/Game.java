@@ -60,7 +60,7 @@ public class Game {
     }
 
     public static void removePlayer(int playerID) {
-        destroyAll(new Condition[]{new ConditionController(playerID)});
+        destroyAll(new Condition[]{new ConditionController(playerID)},null);
         hand.remove(playerID);
         library.remove(playerID);
         graveyard.remove(playerID);

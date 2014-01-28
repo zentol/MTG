@@ -7,6 +7,8 @@ add a target action
 
 pass source to actions
 
+avoid NPE in removePlayer destroyAll source
+
 what about color/type checking?
     passing the source would be an option -> check inside action
         only real way to avoid massive redundancy inside various effets

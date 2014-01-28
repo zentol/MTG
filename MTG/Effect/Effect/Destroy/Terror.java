@@ -17,13 +17,12 @@ public class Terror extends Effect {
         this.source = source;
         conditions = new Condition[]{
             new ConditionColorNegative(B) /*,new ConditionTargetable(Spell.class)*/,
-            new ConditionVulnerableColor(B),
-        //new ConditionVUlnerableType(),
-            //new COnditionVulnerableSubType()...
+            new ConditionVulnerableColor(B), //new ConditionVUlnerableType(),
+        //new COnditionVulnerableSubType()...
         };
     }
 
     public void execute(Permanent target) {
-        destroyTarget(target,conditions);
+        destroyTarget(target, conditions, source);
     }
 }

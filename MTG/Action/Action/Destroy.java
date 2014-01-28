@@ -14,13 +14,13 @@ public abstract class Destroy extends Action {
      Destroys every permanent for whom ALL conditions are met.
      @param conditions conditions to meet
      */
-    public static void destroyAll(Condition[] conditions) {
+    public static void destroyAll(Condition[] conditions, Card source) {
         for (int x = 0; x < battlefield.size(); x++) {
             boolean allConditionsMet = true;
             for (Condition condition : conditions) {
                 allConditionsMet &= condition.evaluate(battlefield.get(x));
             }
-            allConditionsMet &= destroyConditions(battlefield.get(x), null);
+            allConditionsMet &= destroyConditions(battlefield.get(x), source);
 
             if (allConditionsMet) {
                 destroyPermanent(battlefield.get(x));
@@ -28,13 +28,13 @@ public abstract class Destroy extends Action {
         }
     }
 
-    public static void destroyTarget(Permanent permanent, Condition[] conditions) {
+    public static void destroyTarget(Permanent permanent, Condition[] conditions, Card source) {
         boolean allConditionsMet = true;
         for (Condition condition : conditions) {
             allConditionsMet &= condition.evaluate(permanent);
         }
 
-        //allConditionsMet &= destroyConditions(permanent, null);
+        allConditionsMet &= destroyConditions(permanent, source);
 
         if (allConditionsMet) {
             destroyPermanent(permanent);
@@ -46,14 +46,14 @@ public abstract class Destroy extends Action {
      * @param permanents
      @param conditions conditions to meet
      */
-    public static void destroyTargets(Permanent[] permanents, Condition[] conditions) {
+    public static void destroyTargets(Permanent[] permanents, Condition[] conditions, Card source) {
         for (Permanent permanent : permanents) {
             boolean allConditionsMet = true;
             for (Condition condition : conditions) {
                 allConditionsMet &= condition.evaluate(permanent);
             }
 
-            allConditionsMet &= destroyConditions(permanent, null);
+            allConditionsMet &= destroyConditions(permanent, source);
 
             if (allConditionsMet) {
                 destroyPermanent(permanent);
