@@ -34,7 +34,7 @@ public abstract class Destroy extends Action {
             allConditionsMet &= condition.evaluate(permanent);
         }
 
-        allConditionsMet &= destroyConditions(permanent, null);
+        //allConditionsMet &= destroyConditions(permanent, null);
 
         if (allConditionsMet) {
             destroyPermanent(permanent);

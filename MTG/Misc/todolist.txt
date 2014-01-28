@@ -5,6 +5,8 @@ is the effect of terror an activated effect? NO!
 add a target action
     untargetable exception
 
+pass source to actions
+
 what about color/type checking?
     passing the source would be an option -> check inside action
         only real way to avoid massive redundancy inside various effets
