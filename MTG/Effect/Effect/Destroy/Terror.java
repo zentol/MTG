@@ -7,9 +7,9 @@ import Card.Spell;
 import Condition.Card.ConditionColorNegative;
 import Condition.Condition;
 import Condition.Permanent.ConditionVulnerableColor;
-import Effect.Type.Activated.Activated;
+import Effect.Effect;
 
-public class Terror extends Activated {
+public class Terror extends Effect {
     private final Spell source;
     private final Condition[] conditions;
 

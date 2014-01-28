@@ -4,9 +4,9 @@ import static Action.Destroy.destroyAll;
 import Card.Permanent;
 import Card.Spell;
 import Condition.Condition;
-import Effect.Type.Activated.Activated;
+import Effect.Effect;
 
-public class Damnation extends Activated {
+public class Damnation extends Effect {
     private final Spell source;
 
     public Damnation(Spell source) {
