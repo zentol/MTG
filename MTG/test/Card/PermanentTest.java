@@ -5,11 +5,12 @@
  */
 package Card;
 
-import Card.Aspect.Permanent.ArtifactAspect;
+import static Card.Aspect.Aspect.KEY_ASPECT_ARTIFACT;
+import static Card.Aspect.Aspect.KEY_ASPECT_CREATURE;
+import static Card.Aspect.Aspect.KEY_ASPECT_ENCHANTMENT;
+import static Card.Aspect.Aspect.KEY_ASPECT_LAND;
+import static Card.Aspect.Aspect.KEY_ASPECT_PLANESWALKER;
 import Card.Aspect.Permanent.CreatureAspect;
-import Card.Aspect.Permanent.EnchantmentAspect;
-import Card.Aspect.Permanent.LandAspect;
-import Card.Aspect.Permanent.PlaneswalkerAspect;
 import static Card.Aspect.Permanent.Type.ArtifactType.*;
 import static Card.Aspect.Permanent.Type.CreatureType.*;
 import static Card.Aspect.Permanent.Type.EnchantmentType.*;
@@ -56,8 +57,8 @@ public class PermanentTest {
     public void testArtifactAspect() {
         String[] types = {EQUIPMENT};
         permanent.addArtifactAspect(types);
-        Assert.assertTrue(permanent.hasAspect(ArtifactAspect.class));
-        Assert.assertTrue(permanent.getAspect(ArtifactAspect.class).hasType(EQUIPMENT));
+        Assert.assertTrue(permanent.hasAspect(KEY_ASPECT_ARTIFACT));
+        Assert.assertTrue(permanent.getAspect(KEY_ASPECT_ARTIFACT).hasType(EQUIPMENT));
     }
 
     /**
@@ -69,11 +70,11 @@ public class PermanentTest {
         int defense = 1;
         String[] types = {SOLDIER, MYR};
         permanent.addCreatureAspect(attack, defense, types);
-        Assert.assertTrue(permanent.hasAspect(CreatureAspect.class));
-        Assert.assertTrue(permanent.getAspect(CreatureAspect.class).hasType(SOLDIER));
-        Assert.assertTrue(permanent.getAspect(CreatureAspect.class).hasType(MYR));
-        Assert.assertTrue(((CreatureAspect) permanent.getAspect(CreatureAspect.class)).getAttack() == 1);
-        Assert.assertTrue(((CreatureAspect) permanent.getAspect(CreatureAspect.class)).getDefense() == 1);
+        Assert.assertTrue(permanent.hasAspect(KEY_ASPECT_CREATURE));
+        Assert.assertTrue(permanent.getAspect(KEY_ASPECT_CREATURE).hasType(SOLDIER));
+        Assert.assertTrue(permanent.getAspect(KEY_ASPECT_CREATURE).hasType(MYR));
+        Assert.assertTrue(((CreatureAspect) permanent.getAspect(KEY_ASPECT_CREATURE)).getAttack() == 1);
+        Assert.assertTrue(((CreatureAspect) permanent.getAspect(KEY_ASPECT_CREATURE)).getDefense() == 1);
     }
 
     /**
@@ -83,8 +84,8 @@ public class PermanentTest {
     public void testEnchantmentAspect() {
         String[] types = {AURA};
         permanent.addEnchantmentAspect(types);
-        Assert.assertTrue(permanent.hasAspect(EnchantmentAspect.class));
-        Assert.assertTrue(permanent.getAspect(EnchantmentAspect.class).hasType(AURA));
+        Assert.assertTrue(permanent.hasAspect(KEY_ASPECT_ENCHANTMENT));
+        Assert.assertTrue(permanent.getAspect(KEY_ASPECT_ENCHANTMENT).hasType(AURA));
     }
 
     /**
@@ -94,8 +95,8 @@ public class PermanentTest {
     public void testLandAspect() {
         String[] types = {GATE};
         permanent.addLandAspect(types);
-        Assert.assertTrue(permanent.hasAspect(LandAspect.class));
-        Assert.assertTrue(permanent.getAspect(LandAspect.class).hasType(GATE));
+        Assert.assertTrue(permanent.hasAspect(KEY_ASPECT_LAND));
+        Assert.assertTrue(permanent.getAspect(KEY_ASPECT_LAND).hasType(GATE));
     }
 
     /**
@@ -105,8 +106,8 @@ public class PermanentTest {
     public void testPlaneswalkerAspect() {
         String[] types = {JACE};
         permanent.addPlaneswalkerAspect(types);
-        Assert.assertTrue(permanent.hasAspect(PlaneswalkerAspect.class));
-        Assert.assertTrue(permanent.getAspect(PlaneswalkerAspect.class).hasType(JACE));
+        Assert.assertTrue(permanent.hasAspect(KEY_ASPECT_PLANESWALKER));
+        Assert.assertTrue(permanent.getAspect(KEY_ASPECT_PLANESWALKER).hasType(JACE));
     }
 
     /**

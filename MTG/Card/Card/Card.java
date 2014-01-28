@@ -1,8 +1,9 @@
 package Card;
 
 import Card.Aspect.Aspect;
-import Card.Aspect.Permanent.PermanentAspect;
-import Card.Aspect.Spell.SpellAspect;
+import static Card.Aspect.Aspect.*;
+import Card.Aspect.Permanent.*;
+import Card.Aspect.Spell.*;
 import Effect.Effect;
 import java.util.ArrayList;
 
@@ -66,13 +67,76 @@ public abstract class Card<A extends Aspect> {
         return aspects.getClass().isInstance(SpellAspect.class);
     }
 
-    public boolean hasAspect(Class<? extends Aspect> aspect) {
+    public boolean hasAspect(int aspectKey) {
+        Class aspect;
+        switch (aspectKey) {
+            case KEY_ASPECT_ARTIFACT:
+                aspect = ArtifactAspect.class;
+                break;
+            case KEY_ASPECT_CREATURE:
+                aspect = CreatureAspect.class;
+                break;
+            case KEY_ASPECT_ENCHANTMENT:
+                aspect = EnchantmentAspect.class;
+                break;
+            case KEY_ASPECT_LAND:
+                aspect = LandAspect.class;
+                break;
+            case KEY_ASPECT_PLANESWALKER:
+                aspect = PlaneswalkerAspect.class;
+                break;
+            case KEY_ASPECT_INSTANT:
+                aspect = InstantAspect.class;
+                break;
+            case KEY_ASPECT_SORCERY:
+                aspect = SorceryAspect.class;
+                break;
+            default:
+                aspect = null;
+                break;
+        }
         for (int x = 0; x < aspects.size(); x++) {
             if (aspects.get(x).getClass() == aspect) {
                 return true;
             }
         }
         return false;
+    }
+
+    public Aspect getAspect(int aspectKey) {
+        Class aspect;
+        switch (aspectKey) {
+            case KEY_ASPECT_ARTIFACT:
+                aspect = ArtifactAspect.class;
+                break;
+            case KEY_ASPECT_CREATURE:
+                aspect = CreatureAspect.class;
+                break;
+            case KEY_ASPECT_ENCHANTMENT:
+                aspect = EnchantmentAspect.class;
+                break;
+            case KEY_ASPECT_LAND:
+                aspect = LandAspect.class;
+                break;
+            case KEY_ASPECT_PLANESWALKER:
+                aspect = PlaneswalkerAspect.class;
+                break;
+            case KEY_ASPECT_INSTANT:
+                aspect = InstantAspect.class;
+                break;
+            case KEY_ASPECT_SORCERY:
+                aspect = SorceryAspect.class;
+                break;
+            default:
+                aspect = null;
+                break;
+        }
+        for (int x = 0; x < aspects.size(); x++) {
+            if (aspects.get(x).getClass().equals(aspect)) {
+                return aspects.get(x);
+            }
+        }
+        return null;
     }
 
     public boolean hasType(String type) {
@@ -85,7 +149,7 @@ public abstract class Card<A extends Aspect> {
     }
 
 //Color-------------------------------------------------------------------------
-    public boolean hasColor(String color) {
+    public boolean isColor(String color) {
         return colors.contains(color);
     }
 
@@ -96,9 +160,9 @@ public abstract class Card<A extends Aspect> {
     public boolean isColorless() {
         return colors.isEmpty();
     }
-    
-//
-    public void resetModifiers(){
+
+//Misc--------------------------------------------------------------------------
+    public void resetModifiers() {
         this.modifiers.clear();
     }
 

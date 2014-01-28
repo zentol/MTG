@@ -2,7 +2,6 @@ package Game.Phase;
 
 import Card.Permanent;
 import static Game.Game.activePlayer;
-import static Game.Game.battlefield;
 import static Game.Game.hand;
 import static Game.Game.library;
 

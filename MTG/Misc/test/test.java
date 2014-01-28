@@ -1,19 +1,11 @@
 package test;
 
 import Card.Permanent;
-import static Card.Aspect.Permanent.Type.CreatureType.MYR;
-import static Card.Aspect.Permanent.Type.CreatureType.SOLDIER;
 import static Card.Color.Color.*;
 import Card.Spell;
 import Effect.Destroy.Terror;
-import Effect.Destroy.destroyother;
-import Effect.Type.Static.StaticIndestructible;
-import Effect.Type.Static.StaticProtectionColor;
 import Game.Game;
 import static Game.Game.battlefield;
-import static Game.Game.dummyLoadLibrary;
-import static Game.Game.initGame;
-import static Game.Game.turn;
 
 public class test {
     public static void main(String[] args) {

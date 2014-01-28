@@ -37,15 +37,6 @@ public class Permanent extends Card<PermanentAspect> {
         aspects.add(new PlaneswalkerAspect(types));
     }
 
-    public PermanentAspect getAspect(Class<? extends PermanentAspect> aspect) {
-        for (int x = 0; x < aspects.size(); x++) {
-            if (aspects.get(x).getClass().equals(aspect)) {
-                return aspects.get(x);
-            }
-        }
-        return null;
-    }
-
 //Tap---------------------------------------------------------------------------
     public boolean isTapped() {
         return !untapped;

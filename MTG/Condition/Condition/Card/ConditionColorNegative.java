@@ -16,7 +16,7 @@ public class ConditionColorNegative extends Condition<Card> {
             return false;
         }
         for (int x = 0; x < colors.length(); x++) {
-            if (target.hasColor(Character.toString(colors.charAt(x)))) {
+            if (target.isColor(Character.toString(colors.charAt(x)))) {
                 return false;
             }
 

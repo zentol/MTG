@@ -1,5 +1,6 @@
 package Condition.Creature;
 
+import static Card.Aspect.Aspect.KEY_ASPECT_CREATURE;
 import Card.Aspect.Permanent.CreatureAspect;
 import Card.Permanent;
 import Condition.Condition;
@@ -15,7 +16,7 @@ public class ConditionDefense extends Condition<Permanent> {
 
     @Override
     public boolean evaluate(Permanent target) {
-        CreatureAspect creature = (CreatureAspect) target.getAspect(CreatureAspect.class);
+        CreatureAspect creature = (CreatureAspect) target.getAspect(KEY_ASPECT_CREATURE);
         switch (mode) {
             case -1:
                 return creature.getDefense() < value;
