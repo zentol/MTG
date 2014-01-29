@@ -5,6 +5,9 @@ is the effect of terror an activated effect? NO!
 add a target action
     untargetable exception
 
+split effects by whether they use the stack (statics dont need setTargets method
+    globals really dont aswell. figure it out)
+
 pass source to actions
 
 avoid NPE in removePlayer destroyAll source
@@ -15,10 +18,10 @@ what about color/type checking?
             literally every effect would have to pass color/type specific conditions (shit!)
     occurs when targeting/damaging/destroying/attacking/blocking
 
-passed conditions would have to include the sources type(s), colors, names, attack/defense etc.
-maybe rather check against static effects.(this would require reflections though...)
-    Not necessarily, statics could have an abstract prohibits(card source) 
-    method that evaluates these conditions
+check validity and costs when playing an ability
+
+resolvecard:
+    replace battlefield.add with "putIntoPlay" action
 
 Turn
     Phases

@@ -4,7 +4,6 @@ import Card.Aspect.Aspect;
 import static Card.Aspect.Aspect.*;
 import Card.Aspect.Permanent.*;
 import Card.Aspect.Spell.*;
-import static Card.Color.Color.*;
 import Effect.Effect;
 import java.util.ArrayList;
 

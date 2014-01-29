@@ -2,10 +2,12 @@ package test;
 
 import static Card.Aspect.Permanent.Type.CreatureType.MYR;
 import static Card.Aspect.Permanent.Type.CreatureType.SOLDIER;
+import Card.Card;
 import Card.Permanent;
 import static Card.Color.Color.*;
 import Card.Spell;
 import Effect.Destroy.Terror;
+import Effect.Effect;
 import Effect.Type.Static.StaticProtectionColor;
 import Game.Game;
 import static Game.Game.battlefield;
@@ -40,7 +42,9 @@ public class test {
          */
         //System.out.println(((StaticProtectionColor) c.modifiers.get(0)).protectsAgainst("" + B));
         Spell s = new Spell(1, 1, 1, 1, "Terror", "1B", B, false);
-        new Terror(s).execute(c);
+        Effect t = new Terror(s);
+        t.setTargets(new Card[]{c});
+        t.execute();
 
         /*c.addArtifactAspect(new String[]{"Equipment"});
          Creature q = new Creature(1,1,null,null);
