@@ -1,6 +1,7 @@
 package Effect.Destroy;
 
 import static Action.Destroy.destroyTarget;
+import static Action.Destroy.destroyTargetConditions;
 import Card.Card;
 import static Card.Color.Color.B;
 import Card.Permanent;
@@ -27,6 +28,7 @@ public class Terror extends Effect {
     @Override
     public void activate(Card[] targets) {
         target = (Permanent) targets[0];
+        destroyTargetConditions(target, conditions, source);
     }
 
     @Override

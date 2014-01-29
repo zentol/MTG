@@ -16,19 +16,29 @@ public abstract class Destroy extends Action {
      */
     public static void destroyAll(Condition[] conditions, Card source) {
         for (int x = 0; x < battlefield.size(); x++) {
-            boolean allConditionsMet = true;
-            for (Condition condition : conditions) {
-                allConditionsMet &= condition.evaluate(battlefield.get(x));
-            }
-            allConditionsMet &= destroyConditions(battlefield.get(x), source);
-
-            if (allConditionsMet) {
+            if (destroyAllConditions(battlefield.get(x), conditions, source)) {
                 destroyPermanent(battlefield.get(x));
             }
         }
     }
 
+    public static boolean destroyAllConditions(Permanent target, Condition[] conditions, Card source) {
+        boolean allConditionsMet = true;
+        for (Condition condition : conditions) {
+            allConditionsMet &= condition.evaluate(target);
+        }
+        allConditionsMet &= destroyConditions(target, source);
+
+        return allConditionsMet;
+    }
+
     public static void destroyTarget(Permanent permanent, Condition[] conditions, Card source) {
+        if (destroyTargetConditions(permanent, conditions, source)) {
+            destroyPermanent(permanent);
+        }
+    }
+
+    public static boolean destroyTargetConditions(Permanent permanent, Condition[] conditions, Card source) {
         boolean allConditionsMet = true;
         for (Condition condition : conditions) {
             allConditionsMet &= condition.evaluate(permanent);
@@ -36,9 +46,7 @@ public abstract class Destroy extends Action {
 
         allConditionsMet &= destroyConditions(permanent, source);
 
-        if (allConditionsMet) {
-            destroyPermanent(permanent);
-        }
+        return allConditionsMet;
     }
 
     /**
@@ -48,17 +56,19 @@ public abstract class Destroy extends Action {
      */
     public static void destroyTargets(Permanent[] permanents, Condition[] conditions, Card source) {
         for (Permanent permanent : permanents) {
-            boolean allConditionsMet = true;
-            for (Condition condition : conditions) {
-                allConditionsMet &= condition.evaluate(permanent);
-            }
 
-            allConditionsMet &= destroyConditions(permanent, source);
-
-            if (allConditionsMet) {
+            if (destroyTargetConditions(permanent, conditions, source)) {
                 destroyPermanent(permanent);
             }
         }
+    }
+
+    public static boolean destroyTargetsConditions(Permanent[] permanents, Condition[] conditions, Card source) {
+        boolean allConditionsMet = true;
+        for (Permanent permanent : permanents) {
+            allConditionsMet &= destroyTargetConditions(permanent, conditions, source);
+        }
+        return allConditionsMet;
     }
 
     private static boolean destroyConditions(Permanent target, Card source) {
