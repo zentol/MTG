@@ -1,10 +1,9 @@
-
 package Effect.Resolve;
 
 import Card.Card;
 import Effect.Effect;
 
-public class ResolveEffect extends Resolve{
+public class ResolveEffect extends Resolve {
     private final int ownerID;
     private final Effect target;
 
@@ -14,11 +13,12 @@ public class ResolveEffect extends Resolve{
     }
 
     @Override
+    public void activate(Card[] targets) {
+    }
+
+    @Override
     public void execute() {
         target.execute();
     }
 
-    @Override
-    public void setTargets(Card[] targets) {
-    }
 }

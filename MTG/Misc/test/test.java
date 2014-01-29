@@ -31,7 +31,7 @@ public class test {
         //c.effects.add(new StaticIndestructible(c, c));
         //((StaticIndestructible) c.effects.get(0)).execute();
         c.effects.add(new StaticProtectionColor(c, c, B));
-        ((StaticProtectionColor) c.effects.get(0)).execute();
+        //((StaticProtectionColor) c.effects.get(0)).execute();
         /*
          Permanent q = new Permanent(2, 2, 1, 2, "Footsoldier", "W", "W", false);
          q.addCreatureAspect(1, 1, new String[]{SOLDIER, MYR});
@@ -43,7 +43,7 @@ public class test {
         //System.out.println(((StaticProtectionColor) c.modifiers.get(0)).protectsAgainst("" + B));
         Spell s = new Spell(1, 1, 1, 1, "Terror", "1B", B, false);
         Effect t = new Terror(s);
-        t.setTargets(new Card[]{c});
+        t.activate(new Card[]{c});
         t.execute();
 
         /*c.addArtifactAspect(new String[]{"Equipment"});

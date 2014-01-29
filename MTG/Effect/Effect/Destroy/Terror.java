@@ -15,6 +15,7 @@ public class Terror extends Effect {
     private Permanent target;
 
     public Terror(Spell source) {
+        super(true);
         this.source = source;
         conditions = new Condition[]{
             new ConditionColorNegative(B) /*,new ConditionTargetable(Spell.class)*/,
@@ -24,12 +25,13 @@ public class Terror extends Effect {
     }
 
     @Override
+    public void activate(Card[] targets) {
+        target = (Permanent) targets[0];
+    }
+
+    @Override
     public void execute() {
         destroyTarget(target, conditions, source);
     }
 
-    @Override
-    public void setTargets(Card[] targets) {
-        this.target = (Permanent) targets[0];
-    }
 }

@@ -8,15 +8,17 @@ import Effect.Effect;
 
 public class Damnation extends Effect {
     public Damnation(Spell source) {
+        super(false);
         this.source = source;
+    }
+
+    @Override
+    public void activate(Card[] targets) {
+        //check play conditions        
     }
 
     @Override
     public void execute() {
         destroyAll(new Condition[0], source);
-    }
-
-    @Override
-    public void setTargets(Card[] targets) {
     }
 }

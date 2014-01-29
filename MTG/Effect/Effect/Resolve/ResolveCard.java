@@ -11,8 +11,13 @@ public class ResolveCard extends Resolve {
     private final Card target;
 
     public ResolveCard(Card target) {
+        super();
         this.target = target;
         this.ownerID = target.ownerID;
+    }
+
+    @Override
+    public void activate(Card[] targets) {
     }
 
     @Override
@@ -24,9 +29,5 @@ public class ResolveCard extends Resolve {
             //target.effect.execute();
             target.resetModifiers();
         }
-    }
-
-    @Override
-    public void setTargets(Card[] targets) {
     }
 }

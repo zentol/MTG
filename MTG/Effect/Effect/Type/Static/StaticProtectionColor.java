@@ -10,9 +10,14 @@ public class StaticProtectionColor extends StaticEffect {
     private final Permanent target;
 
     public StaticProtectionColor(Card source, Permanent target, int color) {
+        super(false);
         this.color = color;
         this.source = source;
         this.target = target;
+    }
+
+    @Override
+    public void activate(Card[] targets) {
     }
 
     @Override
@@ -29,8 +34,4 @@ public class StaticProtectionColor extends StaticEffect {
         return false;
     }
 
-    @Override
-    public void setTargets(Card[] targets) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }
