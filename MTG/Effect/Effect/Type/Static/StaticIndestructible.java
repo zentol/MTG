@@ -16,4 +16,8 @@ public class StaticIndestructible extends Static {
     public void execute() {
         addIndestructible(source, target);
     }
+
+    @Override
+    public void setTargets(Card[] targets) {
+    }
 }

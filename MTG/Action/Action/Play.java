@@ -3,16 +3,21 @@ package Action;
 import Action.Action;
 import static Action.Pay.payMana;
 import Card.Card;
-import Effect.Resolve.Resolve;
+import Effect.Effect;
+import Effect.Resolve.ResolveCard;
 import static Game.Game.activePlayer;
 import static Game.Game.manapool;
 import static Game.Game.stack;
 
 public abstract class Play extends Action {
-    public static void play(Card target) {
+    public static void playCard(Card target) {
         if (manapool.get(activePlayer).contains(target.cost)) {
             payMana(target.cost);
-            stack.add(new Resolve(target));
+            stack.add(new ResolveCard(target));
         }
+    }
+    
+    public static void playAbility(Effect effect){
+        
     }
 }

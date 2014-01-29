@@ -15,6 +15,7 @@ public class StaticProtectionColor extends Static {
         this.target = target;
     }
 
+    @Override
     public void execute() {
         addProtectionColor(source, target, color);
     }
@@ -26,5 +27,10 @@ public class StaticProtectionColor extends Static {
             }
         }
         return false;
+    }
+
+    @Override
+    public void setTargets(Card[] targets) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

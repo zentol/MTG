@@ -6,15 +6,16 @@ import Card.Spell;
 import Effect.Effect;
 import static Game.Game.battlefield;
 
-public class Resolve extends Effect {
+public class ResolveCard extends Resolve {
     private final int ownerID;
     private final Card target;
 
-    public Resolve(Card target) {
+    public ResolveCard(Card target) {
         this.target = target;
         this.ownerID = target.ownerID;
     }
 
+    @Override
     public void execute() {
         if (target.getClass().equals(Permanent.class)) {
             battlefield.add((Permanent) target);
@@ -23,5 +24,9 @@ public class Resolve extends Effect {
             //target.effect.execute();
             target.resetModifiers();
         }
+    }
+
+    @Override
+    public void setTargets(Card[] targets) {
     }
 }
