@@ -1,11 +1,11 @@
 package Effect.Type.Static;
 
+import Effect.Type.StaticEffect;
 import static Action.Indestructible.addIndestructible;
 import Card.Card;
 import Card.Permanent;
 
-public class StaticIndestructible extends Static {
-    private final Card source;
+public class StaticIndestructible extends StaticEffect {
     private final Permanent target;
 
     public StaticIndestructible(Card source, Permanent target) {
@@ -13,6 +13,7 @@ public class StaticIndestructible extends Static {
         this.target = target;
     }
 
+    @Override
     public void execute() {
         addIndestructible(source, target);
     }

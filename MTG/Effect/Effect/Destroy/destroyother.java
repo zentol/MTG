@@ -6,9 +6,9 @@ import Card.Permanent;
 import Condition.Card.ConditionSubType;
 import Condition.Condition;
 import Condition.Card.ConditionOther;
-import Effect.Type.Activated.Activated;
+import Effect.Type.ActivatedEffect;
 
-public class destroyother extends Activated {
+public class destroyother extends ActivatedEffect {
     private final Permanent source;
 
     public destroyother(Permanent source) {

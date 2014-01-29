@@ -2,7 +2,7 @@ package Effect;
 
 import Card.Card;
 
-public abstract class Effect<A extends Effect> {
+public abstract class Effect {
     public Card source;
 
     public abstract void execute();
