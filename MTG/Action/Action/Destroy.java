@@ -56,19 +56,20 @@ public abstract class Destroy extends Action {
      */
     public static void destroyTargets(Permanent[] permanents, Condition[] conditions, Card source) {
         for (Permanent permanent : permanents) {
-
             if (destroyTargetConditions(permanent, conditions, source)) {
                 destroyPermanent(permanent);
             }
         }
     }
 
-    public static boolean destroyTargetsConditions(Permanent[] permanents, Condition[] conditions, Card source) {
-        boolean allConditionsMet = true;
+    public static int destroyTargetsConditions(Permanent[] permanents, Condition[] conditions, Card source) {
+        int validTargets = 0;
         for (Permanent permanent : permanents) {
-            allConditionsMet &= destroyTargetConditions(permanent, conditions, source);
+            if (destroyTargetConditions(permanent, conditions, source)) {
+                validTargets++;
+            }
         }
-        return allConditionsMet;
+        return validTargets;
     }
 
     private static boolean destroyConditions(Permanent target, Card source) {
