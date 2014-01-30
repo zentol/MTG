@@ -13,27 +13,29 @@ public class Beginning {
     }
 
     private static void stepUntap() {
-        triggerPhaseInOut();
-        Permanent[] toUntap = selectPermanents();
-        untap(toUntap);
+        /*
+         triggerPhaseInOut();
+         Permanent[] toUntap = selectPermanents();
+         untap(toUntap);
+         */
     }
-    
-    private static void untap(Permanent[] permanents){
-        for (Permanent permanent:permanents) {
+
+    private static void untap(Permanent[] permanents) {
+        for (Permanent permanent : permanents) {
             permanent.untap();
         }
     }
 
     private static void stepUpkeep() {
-        triggerBeginningOfUpkeep();
-        triggerBeginningOfNextUpkeep();
+        //triggerBeginningOfUpkeep();
+        //triggerBeginningOfNextUpkeep();
     }
 
     private static void stepDraw() {
         drawCard();
-        triggerBeginningOfDraw();
+        //triggerBeginningOfDraw();
     }
-    
+
     private static void drawCard() {
         hand.get(activePlayer).add(library.get(activePlayer).draw(1));
     }

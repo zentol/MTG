@@ -12,19 +12,23 @@ public class Combat {
     }
 
     private static void stepBeginning() {
-        triggerBeginningOfCombat();
+        //triggerBeginningOfCombat();
     }
 
     private static void stepDeclareAttackers() {
-        Permanent[] toAttack = selectAttackers();
-        checkAttackRestrictions(toAttack);
-        tap(toAttack);
+        /*
+         Permanent[] toAttack = selectAttackers();
+         checkAttackRestrictions(toAttack);
+         tap(toAttack);
+         */
     }
 
     private static void stepDeclareBlockers() {
-        Permanent[] toBlock = selectBlockers();
-        checkBlockRestrictions(toBlock);
-        checkBlockRequirements(toBlock);
+        /*
+         Permanent[] toBlock = selectBlockers();
+         checkBlockRestrictions(toBlock);
+         checkBlockRequirements(toBlock);
+         */
     }
 
     private static void stepDamage() {
