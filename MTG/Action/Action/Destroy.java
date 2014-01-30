@@ -16,7 +16,7 @@ public abstract class Destroy extends Action {
      */
     public static void destroyAll(Condition[] conditions, Card source) {
         for (int x = 0; x < battlefield.size(); x++) {
-            if (destroyAllConditions(battlefield.get(x), conditions, source)) {
+            if (destroyAllConditions(battlefield.get(x), conditions, source) & destroyConditions(battlefield.get(x), source)) {
                 destroyPermanent(battlefield.get(x));
             }
         }
@@ -27,13 +27,11 @@ public abstract class Destroy extends Action {
         for (Condition condition : conditions) {
             allConditionsMet &= condition.evaluate(target);
         }
-        allConditionsMet &= destroyConditions(target, source);
-
         return allConditionsMet;
     }
 
     public static void destroyTarget(Permanent permanent, Condition[] conditions, Card source) {
-        if (destroyTargetConditions(permanent, conditions, source)) {
+        if (destroyTargetConditions(permanent, conditions, source) & destroyConditions(permanent, source)) {
             destroyPermanent(permanent);
         }
     }
@@ -43,9 +41,6 @@ public abstract class Destroy extends Action {
         for (Condition condition : conditions) {
             allConditionsMet &= condition.evaluate(permanent);
         }
-
-        allConditionsMet &= destroyConditions(permanent, source);
-
         return allConditionsMet;
     }
 
