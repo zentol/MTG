@@ -10,10 +10,11 @@ import Condition.Card.ConditionColorNegative;
 import Condition.Condition;
 import Condition.Permanent.ConditionVulnerableColor;
 import Effect.Effect;
+import static Action.Target.target;
 
 public class Terror extends Effect {
     private final Condition[] conditions;
-    private Permanent target;
+    private Card target;
 
     public Terror(Spell source) {
         super(true);
@@ -27,13 +28,14 @@ public class Terror extends Effect {
 
     @Override
     public void activate(Card[] targets) {
-        target = (Permanent) targets[0];
-        destroyTargetConditions(target, conditions, source);
+        target = targets[0];
+        target(target, source);
+        destroyTargetConditions((Permanent) target, conditions, source);
     }
 
     @Override
     public void execute() {
-        destroyTarget(target, conditions, source);
+        destroyTarget((Permanent) target, conditions, source);
     }
 
 }

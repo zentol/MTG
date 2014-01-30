@@ -139,6 +139,14 @@ public abstract class Card<A extends Aspect> {
         return null;
     }
 
+    public int[] getAspects() {
+        int[] keys = new int[aspects.size()];
+        for (int x = 0; x < keys.length; x++) {
+            keys[x] = aspects.get(x).getKey();
+        }
+        return keys;
+    }
+
     public boolean hasType(String type) {
         for (Aspect aspect : aspects) {
             if (aspect.hasType(type)) {

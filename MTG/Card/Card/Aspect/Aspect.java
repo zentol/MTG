@@ -17,4 +17,6 @@ public abstract class Aspect {
     public boolean hasType(String type) {
         return subType.contains(type);
     }
+    
+    public abstract int getKey();
 }

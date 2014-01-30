@@ -1,15 +1,16 @@
 package Effect.Type.Static;
 
 import Effect.Type.StaticEffect;
-import static Action.Protection.addProtectionColor;
+import static Action.Protection.addInvulnerablityColor;
+import static Action.Protection.addUntargetableColor;
 import Card.Card;
 import Card.Permanent;
 
-public class StaticProtectionColor extends StaticEffect {
+public class StaticUntargetableColor extends StaticEffect {
     private final int color;
     private final Permanent target;
 
-    public StaticProtectionColor(Card source, Permanent target, int color) {
+    public StaticUntargetableColor(Card source, Permanent target, int color) {
         super(false);
         this.color = color;
         this.source = source;
@@ -22,7 +23,7 @@ public class StaticProtectionColor extends StaticEffect {
 
     @Override
     public void execute() {
-        addProtectionColor(source, target, color);
+        addUntargetableColor(source, target, color);
     }
 
     public boolean protectsAgainst(int color) {

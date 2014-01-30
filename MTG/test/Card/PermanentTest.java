@@ -19,7 +19,7 @@ import static Card.Aspect.Permanent.Type.PlaneswalkerType.*;
 import static Card.Color.Color.B;
 import static Card.Color.Color.W;
 import Effect.Type.Static.StaticIndestructible;
-import Effect.Type.Static.StaticProtectionColor;
+import Effect.Type.Static.StaticInvulnerableColor;
 import junit.framework.Assert;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -131,14 +131,14 @@ public class PermanentTest {
     public void testHasEffect() {
         permanent.effects.add(new StaticIndestructible(permanent, permanent));
         Assert.assertTrue(permanent.hasEffect(StaticIndestructible.class));
-        Assert.assertTrue(!permanent.hasEffect(StaticProtectionColor.class));
+        Assert.assertTrue(!permanent.hasEffect(StaticInvulnerableColor.class));
     }
 
     @Test
     public void testHasModifier() {
         new StaticIndestructible(permanent, permanent).execute();
         Assert.assertTrue(permanent.hasModifier(StaticIndestructible.class));
-        Assert.assertTrue(!permanent.hasModifier(StaticProtectionColor.class));
+        Assert.assertTrue(!permanent.hasModifier(StaticInvulnerableColor.class));
     }
     
     @Test

@@ -6,4 +6,8 @@ public class LandAspect extends PermanentAspect {
         super(types);
     }
 
+    @Override
+    public int getKey() {
+        return KEY_ASPECT_LAND;
+    }
 }

@@ -14,6 +14,11 @@ public class CreatureAspect extends PermanentAspect {
         this.damageTaken = 0;
     }
 
+    @Override
+    public int getKey() {
+        return KEY_ASPECT_CREATURE;
+    }
+
     public void disableSummoningSickness() {
         summoningSickness = false;
     }

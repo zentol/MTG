@@ -8,11 +8,12 @@ import Condition.Permanent.ConditionVulnerableColor;
 import static Game.Game.*;
 
 public abstract class Destroy extends Action {
-    private static ConditionDestructible destructible = new ConditionDestructible();
+    private static final ConditionDestructible destructible = new ConditionDestructible();
 
     /**
      Destroys every permanent for whom ALL conditions are met.
      @param conditions conditions to meet
+     @param source action source
      */
     public static void destroyAll(Condition[] conditions, Card source) {
         for (int x = 0; x < battlefield.size(); x++) {
@@ -72,7 +73,6 @@ public abstract class Destroy extends Action {
         destroyConditionsMet &= destructible.evaluate(target);
         //destructible by type
         //destructible by subtype
-        destroyConditionsMet &= new ConditionVulnerableColor(source.colors).evaluate(target);
         return destroyConditionsMet;
     }
 

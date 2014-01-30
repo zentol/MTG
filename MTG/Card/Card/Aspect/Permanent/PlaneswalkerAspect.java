@@ -8,4 +8,8 @@ public class PlaneswalkerAspect extends PermanentAspect {
         this.loyalty = loyalty;
     }
 
+    @Override
+    public int getKey() {
+        return KEY_ASPECT_PLANESWALKER;
+    }
 }
