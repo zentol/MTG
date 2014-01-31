@@ -12,6 +12,10 @@ import Effect.Effect;
 import Effect.Static.StaticInvulnerableColor;
 import Game.Game;
 import static Game.Game.battlefield;
+import Modifier.Modifier;
+import Modifier.Protection.ModifierUntargetableAspect;
+import Modifier.Protection.ModifierUntargetableColor;
+import Modifier.Protection.TargetingModifier;
 
 public class test {
     public static void main(String[] args) {
@@ -28,6 +32,13 @@ public class test {
         c.addCreatureAspect(1, 1, new String[]{SOLDIER, MYR});
         battlefield.add(c);
         System.out.println(battlefield.size());
+
+        System.out.println(Card.class.isInstance(c));
+        
+        System.out.println(TargetingModifier.class.isInstance(new ModifierUntargetableColor(c,W)));
+        System.out.println(TargetingModifier.class.isInstance(new ModifierUntargetableAspect(c,2)));
+
+        System.out.println(Modifier.class.isInstance(new ModifierUntargetableColor(c,W)));
 
         //c.effects.add(new StaticIndestructible(c, c));
         //((StaticIndestructible) c.effects.get(0)).execute();

@@ -81,6 +81,8 @@ public abstract class Card<A extends Aspect> {
         return aspects.getClass().isInstance(SpellAspect.class);
     }
 
+    public abstract int getType();
+
     public boolean hasAspect(int aspectKey) {
         Class aspect;
         switch (aspectKey) {
@@ -154,8 +156,9 @@ public abstract class Card<A extends Aspect> {
     }
 
     public int[] getAspects() {
-        int[] keys = new int[aspects.size()];
-        for (int x = 0; x < keys.length; x++) {
+        int[] keys = new int[aspects.size() + 1];
+        keys[0] = getType();
+        for (int x = 1; x < keys.length; x++) {
             keys[x] = aspects.get(x).getKey();
         }
         return keys;

@@ -5,7 +5,7 @@ is the effect of terror an activated effect? NO!
 rework destroy to use a single destroy method. pass instanceID as ConditionIsTarget
     nah thats shitty. this would mean searching through the whole battlefield each time.
 
-targetable: check for type/subtype
+targetable: subtype
 
 split Protection into damage/target/block component
 

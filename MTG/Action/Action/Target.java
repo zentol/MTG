@@ -2,9 +2,9 @@ package Action;
 
 import Card.Card;
 import Card.Permanent;
-import Condition.Permanent.ConditionTargetableAspect;
-import Condition.Permanent.ConditionTargetableColor;
 import Game.InvalidTargetException;
+import Modifier.Modifier;
+import Modifier.Protection.TargetingModifier;
 
 public class Target extends Action {
 
@@ -14,15 +14,15 @@ public class Target extends Action {
 
     private static void targetCondition(Card target, Card source) {
         boolean targetConditionsMet = true;
-        targetConditionsMet &= new ConditionTargetableColor(source.colors).evaluate((Permanent) target);
-
-        int[] aspects = source.getAspects();
-        for (int aspect : aspects) {
-            targetConditionsMet &= new ConditionTargetableAspect(aspect).evaluate((Permanent) target);
+        
+        for(int x=0;x<target.modifiers.size();x++){
+            if(TargetingModifier.class.isInstance(target.modifiers.get(x))){
+                targetConditionsMet &= !((TargetingModifier)target.modifiers.get(x)).preventsTargeting(source);
+            }
+            
         }
-        //check type
         //check subtype
-        if (false) {
+        if (!targetConditionsMet) {
             throw new InvalidTargetException();
         }
     }

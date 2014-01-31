@@ -3,7 +3,7 @@ package Modifier.Protection;
 import Card.Card;
 import Modifier.Modifier;
 
-public class ModifierUntargetableAspect extends Modifier {
+public class ModifierUntargetableAspect extends TargetingModifier {
     private final int aspect;
 
     public ModifierUntargetableAspect(Card source, int aspect) {
@@ -11,7 +11,13 @@ public class ModifierUntargetableAspect extends Modifier {
         this.aspect = aspect;
     }
 
-    public boolean protectsAgainst(int aspect) {
-        return this.aspect == aspect;
+    @Override
+    public boolean preventsTargeting(Card targeter) {
+        int[] targeterAspects = targeter.getAspects();
+        boolean prevents = false;
+        for (int aspect : targeterAspects) {
+            prevents |= (this.aspect == aspect);
+        }
+        return prevents;
     }
 }

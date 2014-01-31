@@ -1,5 +1,6 @@
 package Card;
 
+import static Card.Aspect.Aspect.KEY_ASPECT_PERMANENT;
 import Card.Aspect.Permanent.ArtifactAspect;
 import Card.Aspect.Permanent.CreatureAspect;
 import Card.Aspect.Permanent.EnchantmentAspect;
@@ -15,6 +16,11 @@ public class Permanent extends Card<PermanentAspect> {
     public Permanent(int cardID, int instanceID, int ownerID, int controllerID, String name, String cost, int colors, boolean legendary) {
         super(cardID, instanceID, ownerID, controllerID, name, cost, colors, legendary);
         this.untapped = true;
+    }
+    
+    @Override
+    public int getType(){
+        return KEY_ASPECT_PERMANENT;
     }
 
 //Aspect------------------------------------------------------------------------

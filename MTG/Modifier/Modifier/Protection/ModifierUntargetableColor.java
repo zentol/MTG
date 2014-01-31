@@ -3,7 +3,7 @@ package Modifier.Protection;
 import Card.Card;
 import Modifier.Modifier;
 
-public class ModifierUntargetableColor extends Modifier {
+public class ModifierUntargetableColor extends TargetingModifier {
     private final int color;
 
     public ModifierUntargetableColor(Card source, int color) {
@@ -11,9 +11,12 @@ public class ModifierUntargetableColor extends Modifier {
         this.color = color;
     }
 
-    public boolean protectsAgainst(int color) {
+    @Override
+    public boolean preventsTargeting(Card targeter) {
+        
+        int targeterColors = targeter.colors;
         for (int x = 1; x < 6; x++) {
-            if ((this.color & x) == x && (color & x) == x) {
+            if ((this.color & x) == x && (targeterColors & x) == x) {
                 return true;
             }
         }
