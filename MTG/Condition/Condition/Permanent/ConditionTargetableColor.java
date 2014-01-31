@@ -3,8 +3,7 @@ package Condition.Permanent;
 
 import Card.Permanent;
 import Condition.Condition;
-import Effect.Type.Static.StaticInvulnerableColor;
-import Effect.Type.Static.StaticUntargetableColor;
+import Modifier.Protection.ModifierUntargetableColor;
 
 public class ConditionTargetableColor extends Condition<Permanent> {
     private final int colors;
@@ -16,8 +15,8 @@ public class ConditionTargetableColor extends Condition<Permanent> {
     @Override
     public boolean evaluate(Permanent target) {
         for (int x = 0; x < target.modifiers.size(); x++) {
-            if (target.modifiers.get(x).getClass().equals(StaticUntargetableColor.class)) {
-                return !((StaticUntargetableColor) target.modifiers.get(x)).protectsAgainst(colors);
+            if (target.modifiers.get(x).getClass().equals(ModifierUntargetableColor.class)) {
+                return !((ModifierUntargetableColor) target.modifiers.get(x)).protectsAgainst(colors);
             }
         }
         return true;

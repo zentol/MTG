@@ -15,13 +15,11 @@ public class StaticIndestructible extends StaticEffect {
     }
 
     @Override
-    public void execute() {
-        addIndestructible(source, target);
+    public void activate(Card[] targets) {
     }
 
     @Override
-    public void activate(Card[] targets) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void execute() {
+        addIndestructible(source, target);
     }
-
 }

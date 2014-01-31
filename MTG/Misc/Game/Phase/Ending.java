@@ -1,9 +1,7 @@
 package Game.Phase;
 
-import static Action.Discard.discard;
 import static Card.Aspect.Aspect.KEY_ASPECT_CREATURE;
 import Card.Aspect.Permanent.CreatureAspect;
-import Card.Card;
 import static Game.Game.activePlayer;
 import static Game.Game.battlefield;
 import static Game.Game.hand;

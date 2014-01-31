@@ -4,7 +4,6 @@ import Card.Card;
 import Card.Permanent;
 import Condition.Condition;
 import Condition.Permanent.ConditionDestructible;
-import Condition.Permanent.ConditionVulnerableColor;
 import static Game.Game.*;
 
 public abstract class Destroy extends Action {

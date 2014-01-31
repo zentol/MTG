@@ -1,7 +1,5 @@
 package Game.Phase;
 
-import Card.Permanent;
-
 public class Combat {
     public static void phaseCombat() {
         stepBeginning();

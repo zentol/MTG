@@ -24,14 +24,4 @@ public class StaticInvulnerableColor extends StaticEffect {
     public void execute() {
         addInvulnerablityColor(source, target, color);
     }
-
-    public boolean protectsAgainst(int color) {
-        for (int x = 1; x < 6; x++) {
-            if ((this.color & x) == x && (color & x) == x) {
-                return true;
-            }
-        }
-        return false;
-    }
-
 }

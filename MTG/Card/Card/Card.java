@@ -5,6 +5,7 @@ import static Card.Aspect.Aspect.*;
 import Card.Aspect.Permanent.*;
 import Card.Aspect.Spell.*;
 import Effect.Effect;
+import Modifier.Modifier;
 import java.util.ArrayList;
 
 public abstract class Card<A extends Aspect> {
@@ -19,7 +20,7 @@ public abstract class Card<A extends Aspect> {
     public int colors;
     public boolean legendary;
 
-    public ArrayList<Effect> modifiers;
+    public ArrayList<Modifier> modifiers;
     public ArrayList<Effect> effects;
     public ArrayList<A> aspects;
 

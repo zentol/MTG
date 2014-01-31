@@ -3,7 +3,6 @@ package Action;
 import Game.InvalidTargetException;
 import Card.Card;
 import Card.Permanent;
-import Condition.Condition;
 import Condition.Permanent.ConditionTargetableAspect;
 import Condition.Permanent.ConditionTargetableColor;
 
