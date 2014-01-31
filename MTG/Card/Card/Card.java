@@ -21,7 +21,7 @@ import Effect.Effect;
 import Modifier.Modifier;
 import java.util.ArrayList;
 
-public abstract class Card<A extends Aspect> {
+public abstract class Card {
 
     public final int cardID;
     public final int instanceID;
@@ -35,7 +35,7 @@ public abstract class Card<A extends Aspect> {
 
     public ArrayList<Modifier> modifiers;
     public ArrayList<Effect> effects;
-    public ArrayList<A> aspects;
+    public ArrayList<Aspect> aspects;
 
     public Card(int cardID, int instanceID, int ownerID, int controllerID,
             String name, String cost, int colors, boolean legendary

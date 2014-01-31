@@ -10,7 +10,7 @@ import Card.Aspect.Permanent.PlaneswalkerAspect;
 import Effect.Effect;
 import Modifier.Modifier;
 
-public class Permanent extends Card<PermanentAspect> {
+public class Permanent extends Card {
     private boolean untapped;
 
     public Permanent(int cardID, int instanceID, int ownerID, int controllerID, String name, String cost, int colors, boolean legendary) {
