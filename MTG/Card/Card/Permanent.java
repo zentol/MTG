@@ -7,6 +7,7 @@ import Card.Aspect.Permanent.CreatureAspect;
 import Card.Aspect.Permanent.EnchantmentAspect;
 import Card.Aspect.Permanent.PermanentAspect;
 import Effect.Effect;
+import Modifier.Modifier;
 
 public class Permanent extends Card<PermanentAspect> {
     private boolean untapped;
@@ -60,7 +61,7 @@ public class Permanent extends Card<PermanentAspect> {
         return false;
     }
 
-    public boolean hasModifier(Class<? extends Effect> modifier) {
+    public boolean hasModifier(Class<? extends Modifier> modifier) {
         for (int x = 0; x < modifiers.size(); x++) {
             if (modifiers.get(x).getClass().equals(modifier)) {
                 return true;
