@@ -1,7 +1,6 @@
 package Collection;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import static java.util.Arrays.asList;
 
 public abstract class Collection<E> {

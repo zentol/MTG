@@ -3,10 +3,6 @@ package Collection;
 import Card.Color.Color;
 import static Card.Color.Color.Colors.valueOf;
 import static java.lang.Integer.parseInt;
-import static java.lang.Integer.parseInt;
-import static java.lang.Integer.parseInt;
-import static java.lang.String.valueOf;
-import static java.lang.String.valueOf;
 import static java.lang.String.valueOf;
 
 

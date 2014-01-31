@@ -3,6 +3,7 @@ package Condition.Permanent;
 
 import Card.Permanent;
 import Condition.Condition;
+import Modifier.Modifier;
 import Modifier.Protection.ModifierUntargetableAspect;
 
 public class ConditionTargetableAspect extends Condition<Permanent> {
@@ -14,9 +15,9 @@ public class ConditionTargetableAspect extends Condition<Permanent> {
 
     @Override
     public boolean evaluate(Permanent target) {
-        for (int x = 0; x < target.modifiers.size(); x++) {
-            if (target.modifiers.get(x).getClass().equals(ModifierUntargetableAspect.class)) {
-                return !((ModifierUntargetableAspect) target.modifiers.get(x)).protectsAgainst(aspect);
+        for (Modifier modifier:target.modifiers) {
+            if (modifier.getClass().equals(ModifierUntargetableAspect.class)) {
+                return !((ModifierUntargetableAspect) modifier).protectsAgainst(aspect);
             }
         }
         return true;
