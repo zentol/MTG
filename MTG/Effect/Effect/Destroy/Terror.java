@@ -2,6 +2,7 @@ package Effect.Destroy;
 
 import static Action.Destroy.destroyTarget;
 import static Action.Destroy.destroyTargetConditions;
+import static Action.Target.target;
 import Card.Card;
 import static Card.Color.Color.B;
 import Card.Permanent;
@@ -10,7 +11,6 @@ import Condition.Card.ConditionColorNegative;
 import Condition.Condition;
 import Condition.Permanent.ConditionVulnerableColor;
 import Effect.Effect;
-import static Action.Target.target;
 
 public class Terror extends Effect {
     private final Condition[] conditions;

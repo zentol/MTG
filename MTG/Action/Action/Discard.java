@@ -1,6 +1,5 @@
 package Action;
 
-import Action.Action;
 import Card.Card;
 import static Game.Game.activePlayer;
 import static Game.Game.graveyard;

@@ -1,10 +1,10 @@
 package Action;
 
-import Game.InvalidTargetException;
 import Card.Card;
 import Card.Permanent;
 import Condition.Permanent.ConditionTargetableAspect;
 import Condition.Permanent.ConditionTargetableColor;
+import Game.InvalidTargetException;
 
 public class Target extends Action {
 

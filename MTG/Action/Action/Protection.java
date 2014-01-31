@@ -1,6 +1,5 @@
 package Action;
 
-import Action.Action;
 import Card.Card;
 import Card.Permanent;
 import Modifier.Protection.ModifierInvulnerableColor;

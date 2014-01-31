@@ -1,7 +1,7 @@
 package Action;
 
-import Card.Permanent;
 import Card.Card;
+import Card.Permanent;
 import Condition.Condition;
 import static Game.Game.battlefield;
 import static Game.Game.graveyard;

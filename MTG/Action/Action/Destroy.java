@@ -4,7 +4,8 @@ import Card.Card;
 import Card.Permanent;
 import Condition.Condition;
 import Condition.Permanent.ConditionDestructible;
-import static Game.Game.*;
+import static Game.Game.battlefield;
+import static Game.Game.graveyard;
 
 public abstract class Destroy extends Action {
     private static final ConditionDestructible destructible = new ConditionDestructible();

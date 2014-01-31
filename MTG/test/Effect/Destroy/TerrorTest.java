@@ -12,30 +12,24 @@ import static Card.Color.Color.B;
 import static Card.Color.Color.W;
 import Card.Permanent;
 import Card.Spell;
-import Collection.Battlefield;
 import Effect.Effect;
-import Effect.Type.Static.StaticIndestructible;
+import Effect.Static.StaticIndestructible;
 import Game.Game;
 import static Game.Game.battlefield;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *
  * @author Shiren
  */
 public class TerrorTest {
-    private Game game;
-    private Permanent target;
-    private Effect effect;
-
-    public TerrorTest() {
-    }
 
     @BeforeClass
     public static void setUpClass() {
@@ -43,6 +37,12 @@ public class TerrorTest {
 
     @AfterClass
     public static void tearDownClass() {
+    }
+    private Game game;
+    private Permanent target;
+    private Effect effect;
+
+    public TerrorTest() {
     }
 
     @Before
@@ -65,23 +65,25 @@ public class TerrorTest {
     @Test
     public void testExecuteNoInvul() {
         activateAndExecuteEffect();
-        Assert.assertEquals(0, battlefield.size());
+        assertEquals(0, battlefield.size());
+
     }
 
     @Test
     public void testExecuteInvul() {
         addTargetInvulnerability();
         activateAndExecuteEffect();
-        Assert.assertEquals(1, battlefield.size());
+        assertEquals(1, battlefield.size());
     }
 
-    private void addTargetInvulnerability() {
-        target.effects.add(new StaticIndestructible(target, target));
-        target.effects.get(0).execute();
-    }
+        private void addTargetInvulnerability() {
+            target.effects.add(new StaticIndestructible(target, target));
+            target.effects.get(0).execute();
+        }
 
-    private void activateAndExecuteEffect() {
-        effect.activate(new Card[]{target});
-        effect.execute();
-    }
+        private void activateAndExecuteEffect() {
+            effect.activate(new Card[]{target});
+            effect.execute();
+        }
+
 }

@@ -6,6 +6,11 @@
 package Collection;
 
 import junit.framework.Assert;
+import static junit.framework.Assert.assertEquals;
+import static junit.framework.Assert.assertEquals;
+import static junit.framework.Assert.assertEquals;
+import static junit.framework.Assert.assertFalse;
+import static junit.framework.Assert.assertTrue;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -17,7 +22,6 @@ import org.junit.Test;
  * @author Shiren
  */
 public class ManapoolTest {
-    private Manapool manapool;
 
     @BeforeClass
     public static void setUpClass() {
@@ -26,6 +30,7 @@ public class ManapoolTest {
     @AfterClass
     public static void tearDownClass() {
     }
+    private Manapool manapool;
 
     @Before
     public void setUp() {
@@ -43,12 +48,13 @@ public class ManapoolTest {
     public void testManapool() {
         String addition = "2RRWGUB";
         manapool.addMana(addition);
-        Assert.assertEquals("2BUGRRW", manapool.checkMana());
-        Assert.assertTrue(manapool.contains("1W"));
-        Assert.assertFalse(manapool.contains("3GG"));
+        assertEquals("2BUGRRW", manapool.checkMana());
+        assertTrue(manapool.contains("1W"));
+        assertFalse(manapool.contains("3GG"));
         manapool.useMana("1W");
-        Assert.assertEquals("1BUGRR", manapool.checkMana());
+        assertEquals("1BUGRR", manapool.checkMana());
         manapool.empty();
-        Assert.assertEquals("", manapool.checkMana());
+        assertEquals("", manapool.checkMana());
     }
+
 }

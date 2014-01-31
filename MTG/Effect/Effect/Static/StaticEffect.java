@@ -1,4 +1,4 @@
-package Effect.Type;
+package Effect.Static;
 
 import Effect.Effect;
 

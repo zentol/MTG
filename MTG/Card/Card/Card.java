@@ -1,9 +1,22 @@
 package Card;
 
 import Card.Aspect.Aspect;
-import static Card.Aspect.Aspect.*;
-import Card.Aspect.Permanent.*;
-import Card.Aspect.Spell.*;
+import static Card.Aspect.Aspect.KEY_ASPECT_ARTIFACT;
+import static Card.Aspect.Aspect.KEY_ASPECT_CREATURE;
+import static Card.Aspect.Aspect.KEY_ASPECT_ENCHANTMENT;
+import static Card.Aspect.Aspect.KEY_ASPECT_INSTANT;
+import static Card.Aspect.Aspect.KEY_ASPECT_LAND;
+import static Card.Aspect.Aspect.KEY_ASPECT_PLANESWALKER;
+import static Card.Aspect.Aspect.KEY_ASPECT_SORCERY;
+import Card.Aspect.Permanent.ArtifactAspect;
+import Card.Aspect.Permanent.CreatureAspect;
+import Card.Aspect.Permanent.EnchantmentAspect;
+import Card.Aspect.Permanent.LandAspect;
+import Card.Aspect.Permanent.PermanentAspect;
+import Card.Aspect.Permanent.PlaneswalkerAspect;
+import Card.Aspect.Spell.InstantAspect;
+import Card.Aspect.Spell.SorceryAspect;
+import Card.Aspect.Spell.SpellAspect;
 import Effect.Effect;
 import Modifier.Modifier;
 import java.util.ArrayList;

@@ -4,9 +4,9 @@ import static Action.Destroy.destroyAll;
 import static Card.Aspect.Permanent.Type.CreatureType.SOLDIER;
 import Card.Card;
 import Card.Permanent;
+import Condition.Card.ConditionOther;
 import Condition.Card.ConditionSubType;
 import Condition.Condition;
-import Condition.Card.ConditionOther;
 import Effect.Effect;
 
 public class destroyother extends Effect {

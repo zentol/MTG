@@ -1,20 +1,26 @@
 package Game;
 
-import Collection.*;
-import Condition.Card.ConditionController;
-import Effect.Effect;
-import java.util.ArrayList;
 import static Action.Destroy.destroyAll;
 import static Card.Aspect.Permanent.Type.CreatureType.MYR;
 import static Card.Aspect.Permanent.Type.CreatureType.SOLDIER;
 import static Card.Color.Color.W;
 import Card.Permanent;
+import Collection.Battlefield;
+import Collection.Exile;
+import Collection.Graveyard;
+import Collection.Hand;
+import Collection.Library;
+import Collection.Manapool;
+import Collection.Stack;
+import Condition.Card.ConditionController;
 import Condition.Condition;
+import Effect.Effect;
 import static Game.Phase.Beginning.phaseBeginning;
 import static Game.Phase.Combat.phaseCombat;
 import static Game.Phase.Ending.phaseEnding;
 import static Game.Phase.Main.phasePostMain;
 import static Game.Phase.Main.phasePreMain;
+import java.util.ArrayList;
 
 public class Game {
     public static ArrayList<Hand> hand;
@@ -29,21 +35,6 @@ public class Game {
 
     public static int activePlayer = 0;
 
-    public Game(int playerCount) {
-        hand = new ArrayList();
-        library = new ArrayList();
-        graveyard = new ArrayList();
-        exile = new ArrayList();
-        manapool = new ArrayList();
-        lifepoints = new ArrayList();
-        battlefield = new Battlefield();
-        stack = new Stack();
-        effects = new ArrayList();
-        for (int x = 0; x < playerCount; x++) {
-            addPlayer();
-        }
-    }
-
 //turn--------------------------------------------------------------------------
     public static void turn() {
         phaseBeginning();
@@ -53,7 +44,6 @@ public class Game {
         phaseEnding();
         endTurn();
     }
-
     public static void endTurn() {
         activePlayer++;
         activePlayer %= lifepoints.size();
@@ -102,6 +92,21 @@ public class Game {
     public static void initGame() {
         for (int x = 0; x < lifepoints.size(); x++) {
             hand.get(x).add(library.get(x).draw(7));
+        }
+    }
+
+    public Game(int playerCount) {
+        hand = new ArrayList();
+        library = new ArrayList();
+        graveyard = new ArrayList();
+        exile = new ArrayList();
+        manapool = new ArrayList();
+        lifepoints = new ArrayList();
+        battlefield = new Battlefield();
+        stack = new Stack();
+        effects = new ArrayList();
+        for (int x = 0; x < playerCount; x++) {
+            addPlayer();
         }
     }
 }

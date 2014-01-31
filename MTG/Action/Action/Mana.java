@@ -1,6 +1,5 @@
 package Action;
 
-import Action.Action;
 import static Game.Game.activePlayer;
 import static Game.Game.manapool;
 

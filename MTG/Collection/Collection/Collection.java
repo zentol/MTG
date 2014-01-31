@@ -2,6 +2,7 @@ package Collection;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import static java.util.Arrays.asList;
 
 public abstract class Collection<E> {
     protected ArrayList<E> collection;
@@ -20,7 +21,7 @@ public abstract class Collection<E> {
     }
 
     public void add(E[] items) {
-        collection.addAll(Arrays.asList(items));
+        collection.addAll(asList(items));
     }
 
     public int size() {

@@ -1,6 +1,13 @@
 package Collection;
 
 import Card.Color.Color;
+import static Card.Color.Color.Colors.valueOf;
+import static java.lang.Integer.parseInt;
+import static java.lang.Integer.parseInt;
+import static java.lang.Integer.parseInt;
+import static java.lang.String.valueOf;
+import static java.lang.String.valueOf;
+import static java.lang.String.valueOf;
 
 
 
@@ -24,7 +31,7 @@ public class Manapool {
     public void addMana(String addition) {
         int startIndexColored = 0;
         try {
-            manaColorless += Integer.parseInt(Character.toString(addition.charAt(0)));
+            manaColorless += parseInt(Character.toString(addition.charAt(0)));
             startIndexColored = 1;
         } catch (NumberFormatException nfe) {
         }
@@ -34,7 +41,7 @@ public class Manapool {
     }
 
     private void add(char mana) {
-        switch (Color.Colors.valueOf(String.valueOf(mana))) {
+        switch (valueOf(valueOf(mana))) {
             case B:
                 manaBlack++;
                 break;
@@ -59,12 +66,12 @@ public class Manapool {
         if (contains(cost)) {
             int startIndexColored = 0;
             try {
-                manaColorless -= Integer.parseInt(Character.toString(cost.charAt(0)));
+                manaColorless -= parseInt(Character.toString(cost.charAt(0)));
                 startIndexColored = 1;
             } catch (NumberFormatException nfe) {
             }
             for (int x = startIndexColored; x < cost.length(); x++) {
-                switch (Color.Colors.valueOf(String.valueOf(cost.charAt(x)))) {
+                switch (valueOf(valueOf(cost.charAt(x)))) {
                     case B:
                         manaBlack--;
                         break;
@@ -97,12 +104,12 @@ public class Manapool {
 
         int startIndexColored = 0;
         try {
-            colorless = Integer.parseInt(Character.toString(cost.charAt(0)));
+            colorless = parseInt(Character.toString(cost.charAt(0)));
             startIndexColored = 1;
         } catch (NumberFormatException nfe) {
         }
         for (int x = startIndexColored; x < cost.length(); x++) {
-            switch (Color.Colors.valueOf(String.valueOf(cost.charAt(x)))) {
+            switch (valueOf(valueOf(cost.charAt(x)))) {
                 case B:
                     black++;
                     break;
@@ -122,16 +129,13 @@ public class Manapool {
                     break;
             }
         }
-        if (black <= manaBlack
+        return black <= manaBlack
                 && blue <= manaBlue
                 && green <= manaGreen
                 && red <= manaRed
                 && white <= manaWhite
                 && (colorless <= manaColorless
-                || colorless <= sumMana() - black - blue - green - red - white)) {
-            return true;
-        }
-        return false;
+                || colorless <= sumMana() - black - blue - green - red - white);
     }
 
     private int sumMana() {

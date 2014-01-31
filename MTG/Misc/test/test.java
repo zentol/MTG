@@ -3,12 +3,13 @@ package test;
 import static Card.Aspect.Permanent.Type.CreatureType.MYR;
 import static Card.Aspect.Permanent.Type.CreatureType.SOLDIER;
 import Card.Card;
+import static Card.Color.Color.B;
+import static Card.Color.Color.W;
 import Card.Permanent;
-import static Card.Color.Color.*;
 import Card.Spell;
 import Effect.Destroy.Terror;
 import Effect.Effect;
-import Effect.Type.Static.StaticInvulnerableColor;
+import Effect.Static.StaticInvulnerableColor;
 import Game.Game;
 import static Game.Game.battlefield;
 
