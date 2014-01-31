@@ -20,6 +20,8 @@ import static Card.Color.Color.B;
 import static Card.Color.Color.W;
 import Effect.Type.Static.StaticIndestructible;
 import Effect.Type.Static.StaticInvulnerableColor;
+import Modifier.Protection.ModifierIndestructible;
+import Modifier.Protection.ModifierInvulnerableColor;
 import junit.framework.Assert;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -131,14 +133,14 @@ public class PermanentTest {
     public void testHasEffect() {
         permanent.effects.add(new StaticIndestructible(permanent, permanent));
         Assert.assertTrue(permanent.hasEffect(StaticIndestructible.class));
-        Assert.assertTrue(!permanent.hasEffect(StaticInvulnerableColor.class));
+        Assert.assertFalse(permanent.hasEffect(StaticInvulnerableColor.class));
     }
 
     @Test
     public void testHasModifier() {
         new StaticIndestructible(permanent, permanent).execute();
-        Assert.assertTrue(permanent.hasModifier(StaticIndestructible.class));
-        Assert.assertTrue(!permanent.hasModifier(StaticInvulnerableColor.class));
+        Assert.assertTrue(permanent.hasModifier(ModifierIndestructible.class));
+        Assert.assertFalse(permanent.hasModifier(ModifierInvulnerableColor.class));
     }
     
     @Test
