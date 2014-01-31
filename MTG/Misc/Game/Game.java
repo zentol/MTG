@@ -17,19 +17,28 @@ import static Game.Phase.Main.phasePostMain;
 import static Game.Phase.Main.phasePreMain;
 
 public class Game {
-    public static final ArrayList<Hand> hand = new ArrayList();
-    public static final ArrayList<Library> library = new ArrayList();
-    public static final ArrayList<Graveyard> graveyard = new ArrayList();
-    public static final ArrayList<Exile> exile = new ArrayList();
-    public static final ArrayList<Manapool> manapool = new ArrayList();
-    public static final ArrayList<Integer> lifepoints = new ArrayList();
-    public static final Battlefield battlefield = new Battlefield();
-    public static final Stack stack = new Stack();
-    public static final ArrayList<Effect> effects = new ArrayList();
-   
+    public static ArrayList<Hand> hand;
+    public static ArrayList<Library> library;
+    public static ArrayList<Graveyard> graveyard;
+    public static ArrayList<Exile> exile;
+    public static ArrayList<Manapool> manapool;
+    public static ArrayList<Integer> lifepoints;
+    public static Battlefield battlefield;
+    public static Stack stack;
+    public static ArrayList<Effect> effects;
+
     public static int activePlayer = 0;
 
     public Game(int playerCount) {
+        hand = new ArrayList();
+        library = new ArrayList();
+        graveyard = new ArrayList();
+        exile = new ArrayList();
+        manapool = new ArrayList();
+        lifepoints = new ArrayList();
+        battlefield = new Battlefield();
+        stack = new Stack();
+        effects = new ArrayList();
         for (int x = 0; x < playerCount; x++) {
             addPlayer();
         }
@@ -60,17 +69,17 @@ public class Game {
     }
 
     public static void removePlayer(int playerID) {
-        destroyAll(new Condition[]{new ConditionController(playerID)},null);
+        destroyAll(new Condition[]{new ConditionController(playerID)}, null);
         hand.remove(playerID);
         library.remove(playerID);
         graveyard.remove(playerID);
         exile.remove(playerID);
         lifepoints.remove(playerID);
         manapool.remove(playerID);
-        if(playerID<activePlayer){
+        if (playerID < activePlayer) {
             activePlayer--;
         }
-        if(playerID==activePlayer){
+        if (playerID == activePlayer) {
             activePlayer--;
             endTurn();
         }

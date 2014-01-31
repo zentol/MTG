@@ -60,7 +60,6 @@ public class TerrorTest {
 
     @After
     public void tearDown() {
-        battlefield.wipe();
     }
 
     @Test
