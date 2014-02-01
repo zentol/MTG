@@ -5,7 +5,7 @@ import Card.Permanent;
 import Condition.Condition;
 import static Condition.Condition.checkConditions;
 import Game.InvalidTargetException;
-import Modifier.Protection.TargetingModifier;
+import Modifier.Targeting.TargetingModifier;
 
 public class Target {
 

@@ -2,7 +2,7 @@ package Condition.Permanent;
 
 import Card.Permanent;
 import Condition.Condition;
-import Modifier.Protection.ModifierIndestructible;
+import Modifier.Damaging.ModifierIndestructible;
 
 public class ConditionDestructible extends Condition<Permanent> {
 

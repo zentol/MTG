@@ -2,7 +2,7 @@ package Condition.Permanent;
 
 import Card.Permanent;
 import Condition.Condition;
-import Modifier.Protection.ModifierInvulnerableColor;
+import Modifier.Damaging.ModifierInvulnerableColor;
 
 public class ConditionVulnerableColor extends Condition<Permanent> {
     private final int colors;

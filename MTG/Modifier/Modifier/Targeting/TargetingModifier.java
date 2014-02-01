@@ -1,5 +1,5 @@
 
-package Modifier.Protection;
+package Modifier.Targeting;
 
 import Card.Card;
 import Modifier.Modifier;

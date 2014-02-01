@@ -2,7 +2,7 @@ package Action;
 
 import Card.Card;
 import Card.Permanent;
-import Modifier.Protection.ModifierIndestructible;
+import Modifier.Damaging.ModifierIndestructible;
 
 public abstract class Indestructible {
 

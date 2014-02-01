@@ -1,4 +1,4 @@
-package Modifier.Protection;
+package Modifier.Targeting;
 
 import Card.Aspect.Aspect;
 import Card.Card;

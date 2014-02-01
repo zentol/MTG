@@ -13,9 +13,9 @@ import Effect.Static.StaticInvulnerableColor;
 import Game.Game;
 import static Game.Game.battlefield;
 import Modifier.Modifier;
-import Modifier.Protection.ModifierUntargetableAspect;
-import Modifier.Protection.ModifierUntargetableColor;
-import Modifier.Protection.TargetingModifier;
+import Modifier.Targeting.ModifierUntargetableAspect;
+import Modifier.Targeting.ModifierUntargetableColor;
+import Modifier.Targeting.TargetingModifier;
 
 public class test {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package Modifier.Protection;
+package Modifier.Damaging;
 
 import Card.Card;
 import Modifier.Modifier;

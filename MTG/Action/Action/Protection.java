@@ -2,9 +2,9 @@ package Action;
 
 import Card.Card;
 import Card.Permanent;
-import Modifier.Protection.ModifierInvulnerableColor;
-import Modifier.Protection.ModifierUntargetableColor;
-import Modifier.Protection.ModifierUntargetableSubType;
+import Modifier.Damaging.ModifierInvulnerableColor;
+import Modifier.Targeting.ModifierUntargetableColor;
+import Modifier.Targeting.ModifierUntargetableSubType;
 
 public abstract class Protection {
 
