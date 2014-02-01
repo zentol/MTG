@@ -47,10 +47,6 @@ Conditions
     Effect
         isActivatedEffect
         isTriggeredEffect
-    Permanent
-        isAttacking
-        isBlocking
-        isBlocked
 
 Static Effects
     ...
