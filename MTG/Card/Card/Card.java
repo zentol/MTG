@@ -17,6 +17,11 @@ import Card.Aspect.Permanent.PlaneswalkerAspect;
 import Card.Aspect.Spell.InstantAspect;
 import Card.Aspect.Spell.SorceryAspect;
 import Card.Aspect.Spell.SpellAspect;
+import static Card.Color.Color.B;
+import static Card.Color.Color.G;
+import static Card.Color.Color.R;
+import static Card.Color.Color.U;
+import static Card.Color.Color.W;
 import Effect.Effect;
 import Modifier.Modifier;
 import java.util.ArrayList;
@@ -179,7 +184,11 @@ public abstract class Card {
     }
 
     public boolean isMulticolored() {
-        return colors > 5;
+        return (colors & W) > 0
+                || (colors & B) > 0
+                || (colors & U) > 0
+                || (colors & R) > 0
+                || (colors & G) > 0;
     }
 
     public boolean isColorless() {
