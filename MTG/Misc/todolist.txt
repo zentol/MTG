@@ -1,12 +1,3 @@
-Questions:
-is the effect of terror an activated effect? NO!
-    (and they're called abilities...)
-
-rework destroy to use a single destroy method. pass instanceID as ConditionIsTarget
-    nah thats shitty. this would mean searching through the whole battlefield each time.
-
-split Protection into damage/target/block component
-
 pass source to actions
 
 avoid NPE in removePlayer destroyAll source
@@ -21,6 +12,9 @@ check validity and costs when playing an ability
 
 resolvecard:
     replace battlefield.add with "putIntoPlay" action
+
+rework resolving of spells/permanents
+    spells:
 
 turn
     phases
