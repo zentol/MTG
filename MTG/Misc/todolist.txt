@@ -44,8 +44,13 @@ Trigger
     card played(conditions)
 
 Conditions
-    is Multicolored
-    ...    
+    Effect
+        isActivatedEffect
+        isTriggeredEffect
+    Permanent
+        isAttacking
+        isBlocking
+        isBlocked
 
 Static Effects
     ...

@@ -5,8 +5,6 @@ import static Card.Color.Color.Colors.valueOf;
 import static java.lang.Integer.parseInt;
 import static java.lang.String.valueOf;
 
-
-
 public class Manapool {
     private int manaBlack;
     private int manaBlue;
