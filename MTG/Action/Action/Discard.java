@@ -5,7 +5,7 @@ import static Game.Game.activePlayer;
 import static Game.Game.graveyard;
 import static Game.Game.hand;
 
-public abstract class Discard extends Action {
+public abstract class Discard {
     public static void discard(Card[] cards) {
         for (Card card : cards) {
             hand.get(activePlayer).remove(card);

@@ -9,7 +9,7 @@ import static Game.Game.activePlayer;
 import static Game.Game.manapool;
 import static Game.Game.stack;
 
-public abstract class Play extends Action {
+public abstract class Play {
     public static void playCard(Card target) {
         if (manapool.get(activePlayer).contains(target.cost)) {
             payMana(target.cost);

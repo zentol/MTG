@@ -1,4 +1,3 @@
-
 package Action;
 
 import Card.Permanent;
@@ -6,7 +5,7 @@ import Condition.Condition;
 import static Game.Game.battlefield;
 
 public class Tap {
-    
+
     public static void tapAll(Condition[] conditions) {
         for (int x = 0; x < battlefield.size(); x++) {
             boolean allConditionsMet = true;
@@ -48,11 +47,11 @@ public class Tap {
             }
         }
     }
-    
-    private static boolean tapConditions(Permanent target, Permanent source){
+
+    private static boolean tapConditions(Permanent target, Permanent source) {
         return true;
     }
-    
+
     public static void untapAll(Condition[] conditions) {
         for (int x = 0; x < battlefield.size(); x++) {
             boolean allConditionsMet = true;
@@ -94,10 +93,9 @@ public class Tap {
             }
         }
     }
-    
-    private static boolean untapConditions(Permanent target, Permanent source){
+
+    private static boolean untapConditions(Permanent target, Permanent source) {
         return true;
     }
-
 
 }

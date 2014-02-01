@@ -6,7 +6,7 @@ import Modifier.Protection.ModifierInvulnerableColor;
 import Modifier.Protection.ModifierUntargetableColor;
 import Modifier.Protection.ModifierUntargetableSubType;
 
-public abstract class Protection extends Action {
+public abstract class Protection {
 
     public static void addInvulnerablityColor(Card source, Permanent target, int color) {
         target.modifiers.add(new ModifierInvulnerableColor(source, color));

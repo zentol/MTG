@@ -4,7 +4,7 @@ import Card.Card;
 import Game.InvalidTargetException;
 import Modifier.Protection.TargetingModifier;
 
-public class Target extends Action {
+public class Target {
 
     public static void target(Card target, Card source) {
         targetCondition(target, source);
@@ -12,12 +12,12 @@ public class Target extends Action {
 
     private static void targetCondition(Card target, Card source) {
         boolean targetConditionsMet = true;
-        
-        for(int x=0;x<target.modifiers.size();x++){
-            if(TargetingModifier.class.isInstance(target.modifiers.get(x))){
-                targetConditionsMet &= !((TargetingModifier)target.modifiers.get(x)).preventsTargeting(source);
+
+        for (int x = 0; x < target.modifiers.size(); x++) {
+            if (TargetingModifier.class.isInstance(target.modifiers.get(x))) {
+                targetConditionsMet &= !((TargetingModifier) target.modifiers.get(x)).preventsTargeting(source);
             }
-            
+
         }
         //check subtype
         if (!targetConditionsMet) {

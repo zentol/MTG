@@ -7,7 +7,7 @@ import static Game.Game.battlefield;
 import static Game.Game.graveyard;
 import static Game.Game.hand;
 
-public abstract class Return extends Action {
+public abstract class Return {
     /**
      Returns every permanent for whom ALL conditions are met to the respective owner's hand.
      @param conditions 

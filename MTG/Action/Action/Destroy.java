@@ -7,7 +7,7 @@ import Condition.Permanent.ConditionDestructible;
 import static Game.Game.battlefield;
 import static Game.Game.graveyard;
 
-public abstract class Destroy extends Action {
+public abstract class Destroy {
     private static final ConditionDestructible destructible = new ConditionDestructible();
 
     /**
