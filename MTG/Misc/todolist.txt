@@ -1,12 +1,6 @@
-pass source to actions
-
-avoid NPE in removePlayer destroyAll source
-
-what about color/type checking?
-    passing the source would be an option -> check inside action
-        only real way to avoid massive redundancy inside various effets
-            literally every effect would have to pass color/type specific conditions (shit!)
-    occurs when targeting/damaging/destroying/attacking/blocking
+Milestones:
+    triggers
+    combat
 
 check validity and costs when playing an ability
 
@@ -50,19 +44,9 @@ Trigger
     card played(conditions)
 
 Conditions
-    isTargetable
-    isTargetable(type)
-    isTargetable(subtype)
-    isVulnerable(Type)
-    isVulnerable(subtype)
-    isDestructible(type)
-    isDestructible(subtype)
     is Multicolored
     ...    
 
 Static Effects
-    untargetable
-    protection from spells/permanents
-    protection from aspects
     ...
 
