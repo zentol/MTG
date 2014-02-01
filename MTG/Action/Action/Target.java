@@ -1,6 +1,9 @@
 package Action;
 
 import Card.Card;
+import Card.Permanent;
+import Condition.Condition;
+import static Condition.Condition.checkConditions;
 import Game.InvalidTargetException;
 import Modifier.Protection.TargetingModifier;
 
@@ -23,5 +26,14 @@ public class Target {
         if (!targetConditionsMet) {
             throw new InvalidTargetException();
         }
+    }
+    public static int validateTargets(Permanent[] permanents, Condition[] conditions, Card source) {
+        int validTargets = 0;
+        for (Permanent permanent : permanents) {
+            if (checkConditions(permanent, conditions, source)) {
+                validTargets++;
+            }
+        }
+        return validTargets;
     }
 }

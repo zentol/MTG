@@ -5,6 +5,8 @@
  */
 package Condition;
 
+import Card.Card;
+
 /**
  *
  * @author Zento
@@ -12,4 +14,12 @@ package Condition;
 public abstract class Condition<E> {
 
     public abstract boolean evaluate(E target);
+
+    public static boolean checkConditions(Card target, Condition[] conditions, Card source) {
+        boolean allConditionsMet = true;
+        for (Condition condition : conditions) {
+            allConditionsMet &= condition.evaluate(target);
+        }
+        return allConditionsMet;
+    }
 }
