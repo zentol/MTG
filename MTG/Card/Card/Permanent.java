@@ -5,7 +5,6 @@ import Card.Aspect.Permanent.ArtifactAspect;
 import Card.Aspect.Permanent.CreatureAspect;
 import Card.Aspect.Permanent.EnchantmentAspect;
 import Card.Aspect.Permanent.LandAspect;
-import Card.Aspect.Permanent.PermanentAspect;
 import Card.Aspect.Permanent.PlaneswalkerAspect;
 import Effect.Effect;
 import Modifier.Modifier;

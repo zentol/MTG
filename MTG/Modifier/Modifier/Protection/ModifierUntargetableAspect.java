@@ -1,7 +1,6 @@
 package Modifier.Protection;
 
 import Card.Card;
-import Modifier.Modifier;
 
 public class ModifierUntargetableAspect extends TargetingModifier {
     private final int aspect;

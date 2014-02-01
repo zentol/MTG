@@ -1,6 +1,6 @@
 package Effect.Static;
 
-import static Action.Protection.addUntargetableColor;
+import static Action.Protection.addUntargetableSubType;
 import Card.Card;
 import Card.Permanent;
 

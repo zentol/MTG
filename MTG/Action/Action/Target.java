@@ -1,9 +1,7 @@
 package Action;
 
 import Card.Card;
-import Card.Permanent;
 import Game.InvalidTargetException;
-import Modifier.Modifier;
 import Modifier.Protection.TargetingModifier;
 
 public class Target extends Action {
