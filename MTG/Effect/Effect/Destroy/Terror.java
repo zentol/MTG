@@ -11,6 +11,7 @@ import Condition.Condition;
 import static Condition.Condition.checkConditions;
 import Condition.Permanent.ConditionVulnerableColor;
 import Effect.Effect;
+import Game.InvalidTargetException;
 
 public class Terror extends Effect {
     private final Condition[] conditions;
@@ -29,12 +30,18 @@ public class Terror extends Effect {
     public void activate(Card[] targets) {
         target = targets[0];
         target(target, source);
-        checkConditions((Permanent) target, conditions, source);
+        if (!checkConditions((Permanent) target, conditions, source)) {
+            throw new InvalidTargetException();
+        }
     }
 
     @Override
     public void execute() {
-        destroyTarget((Permanent) target, conditions, source);
+        try {
+            destroyTarget((Permanent) target, conditions, source);
+        } catch (InvalidTargetException ITE) {
+            //counter(this);
+        }
     }
 
 }
