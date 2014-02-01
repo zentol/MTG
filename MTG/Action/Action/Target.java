@@ -13,6 +13,12 @@ public class Target {
         targetCondition(target, source);
     }
 
+    public static void target(Card[] targets, Card source) {
+        for (Card target : targets) {
+            targetCondition(target, source);
+        }
+    }
+
     private static void targetCondition(Card target, Card source) {
         boolean targetConditionsMet = true;
 
@@ -22,11 +28,12 @@ public class Target {
             }
 
         }
-        //check subtype
         if (!targetConditionsMet) {
             throw new InvalidTargetException();
         }
     }
+
+//------------------------------------------------------------------------------
     public static int validateTargets(Permanent[] permanents, Condition[] conditions, Card source) {
         int validTargets = 0;
         for (Permanent permanent : permanents) {

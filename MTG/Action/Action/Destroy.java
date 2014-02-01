@@ -45,8 +45,6 @@ public abstract class Destroy {
     private static boolean destroyConditions(Permanent target, Card source) {
         boolean destroyConditionsMet = true;
         destroyConditionsMet &= destructible.evaluate(target);
-        //destructible by type
-        //destructible by subtype
         return destroyConditionsMet;
     }
 
