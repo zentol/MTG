@@ -88,72 +88,18 @@ public abstract class Card {
 
     public abstract int getType();
 
-    public boolean hasAspect(int aspectKey) {
-        Class aspect;
-        switch (aspectKey) {
-            case KEY_ASPECT_ARTIFACT:
-                aspect = ArtifactAspect.class;
-                break;
-            case KEY_ASPECT_CREATURE:
-                aspect = CreatureAspect.class;
-                break;
-            case KEY_ASPECT_ENCHANTMENT:
-                aspect = EnchantmentAspect.class;
-                break;
-            case KEY_ASPECT_LAND:
-                aspect = LandAspect.class;
-                break;
-            case KEY_ASPECT_PLANESWALKER:
-                aspect = PlaneswalkerAspect.class;
-                break;
-            case KEY_ASPECT_INSTANT:
-                aspect = InstantAspect.class;
-                break;
-            case KEY_ASPECT_SORCERY:
-                aspect = SorceryAspect.class;
-                break;
-            default:
-                aspect = null;
-                break;
-        }
+    public boolean hasAspect(int aspect) {
         for (int x = 0; x < aspects.size(); x++) {
-            if (aspects.get(x).getClass() == aspect) {
+            if (aspects.get(x).getKey() == aspect) {
                 return true;
             }
         }
         return false;
     }
 
-    public Aspect getAspect(int aspectKey) {
-        Class aspect;
-        switch (aspectKey) {
-            case KEY_ASPECT_ARTIFACT:
-                aspect = ArtifactAspect.class;
-                break;
-            case KEY_ASPECT_CREATURE:
-                aspect = CreatureAspect.class;
-                break;
-            case KEY_ASPECT_ENCHANTMENT:
-                aspect = EnchantmentAspect.class;
-                break;
-            case KEY_ASPECT_LAND:
-                aspect = LandAspect.class;
-                break;
-            case KEY_ASPECT_PLANESWALKER:
-                aspect = PlaneswalkerAspect.class;
-                break;
-            case KEY_ASPECT_INSTANT:
-                aspect = InstantAspect.class;
-                break;
-            case KEY_ASPECT_SORCERY:
-                aspect = SorceryAspect.class;
-                break;
-            default:
-                aspect = null;
-                break;
-        }
+    public Aspect getAspect(int aspect) {
         for (int x = 0; x < aspects.size(); x++) {
-            if (aspects.get(x).getClass().equals(aspect)) {
+            if (aspects.get(x).getKey() == aspect) {
                 return aspects.get(x);
             }
         }
