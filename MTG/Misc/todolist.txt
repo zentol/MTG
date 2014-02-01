@@ -27,6 +27,8 @@ Stack
 
 Effects
     costs
+        extend from activated effect
+        abstract method payCost()
     global effects
     triggers
         global triggers

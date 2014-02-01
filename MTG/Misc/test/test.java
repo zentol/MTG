@@ -7,7 +7,7 @@ import static Card.Color.Color.B;
 import static Card.Color.Color.W;
 import Card.Permanent;
 import Card.Spell;
-import Effect.Destroy.Terror;
+import Effect.Spell.Terror;
 import Effect.Effect;
 import Effect.Static.StaticInvulnerableColor;
 import Game.Game;

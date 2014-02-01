@@ -8,4 +8,8 @@ public abstract class StaticEffect extends Effect {
         super(targeting);
     }
 
+    @Override
+    public int getType() {
+        return KEY_TYPE_EFFECT_STATIC;
+    }
 }

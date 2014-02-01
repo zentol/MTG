@@ -1,4 +1,4 @@
-package Effect.Destroy;
+package Effect.Spell;
 
 import static Action.Destroy.destroyAll;
 import Card.Card;
@@ -6,7 +6,7 @@ import Card.Spell;
 import Condition.Condition;
 import Effect.Effect;
 
-public class Damnation extends Effect {
+public class Damnation extends SpellEffect {
     public Damnation(Spell source) {
         super(false);
         this.source = source;

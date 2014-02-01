@@ -26,4 +26,9 @@ public class destroyother extends Effect {
         destroyAll(new Condition[]{new ConditionOther(source.instanceID), new ConditionSubType(new String[]{SOLDIER})}, null);
     }
 
+    @Override
+    public int getType() {
+        return 0;
+    }
+
 }

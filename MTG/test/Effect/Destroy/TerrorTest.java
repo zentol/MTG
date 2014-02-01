@@ -5,6 +5,7 @@
  */
 package Effect.Destroy;
 
+import Effect.Spell.Terror;
 import static Card.Aspect.Permanent.Type.CreatureType.MYR;
 import static Card.Aspect.Permanent.Type.CreatureType.SOLDIER;
 import Card.Card;

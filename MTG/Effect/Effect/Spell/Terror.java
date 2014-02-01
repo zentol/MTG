@@ -1,4 +1,4 @@
-package Effect.Destroy;
+package Effect.Spell;
 
 import static Action.Destroy.destroyTarget;
 import static Action.Target.target;
@@ -13,7 +13,7 @@ import Condition.Permanent.ConditionVulnerableColor;
 import Effect.Effect;
 import Game.InvalidTargetException;
 
-public class Terror extends Effect {
+public class Terror extends SpellEffect {
     private final Condition[] conditions;
     private Card target;
 
@@ -43,5 +43,4 @@ public class Terror extends Effect {
             //counter(this);
         }
     }
-
 }
