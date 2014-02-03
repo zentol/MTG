@@ -2,6 +2,15 @@ Milestones:
     triggers
     combat
 
+modifier placement: 
+    instead of applying global effects to every card, why not check the 
+    field for certain modifiers based on the action/condition performed?
+        1.global effects still need modifiers
+        2.differentiate between local/global modifiers
+    con:
+        loses global scope. taking the modifiers effect on 
+        multiple targets into account would be a bitch
+
 check validity and costs when playing an ability
 
 rework resolving of spells/permanents
