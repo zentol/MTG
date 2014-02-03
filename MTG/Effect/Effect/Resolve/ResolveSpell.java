@@ -22,14 +22,5 @@ public class ResolveSpell extends Resolve {
 
     @Override
     public void execute() {
-        if (target.getClass().equals(Permanent.class)) {
-            battlefield.add((Permanent) target);
-        }
-        if (target.getClass().equals(Spell.class)) {
-            for(Effect effect:target.effects){
-                effect.execute();
-            }
-            target.resetModifiers();
-        }
     }
 }

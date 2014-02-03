@@ -1,5 +1,6 @@
 package Effect.Resolve;
 
+import static Action.PutIntoPlay.putIntoPlay;
 import Card.Card;
 import Card.Permanent;
 import Card.Spell;
@@ -23,10 +24,10 @@ public class ResolvePermanent extends Resolve {
     @Override
     public void execute() {
         if (target.getClass().equals(Permanent.class)) {
-            battlefield.add((Permanent) target);
+            putIntoPlay((Permanent) target);
         }
         if (target.getClass().equals(Spell.class)) {
-            for(Effect effect:target.effects){
+            for (Effect effect : target.effects) {
                 effect.execute();
             }
             target.resetModifiers();

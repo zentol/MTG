@@ -4,9 +4,6 @@ Milestones:
 
 check validity and costs when playing an ability
 
-resolvecard:
-    replace battlefield.add with "putIntoPlay" action
-
 rework resolving of spells/permanents
     spells:
 
