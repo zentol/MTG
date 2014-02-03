@@ -1,10 +1,10 @@
 package Modifier;
-import Card.Card;
+import Effect.Effect;
 
 public class Modifier {
-    public Card source;
+    public Effect source;
 
-    public Modifier(Card source) {
+    public Modifier(Effect source) {
         this.source = source;
     }
 }

@@ -21,6 +21,6 @@ public class StaticInvulnerableColor extends StaticEffect {
 
     @Override
     public void execute() {
-        addInvulnerablityColor(source, target, color);
+        addInvulnerablityColor(this, target, color);
     }
 }

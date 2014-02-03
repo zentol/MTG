@@ -1,6 +1,5 @@
 package Game;
 
-import static Action.Destroy.destroyAll;
 import static Card.Aspect.Permanent.Type.CreatureType.MYR;
 import static Card.Aspect.Permanent.Type.CreatureType.SOLDIER;
 import static Card.Color.Color.W;
@@ -12,8 +11,6 @@ import Collection.Hand;
 import Collection.Library;
 import Collection.Manapool;
 import Collection.Stack;
-import Condition.Card.ConditionController;
-import Condition.Condition;
 import Effect.Effect;
 import static Game.Phase.Beginning.phaseBeginning;
 import static Game.Phase.Combat.phaseCombat;

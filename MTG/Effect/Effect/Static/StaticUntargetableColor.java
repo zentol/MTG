@@ -21,6 +21,6 @@ public class StaticUntargetableColor extends StaticEffect {
 
     @Override
     public void execute() {
-        addUntargetableColor(source, target, color);
+        addUntargetableColor(this, target, color);
     }
 }

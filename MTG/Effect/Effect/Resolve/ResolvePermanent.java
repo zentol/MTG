@@ -5,7 +5,6 @@ import Card.Card;
 import Card.Permanent;
 import Card.Spell;
 import Effect.Effect;
-import static Game.Game.battlefield;
 
 public class ResolvePermanent extends Resolve {
     private final int ownerID;

@@ -10,7 +10,6 @@ import Condition.Card.ConditionColorNegative;
 import Condition.Condition;
 import static Condition.Condition.checkConditions;
 import Condition.Permanent.ConditionVulnerableColor;
-import Effect.Effect;
 import Game.InvalidTargetException;
 
 public class Terror extends SpellEffect {

@@ -19,6 +19,6 @@ public class StaticIndestructible extends StaticEffect {
 
     @Override
     public void execute() {
-        addIndestructible(source, target);
+        addIndestructible(this, target);
     }
 }

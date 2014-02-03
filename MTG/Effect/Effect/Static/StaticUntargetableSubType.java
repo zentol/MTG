@@ -21,6 +21,6 @@ public class StaticUntargetableSubType extends StaticEffect {
 
     @Override
     public void execute() {
-        addUntargetableSubType(source, target, subTypes);
+        addUntargetableSubType(this, target, subTypes);
     }
 }

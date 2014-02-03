@@ -34,11 +34,11 @@ public class test {
         System.out.println(battlefield.size());
 
         System.out.println(Card.class.isInstance(c));
-        
-        System.out.println(TargetingModifier.class.isInstance(new ModifierUntargetableColor(c,W)));
-        System.out.println(TargetingModifier.class.isInstance(new ModifierUntargetableAspect(c,2)));
 
-        System.out.println(Modifier.class.isInstance(new ModifierUntargetableColor(c,W)));
+        System.out.println(TargetingModifier.class.isInstance(new ModifierUntargetableColor(null, W)));
+        System.out.println(TargetingModifier.class.isInstance(new ModifierUntargetableAspect(null, 2)));
+
+        System.out.println(Modifier.class.isInstance(new ModifierUntargetableColor(null, W)));
 
         //c.effects.add(new StaticIndestructible(c, c));
         //((StaticIndestructible) c.effects.get(0)).execute();

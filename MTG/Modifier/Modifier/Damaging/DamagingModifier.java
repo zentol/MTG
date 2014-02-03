@@ -1,11 +1,11 @@
 package Modifier.Damaging;
 
-import Card.Card;
+import Effect.Effect;
 import Modifier.Modifier;
 
 public class DamagingModifier extends Modifier {
 
-    public DamagingModifier(Card source) {
+    public DamagingModifier(Effect source) {
         super(source);
     }
 

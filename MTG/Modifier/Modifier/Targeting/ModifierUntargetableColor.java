@@ -1,11 +1,12 @@
 package Modifier.Targeting;
 
 import Card.Card;
+import Effect.Effect;
 
 public class ModifierUntargetableColor extends TargetingModifier {
     private final int color;
 
-    public ModifierUntargetableColor(Card source, int color) {
+    public ModifierUntargetableColor(Effect source, int color) {
         super(source);
         this.color = color;
     }
