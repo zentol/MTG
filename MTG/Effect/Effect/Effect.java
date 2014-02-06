@@ -20,4 +20,5 @@ public abstract class Effect {
     public abstract void execute();
 
     public abstract int getType();
+    
 }

@@ -7,8 +7,10 @@ import static Card.Color.Color.B;
 import static Card.Color.Color.W;
 import Card.Permanent;
 import Card.Spell;
-import Effect.Spell.Terror;
+import Condition.Card.ConditionInstance;
+import Condition.Condition;
 import Effect.Effect;
+import Effect.Spell.Terror;
 import Effect.Static.StaticInvulnerableColor;
 import Game.Game;
 import static Game.Game.battlefield;
@@ -42,7 +44,7 @@ public class test {
 
         //c.effects.add(new StaticIndestructible(c, c));
         //((StaticIndestructible) c.effects.get(0)).execute();
-        c.effects.add(new StaticInvulnerableColor(c, c, B));
+        c.effects.add(new StaticInvulnerableColor(c, c, B,new Condition[]{new ConditionInstance(new int[]{c.instanceID})}));
         //((StaticInvulnerableColor) c.effects.get(0)).execute();
         /*
          Permanent q = new Permanent(2, 2, 1, 2, "Footsoldier", "W", "W", false);

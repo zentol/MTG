@@ -3,14 +3,14 @@ package Effect.Static;
 import static Action.Indestructible.addIndestructible;
 import Card.Card;
 import Card.Permanent;
+import Condition.Condition;
+import static Condition.Condition.checkConditions;
+import static Game.Game.battlefield;
 
 public class StaticIndestructible extends StaticEffect {
-    private final Permanent target;
 
-    public StaticIndestructible(Card source, Permanent target) {
-        super(false);
-        this.source = source;
-        this.target = target;
+    public StaticIndestructible(Card source, Condition[] conditions) {
+        super(false, source, conditions);
     }
 
     @Override
@@ -18,7 +18,7 @@ public class StaticIndestructible extends StaticEffect {
     }
 
     @Override
-    public void execute() {
-        addIndestructible(this, target);
+    protected void executeActions(Card target) {
+        addIndestructible(this, (Permanent) target);
     }
 }

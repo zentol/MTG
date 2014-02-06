@@ -3,16 +3,14 @@ package Effect.Static;
 import static Action.Protection.addUntargetableColor;
 import Card.Card;
 import Card.Permanent;
+import Condition.Condition;
 
 public class StaticUntargetableAspect extends StaticEffect {
     private final int aspect;
-    private final Permanent target;
 
-    public StaticUntargetableAspect(Card source, Permanent target, int aspect) {
-        super(false);
+    public StaticUntargetableAspect(Card source, int aspect, Condition[] conditions) {
+        super(false, source, conditions);
         this.aspect = aspect;
-        this.source = source;
-        this.target = target;
     }
 
     @Override
@@ -20,7 +18,7 @@ public class StaticUntargetableAspect extends StaticEffect {
     }
 
     @Override
-    public void execute() {
-        addUntargetableColor(this, target, aspect);
+    public void executeActions(Card target) {
+        addUntargetableColor(this, (Permanent) target, aspect);
     }
 }

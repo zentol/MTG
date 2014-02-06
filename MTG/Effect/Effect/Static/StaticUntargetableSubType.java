@@ -3,16 +3,14 @@ package Effect.Static;
 import static Action.Protection.addUntargetableSubType;
 import Card.Card;
 import Card.Permanent;
+import Condition.Condition;
 
 public class StaticUntargetableSubType extends StaticEffect {
     private final String[] subTypes;
-    private final Permanent target;
 
-    public StaticUntargetableSubType(Card source, Permanent target, String[] subTypes) {
-        super(false);
+    public StaticUntargetableSubType(Card source, String[] subTypes, Condition[] conditions) {
+        super(false, source, conditions);
         this.subTypes = subTypes;
-        this.source = source;
-        this.target = target;
     }
 
     @Override
@@ -20,7 +18,7 @@ public class StaticUntargetableSubType extends StaticEffect {
     }
 
     @Override
-    public void execute() {
-        addUntargetableSubType(this, target, subTypes);
+    public void executeActions(Card target) {
+        addUntargetableSubType(this, (Permanent) target, subTypes);
     }
 }

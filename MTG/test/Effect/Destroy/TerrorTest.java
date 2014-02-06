@@ -13,6 +13,8 @@ import static Card.Color.Color.B;
 import static Card.Color.Color.W;
 import Card.Permanent;
 import Card.Spell;
+import Condition.Card.ConditionInstance;
+import Condition.Condition;
 import Effect.Effect;
 import Effect.Static.StaticIndestructible;
 import Game.Game;
@@ -75,14 +77,14 @@ public class TerrorTest {
         assertEquals(1, battlefield.size());
     }
 
-        private void addTargetInvulnerability() {
-            target.effects.add(new StaticIndestructible(target, target));
-            target.effects.get(0).execute();
-        }
+    private void addTargetInvulnerability() {
+        target.effects.add(new StaticIndestructible(target, new Condition[]{new ConditionInstance(new int[]{target.instanceID})}));
+        target.effects.get(0).execute();
+    }
 
-        private void activateAndExecuteEffect() {
-            effect.activate(new Card[]{target});
-            effect.execute();
-        }
+    private void activateAndExecuteEffect() {
+        effect.activate(new Card[]{target});
+        effect.execute();
+    }
 
 }

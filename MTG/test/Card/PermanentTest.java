@@ -19,11 +19,23 @@ import static Card.Aspect.Permanent.Type.LandType.GATE;
 import static Card.Aspect.Permanent.Type.PlaneswalkerType.JACE;
 import static Card.Color.Color.B;
 import static Card.Color.Color.W;
+import Condition.Card.ConditionInstance;
+import Condition.Condition;
 import Effect.Static.StaticIndestructible;
 import Effect.Static.StaticInvulnerableColor;
+import Game.Game;
+import static Game.Game.battlefield;
 import Modifier.Damaging.ModifierIndestructible;
 import Modifier.Damaging.ModifierInvulnerableColor;
 import static junit.framework.Assert.assertFalse;
+import static junit.framework.Assert.assertFalse;
+import static junit.framework.Assert.assertFalse;
+import static junit.framework.Assert.assertFalse;
+import static junit.framework.Assert.assertFalse;
+import static junit.framework.Assert.assertTrue;
+import static junit.framework.Assert.assertTrue;
+import static junit.framework.Assert.assertTrue;
+import static junit.framework.Assert.assertTrue;
 import static junit.framework.Assert.assertTrue;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -48,7 +60,9 @@ public class PermanentTest {
 
     @Before
     public void setUp() {
+        Game game = new Game(2);
         permanent = new Permanent(1, 1, 0, 1, "Footsoldier", "W", W, false);
+        battlefield.add(permanent);
 
     }
 
@@ -134,23 +148,22 @@ public class PermanentTest {
      */
     @Test
     public void testHasEffect() {
-        permanent.effects.add(new StaticIndestructible(permanent, permanent));
+        permanent.effects.add(new StaticIndestructible(permanent, new Condition[]{new ConditionInstance(new int[]{permanent.instanceID})}));
         assertTrue(permanent.hasEffect(StaticIndestructible.class));
         assertFalse(permanent.hasEffect(StaticInvulnerableColor.class));
     }
 
     @Test
     public void testHasModifier() {
-        new StaticIndestructible(permanent, permanent).execute();
+        new StaticIndestructible(permanent, new Condition[]{new ConditionInstance(new int[]{permanent.instanceID})}).execute();
         assertTrue(permanent.hasModifier(ModifierIndestructible.class));
         assertFalse(permanent.hasModifier(ModifierInvulnerableColor.class));
     }
-    
+
     @Test
     public void testIsColor() {
         assertTrue(permanent.isColor(W));
         assertFalse(permanent.isColor(B));
     }
-
 
 }
