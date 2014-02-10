@@ -1,3 +1,6 @@
+maybe write tests for all things?
+    with all the changes to constructors that would be REALLY painful...
+
 Milestones:
     triggers
     combat
