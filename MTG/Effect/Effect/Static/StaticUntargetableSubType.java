@@ -14,10 +14,6 @@ public class StaticUntargetableSubType extends StaticEffect {
     }
 
     @Override
-    public void activate(Card[] targets) {
-    }
-
-    @Override
     public void executeActions(Card target) {
         addUntargetableSubType(this, (Permanent) target, subTypes);
     }

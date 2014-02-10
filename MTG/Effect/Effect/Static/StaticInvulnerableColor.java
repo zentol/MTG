@@ -14,10 +14,6 @@ public class StaticInvulnerableColor extends StaticEffect {
     }
 
     @Override
-    public void activate(Card[] targets) {
-    }
-
-    @Override
     public void executeActions(Card target) {
         addInvulnerablityColor(this, (Permanent) target, color);
     }

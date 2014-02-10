@@ -37,14 +37,14 @@ public class test {
 
         System.out.println(Card.class.isInstance(c));
 
-        System.out.println(TargetingModifier.class.isInstance(new ModifierUntargetableColor(null, W)));
-        System.out.println(TargetingModifier.class.isInstance(new ModifierUntargetableAspect(null, 2)));
+        System.out.println(TargetingModifier.class.isInstance(new ModifierUntargetableColor(null, null, W)));
+        System.out.println(TargetingModifier.class.isInstance(new ModifierUntargetableAspect(null, null, 2)));
 
-        System.out.println(Modifier.class.isInstance(new ModifierUntargetableColor(null, W)));
+        System.out.println(Modifier.class.isInstance(new ModifierUntargetableColor(null, null, W)));
 
         //c.effects.add(new StaticIndestructible(c, c));
         //((StaticIndestructible) c.effects.get(0)).execute();
-        c.effects.add(new StaticInvulnerableColor(c, c, B,new Condition[]{new ConditionInstance(new int[]{c.instanceID})}));
+        c.effects.add(new StaticInvulnerableColor(c, c, B, new Condition[]{new ConditionInstance(new int[]{c.instanceID})}));
         //((StaticInvulnerableColor) c.effects.get(0)).execute();
         /*
          Permanent q = new Permanent(2, 2, 1, 2, "Footsoldier", "W", "W", false);

@@ -14,10 +14,6 @@ public class StaticIndestructible extends StaticEffect {
     }
 
     @Override
-    public void activate(Card[] targets) {
-    }
-
-    @Override
     protected void executeActions(Card target) {
         addIndestructible(this, (Permanent) target);
     }

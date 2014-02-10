@@ -1,13 +1,14 @@
 package Modifier.Damaging;
 
+import Card.Card;
 import Effect.Effect;
 import Modifier.Modifier;
 
 public class ModifierInvulnerableColor extends Modifier {
     private final int color;
 
-    public ModifierInvulnerableColor(Effect source, int color) {
-        super(source);
+    public ModifierInvulnerableColor(Card target, Effect source, int color) {
+        super(target, source);
         this.color = color;
     }
 

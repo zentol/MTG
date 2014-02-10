@@ -14,10 +14,6 @@ public class StaticUntargetableColor extends StaticEffect {
     }
 
     @Override
-    public void activate(Card[] targets) {
-    }
-
-    @Override
     public void executeActions(Card target) {
         addUntargetableColor(this, (Permanent) target, color);
     }

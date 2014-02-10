@@ -6,8 +6,8 @@ import Effect.Effect;
 public class ModifierUntargetableAspect extends TargetingModifier {
     private final int aspect;
 
-    public ModifierUntargetableAspect(Effect source, int aspect) {
-        super(source);
+    public ModifierUntargetableAspect(Card target, Effect source, int aspect) {
+        super(target, source);
         this.aspect = aspect;
     }
 

@@ -7,8 +7,8 @@ import Effect.Effect;
 public class ModifierUntargetableSubType extends TargetingModifier {
     private final String[] subTypes;
 
-    public ModifierUntargetableSubType(Effect source, String[] subTypes) {
-        super(source);
+    public ModifierUntargetableSubType(Card target, Effect source, String[] subTypes) {
+        super(target, source);
         this.subTypes = subTypes;
     }
 

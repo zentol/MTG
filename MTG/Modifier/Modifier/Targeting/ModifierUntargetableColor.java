@@ -6,8 +6,8 @@ import Effect.Effect;
 public class ModifierUntargetableColor extends TargetingModifier {
     private final int color;
 
-    public ModifierUntargetableColor(Effect source, int color) {
-        super(source);
+    public ModifierUntargetableColor(Card target, Effect source, int color) {
+        super(target, source);
         this.color = color;
     }
 

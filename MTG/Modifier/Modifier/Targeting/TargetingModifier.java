@@ -7,8 +7,8 @@ import Modifier.Modifier;
 
 public abstract class TargetingModifier extends Modifier{
 
-    public TargetingModifier(Effect source) {
-        super(source);
+    public TargetingModifier(Card target, Effect source) {
+        super(target, source);
     }
     public abstract boolean preventsTargeting(Card targeter);
 

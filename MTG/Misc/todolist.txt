@@ -1,31 +1,6 @@
 Milestones:
     triggers
     combat
-
-conditions for static effects ("all white creature get +1/+1")
-    conditionColor
-    conditionType
-
-modifier placement: 
-    instead of applying global effects to every card, why not check the 
-    field for certain modifiers based on the action/condition performed?
-        1.global effects still need modifiers
-        2.differentiate between local/global modifiers
-    con:
-        loses global scope. taking the modifiers effect on 
-        multiple targets into account would be a bitch
-    differentiation between local/global still necessary(?) though
-    globals implement apply() method, checking the field for valid targets
-        or - reexecute() all statics -> take care they arent applied multiple times :/
-            cant differentiate by class, some modifiers rely on this
-            modifier id?hmm...effectid+sourceid should be fairly specific
-            effect id would be enough
-    is this even necessary? static modifiers dont just disappear. 
-        whenever a permanent is altered, modifiers get reevaluated. 
-        (need reevaluate function?->inherit conditions from source effect
-            or save the effect instead of source card (source is saved transitiv))
-                activate could be use to reevaluate target (catch ITE)
-        if this is properly done i dont have to worry about applying stuff multiple times
         
 check validity and costs when playing an ability
 

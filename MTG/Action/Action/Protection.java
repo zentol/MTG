@@ -9,14 +9,14 @@ import Modifier.Targeting.ModifierUntargetableSubType;
 public abstract class Protection {
 
     public static void addInvulnerablityColor(Effect source, Permanent target, int color) {
-        target.modifiers.add(new ModifierInvulnerableColor(source, color));
+        target.modifiers.add(new ModifierInvulnerableColor(target, source, color));
     }
 
     public static void addUntargetableColor(Effect source, Permanent target, int color) {
-        target.modifiers.add(new ModifierUntargetableColor(source, color));
+        target.modifiers.add(new ModifierUntargetableColor(target, source, color));
     }
 
     public static void addUntargetableSubType(Effect source, Permanent target, String[] subTypes) {
-        target.modifiers.add(new ModifierUntargetableSubType(source, subTypes));
+        target.modifiers.add(new ModifierUntargetableSubType(target, source, subTypes));
     }
 }
