@@ -18,11 +18,11 @@ public class ConditionAttack extends Condition<Permanent> {
     public boolean evaluate(Permanent target) {
         CreatureAspect creature = (CreatureAspect) target.getAspect(KEY_ASPECT_CREATURE);
         switch (mode) {
-            case -1:
+            case LESS:
                 return creature.getAttack() < value;
-            case 0:
+            case EQUAL:
                 return creature.getAttack() == value;
-            case 1:
+            case MORE:
                 return creature.getAttack() > value;
             default:
                 return false;
