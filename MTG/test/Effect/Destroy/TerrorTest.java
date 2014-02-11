@@ -64,14 +64,14 @@ public class TerrorTest {
     }
 
     @Test
-    public void testExecuteNoInvul() {
+    public void testExecuteNoInvulnerability() {
         activateAndExecuteEffect();
         assertEquals(0, battlefield.size());
 
     }
 
     @Test
-    public void testExecuteInvul() {
+    public void testExecuteInvulnerability() {
         addTargetInvulnerability();
         activateAndExecuteEffect();
         assertEquals(1, battlefield.size());
