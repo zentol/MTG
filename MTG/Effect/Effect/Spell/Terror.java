@@ -29,7 +29,7 @@ public class Terror extends SpellEffect {
     public void activate(Card[] targets) {
         target = targets[0];
         target(target, source);
-        if (!checkConditions((Permanent) target, conditions, source)) {
+        if (!checkConditions((Permanent) target, conditions)) {
             throw new InvalidTargetException();
         }
     }

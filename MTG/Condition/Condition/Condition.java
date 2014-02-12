@@ -9,7 +9,7 @@ public abstract class Condition<E> {
 
     public abstract boolean evaluate(E target);
 
-    public static boolean checkConditions(Card target, Condition[] conditions, Card source) {
+    public static boolean checkConditions(Card target, Condition[] conditions) {
         boolean allConditionsMet = true;
         for (Condition condition : conditions) {
             allConditionsMet &= condition.evaluate(target);

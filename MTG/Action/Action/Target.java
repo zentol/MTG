@@ -33,7 +33,7 @@ public class Target {
     public static int validateTargets(Permanent[] permanents, Condition[] conditions, Card source) {
         int validTargets = 0;
         for (Permanent permanent : permanents) {
-            if (checkConditions(permanent, conditions, source)) {
+            if (checkConditions(permanent, conditions)) {
                 validTargets++;
             }
         }

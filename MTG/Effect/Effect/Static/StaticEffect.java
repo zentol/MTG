@@ -19,7 +19,7 @@ public abstract class StaticEffect extends Effect {
     @Override
     public void execute() {
         for (int x = 0; x < battlefield.size(); x++) {
-            if (checkConditions(battlefield.get(x), conditions, source)) {
+            if (checkConditions(battlefield.get(x), conditions)) {
                 executeActions(battlefield.get(x));
             }
         }
@@ -27,7 +27,7 @@ public abstract class StaticEffect extends Effect {
 
     @Override
     public void activate(Card[] targets) {
-        if (!checkConditions(targets[0], conditions, source)) {
+        if (!checkConditions(targets[0], conditions)) {
             throw new InvalidTargetException();
         }
     }

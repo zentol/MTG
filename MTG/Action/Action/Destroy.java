@@ -18,14 +18,14 @@ public abstract class Destroy {
      */
     public static void destroyAll(Condition[] conditions, Card source) {
         for (int x = 0; x < battlefield.size(); x++) {
-            if (checkConditions(battlefield.get(x), conditions, source) & destroyConditions(battlefield.get(x), source)) {
+            if (checkConditions(battlefield.get(x), conditions) & destroyConditions(battlefield.get(x), source)) {
                 destroyPermanent(battlefield.get(x));
             }
         }
     }
 
     public static void destroyTarget(Permanent permanent, Condition[] conditions, Card source) {
-        if (checkConditions(permanent, conditions, source) & destroyConditions(permanent, source)) {
+        if (checkConditions(permanent, conditions) & destroyConditions(permanent, source)) {
             destroyPermanent(permanent);
         }
     }

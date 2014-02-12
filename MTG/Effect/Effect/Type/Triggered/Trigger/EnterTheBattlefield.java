@@ -16,7 +16,7 @@ public class EnterTheBattlefield extends Trigger {
     @Override
     public boolean check(Event event) {
         if (event.getType() == KEY_EVENT_ETB) {
-            return checkConditions(((EventEnterTheBattlefield) event).getTarget(), conditions, null);
+            return checkConditions(((EventEnterTheBattlefield) event).getTarget(), conditions);
         }
         return false;
     }
