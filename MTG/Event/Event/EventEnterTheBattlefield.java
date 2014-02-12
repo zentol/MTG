@@ -9,8 +9,8 @@ public class EventEnterTheBattlefield extends Event {
         super(KEY_EVENT_ETB);
         this.target = target;
     }
-    
-    public Permanent getTarget(){
+
+    public Permanent getTarget() {
         return target;
     }
 }

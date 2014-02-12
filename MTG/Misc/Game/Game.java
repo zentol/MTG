@@ -41,6 +41,7 @@ public class Game {
         phaseEnding();
         endTurn();
     }
+
     public static void endTurn() {
         activePlayer++;
         activePlayer %= lifepoints.size();

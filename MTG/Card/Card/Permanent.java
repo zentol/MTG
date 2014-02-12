@@ -16,9 +16,9 @@ public class Permanent extends Card {
         super(cardID, instanceID, ownerID, controllerID, name, cost, colors, legendary);
         this.untapped = true;
     }
-    
+
     @Override
-    public int getType(){
+    public int getType() {
         return KEY_ASPECT_PERMANENT;
     }
 

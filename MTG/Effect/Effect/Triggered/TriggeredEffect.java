@@ -18,9 +18,9 @@ public abstract class TriggeredEffect extends Effect {
     public int getType() {
         return KEY_EFFECT_TYPE_TRIGGERED;
     }
-    
-    public void evaluateTrigger(Event event){
-        if(trigger.check(event)){
+
+    public void evaluateTrigger(Event event) {
+        if (trigger.check(event)) {
             //effect.activate();
         }
     }

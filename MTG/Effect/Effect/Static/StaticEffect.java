@@ -24,10 +24,10 @@ public abstract class StaticEffect extends Effect {
             }
         }
     }
-    
+
     @Override
-    public void activate(Card[] targets){
-        if(!checkConditions(targets[0],conditions,source)){
+    public void activate(Card[] targets) {
+        if (!checkConditions(targets[0], conditions, source)) {
             throw new InvalidTargetException();
         }
     }
