@@ -4,10 +4,11 @@ import Card.Card;
 import Card.Permanent;
 import Condition.Condition;
 import static Condition.Condition.checkConditions;
+import Condition.Permanent.ConditionTargetable;
 import Game.InvalidTargetException;
-import Modifier.Targeting.TargetingModifier;
 
 public class Target {
+    private static ConditionTargetable targetable;
 
     public static void target(Card target, Card source) {
         targetCondition(target, source);
@@ -20,14 +21,9 @@ public class Target {
     }
 
     private static void targetCondition(Card target, Card source) {
+        targetable = new ConditionTargetable(source);
         boolean targetConditionsMet = true;
-
-        for (int x = 0; x < target.modifiers.size(); x++) {
-            if (TargetingModifier.class.isInstance(target.modifiers.get(x))) {
-                targetConditionsMet &= !((TargetingModifier) target.modifiers.get(x)).preventsTargeting(source);
-            }
-
-        }
+        targetConditionsMet &= targetable.evaluate(target);
         if (!targetConditionsMet) {
             throw new InvalidTargetException();
         }
