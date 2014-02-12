@@ -10,6 +10,6 @@ public abstract class ActivatedEffect extends Effect {
 
     @Override
     public int getType() {
-        return KEY_TYPE_EFFECT_ACTIVATED;
+        return KEY_EFFECT_TYPE_ACTIVATED;
     }
 }

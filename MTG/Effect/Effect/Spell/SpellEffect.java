@@ -10,6 +10,6 @@ public abstract class SpellEffect extends Effect {
 
     @Override
     public int getType() {
-        return KEY_TYPE_EFFECT_SPELL;
+        return KEY_EFFECT_TYPE_SPELL;
     }
 }
