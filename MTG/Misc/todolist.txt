@@ -15,7 +15,7 @@ turn
         see code
         
 combat
-    basic implementetation
+    basic implementation
         attacking
         blocking
             track which creature is getting blocked
