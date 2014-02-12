@@ -1,7 +1,7 @@
 maybe write tests for all things?
     with all the changes to constructors that would be REALLY painful...
 
-separate conditions for specific actions (targetable,destructible)
+separate conditions for specific actions (tapable)
 
 Milestones:
     triggers
