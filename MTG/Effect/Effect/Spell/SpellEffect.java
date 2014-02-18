@@ -4,8 +4,8 @@ import Effect.Effect;
 
 public abstract class SpellEffect extends Effect {
 
-    public SpellEffect(boolean targeting) {
-        super(targeting);
+    public SpellEffect(int targetCount) {
+        super(targetCount);
     }
 
     @Override

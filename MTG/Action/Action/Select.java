@@ -5,7 +5,7 @@ import static Game.Game.battlefield;
 import java.util.Scanner;
 
 public class Select {
-    
+
     //prototype method
     public static Card[] select(int count) {
         Scanner s = new Scanner(System.in);

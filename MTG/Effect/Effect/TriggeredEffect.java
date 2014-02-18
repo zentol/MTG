@@ -9,8 +9,8 @@ public abstract class TriggeredEffect extends Effect {
     private final Trigger trigger;
     private final Effect effect;
 
-    public TriggeredEffect(boolean targeting, Trigger trigger, Effect effect) {
-        super(effect.targeting);
+    public TriggeredEffect(int targetCount, Trigger trigger, Effect effect) {
+        super(effect.targetCount);
         this.trigger = trigger;
         this.effect = effect;
     }

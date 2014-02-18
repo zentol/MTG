@@ -9,7 +9,7 @@ import Condition.Condition;
 public class StaticIndestructible extends StaticEffect {
 
     public StaticIndestructible(Card source, Condition[] conditions) {
-        super(false, source, conditions);
+        super(0, source, conditions);
     }
 
     @Override

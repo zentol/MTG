@@ -10,7 +10,7 @@ public class StaticInvulnerableColor extends StaticEffect {
     private final int color;
 
     public StaticInvulnerableColor(Card source, Permanent target, int color, Condition[] conditions) {
-        super(false, source, conditions);
+        super(0, source, conditions);
         this.color = color;
     }
 

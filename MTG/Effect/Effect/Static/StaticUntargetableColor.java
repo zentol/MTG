@@ -10,7 +10,7 @@ public class StaticUntargetableColor extends StaticEffect {
     private final int color;
 
     public StaticUntargetableColor(Card source, int color, Condition[] conditions) {
-        super(false, source, conditions);
+        super(0, source, conditions);
         this.color = color;
     }
 

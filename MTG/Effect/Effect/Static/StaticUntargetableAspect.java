@@ -10,7 +10,7 @@ public class StaticUntargetableAspect extends StaticEffect {
     private final int aspect;
 
     public StaticUntargetableAspect(Card source, int aspect, Condition[] conditions) {
-        super(false, source, conditions);
+        super(0, source, conditions);
         this.aspect = aspect;
     }
 

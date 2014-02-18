@@ -12,8 +12,8 @@ import Effect.Effect;
 public class destroyother extends Effect {
     private final Permanent source;
 
-    public destroyother(Permanent source, boolean targeting) {
-        super(targeting);
+    public destroyother(Permanent source, int targetCount) {
+        super(targetCount);
         this.source = source;
     }
 

@@ -30,7 +30,7 @@ public abstract class Play {
     }
 
     private static void addEffectToStack(Effect effect) {
-        if (effect.targeting) {
+        if (effect.targetCount > 0) {
 
             Card[] targets = select(1);
             effect.activate(targets);

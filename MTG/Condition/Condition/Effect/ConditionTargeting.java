@@ -9,7 +9,7 @@ public class ConditionTargeting extends Condition<Effect> {
 
     @Override
     public boolean evaluate(Effect target) {
-        return target.targeting;
+        return target.targetCount > 0;
     }
 
 }

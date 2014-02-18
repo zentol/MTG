@@ -1,7 +1,7 @@
 rework effect.activate():
     targets chosen inside (validated right away)
         currently done in Action.Play.addEffectToStack
-        which is better? actions is more centric (choosing targets is an action performed for ALL targeting spells)
+        which is better? actions is more centric (choosing targets is an action performed for ALL targetCount spells)
 
 separate conditions for specific actions (tapable)
 
@@ -13,8 +13,6 @@ selectTargets():
     "dumb" method, selects cards, validation afterwards, if activation fails redo selection
     => requires activate to e called from method encapsuling select
         well thats supported right now ;)
-
-add targetCount to effects
 
 Milestones:
     triggers

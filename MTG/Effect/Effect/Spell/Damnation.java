@@ -7,7 +7,7 @@ import Condition.Condition;
 
 public class Damnation extends SpellEffect {
     public Damnation(Spell source) {
-        super(false);
+        super(0);
         this.source = source;
     }
 

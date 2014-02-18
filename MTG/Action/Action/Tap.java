@@ -10,10 +10,10 @@ public class Tap {
     public static void tapAll(Condition[] conditions) {
         for (int x = 0; x < battlefield.size(); x++) {
             boolean allConditionsMet = true;
-            
-            allConditionsMet &= checkConditions(battlefield.get(x),conditions);
+
+            allConditionsMet &= checkConditions(battlefield.get(x), conditions);
             allConditionsMet &= tapConditions(battlefield.get(x), null);
-            
+
             if (allConditionsMet) {
                 battlefield.get(x).tap();
             }
@@ -22,8 +22,8 @@ public class Tap {
 
     public static void tapTarget(Permanent permanent, Condition[] conditions) {
         boolean allConditionsMet = true;
-        
-        allConditionsMet &= checkConditions(permanent,conditions);
+
+        allConditionsMet &= checkConditions(permanent, conditions);
         allConditionsMet &= tapConditions(permanent, null);
 
         if (allConditionsMet) {
@@ -34,8 +34,8 @@ public class Tap {
     public static void tapTargets(Permanent[] permanents, Condition[] conditions) {
         for (Permanent permanent : permanents) {
             boolean allConditionsMet = true;
-            
-            allConditionsMet &= checkConditions(permanent,conditions);
+
+            allConditionsMet &= checkConditions(permanent, conditions);
             allConditionsMet &= tapConditions(permanent, null);
 
             if (allConditionsMet) {

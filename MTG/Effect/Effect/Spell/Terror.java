@@ -17,7 +17,7 @@ public class Terror extends SpellEffect {
     private Card target;
 
     public Terror(Spell source) {
-        super(true);
+        super(1);
         this.source = source;
         conditions = new Condition[]{
             new ConditionColorNegative(B),

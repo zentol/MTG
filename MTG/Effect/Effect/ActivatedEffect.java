@@ -2,8 +2,8 @@ package Effect;
 
 public abstract class ActivatedEffect extends Effect {
 
-    public ActivatedEffect(boolean targeting) {
-        super(targeting);
+    public ActivatedEffect(int targetCount) {
+        super(targetCount);
     }
 
     @Override
