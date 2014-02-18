@@ -1,4 +1,4 @@
-package Effect.Type.Triggered.Trigger;
+package Trigger;
 
 import Event.Event;
 

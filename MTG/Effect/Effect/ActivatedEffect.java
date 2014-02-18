@@ -1,4 +1,4 @@
-package Effect.Activated;
+package Effect;
 
 import Effect.Effect;
 

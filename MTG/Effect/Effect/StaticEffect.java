@@ -1,4 +1,4 @@
-package Effect.Static;
+package Effect;
 
 import Card.Card;
 import Condition.Condition;

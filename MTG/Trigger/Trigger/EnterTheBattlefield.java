@@ -1,4 +1,4 @@
-package Effect.Type.Triggered.Trigger;
+package Trigger;
 
 import Condition.Condition;
 import static Condition.Condition.checkConditions;

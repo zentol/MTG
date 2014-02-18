@@ -1,7 +1,7 @@
-package Effect.Triggered;
+package Effect;
 
 import Effect.Effect;
-import Effect.Type.Triggered.Trigger.Trigger;
+import Trigger.Trigger;
 import Event.Event;
 
 public abstract class TriggeredEffect extends Effect {

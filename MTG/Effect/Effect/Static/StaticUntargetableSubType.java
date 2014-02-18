@@ -1,5 +1,6 @@
 package Effect.Static;
 
+import Effect.StaticEffect;
 import static Action.Protection.addUntargetableSubType;
 import Card.Card;
 import Card.Permanent;
