@@ -5,8 +5,6 @@ import static Action.Indestructible.addIndestructible;
 import Card.Card;
 import Card.Permanent;
 import Condition.Condition;
-import static Condition.Condition.checkConditions;
-import static Game.Game.battlefield;
 
 public class StaticIndestructible extends StaticEffect {
 

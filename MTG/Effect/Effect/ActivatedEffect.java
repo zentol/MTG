@@ -1,7 +1,5 @@
 package Effect;
 
-import Effect.Effect;
-
 public abstract class ActivatedEffect extends Effect {
 
     public ActivatedEffect(boolean targeting) {

@@ -1,5 +1,7 @@
-maybe write tests for all things?
-    with all the changes to constructors that would be REALLY painful...
+rework effect.activate():
+    targets chosen inside (validated right away)
+        currently done in Action.Play.addEffectToStack
+        which is better? actions is more centric (choosing targets is an action performed for ALL targeting spells)
 
 separate conditions for specific actions (tapable)
 

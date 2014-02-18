@@ -1,15 +1,16 @@
 package Effect;
 
-import Effect.Effect;
-import Trigger.Trigger;
+import static Action.Play.playAbility;
+import Card.Card;
 import Event.Event;
+import Trigger.Trigger;
 
 public abstract class TriggeredEffect extends Effect {
-    private Trigger trigger;
-    private Effect effect;
+    private final Trigger trigger;
+    private final Effect effect;
 
     public TriggeredEffect(boolean targeting, Trigger trigger, Effect effect) {
-        super(targeting);
+        super(effect.targeting);
         this.trigger = trigger;
         this.effect = effect;
     }
@@ -21,7 +22,17 @@ public abstract class TriggeredEffect extends Effect {
 
     public void evaluateTrigger(Event event) {
         if (trigger.check(event)) {
-            //effect.activate();
+            playAbility(this);
         }
+    }
+
+    @Override
+    public void activate(Card[] targets) {
+        effect.activate(targets);
+    }
+
+    @Override
+    public void execute() {
+        effect.execute();
     }
 }

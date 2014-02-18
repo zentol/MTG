@@ -6,10 +6,10 @@ import Event.Event;
 import static Event.Event.KEY_EVENT_ETB;
 import Event.EventEnterTheBattlefield;
 
-public class EnterTheBattlefield extends Trigger {
+public class TriggerEnterTheBattlefield extends Trigger {
     private Condition[] conditions;
 
-    public EnterTheBattlefield(Condition[] conditions) {
+    public TriggerEnterTheBattlefield(Condition[] conditions) {
         this.conditions = conditions;
     }
 
