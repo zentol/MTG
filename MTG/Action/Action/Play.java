@@ -1,6 +1,7 @@
 package Action;
 
 import static Action.Pay.payMana;
+import static Action.Select.select;
 import Card.Card;
 import Effect.Effect;
 import Effect.Resolve.ResolvePermanent;
@@ -30,10 +31,12 @@ public abstract class Play {
 
     private static void addEffectToStack(Effect effect) {
         if (effect.targeting) {
-            /*
-             Card[] targets = selectTargets();
-             effect.activate(targets);
-             */
+
+            Card[] targets = select(1);
+            effect.activate(targets);
+
+        } else {
+            effect.activate(new Card[0]);
         }
         stack.add(effect);
     }
