@@ -11,8 +11,8 @@ public class Select {
         Scanner s = new Scanner(System.in);
         Card[] selection = new Card[count];
         for (int x = 0; x < count; x++) {
-            System.out.println("select target");
-            selection[x] = battlefield.get(s.nextInt());
+            selection[x] = battlefield.get(0);
+            //selection[x] = battlefield.get(s.nextInt());
         }
         return selection;
     }

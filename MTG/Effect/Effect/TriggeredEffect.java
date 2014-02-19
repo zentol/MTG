@@ -5,7 +5,7 @@ import Card.Card;
 import Event.Event;
 import Trigger.Trigger;
 
-public abstract class TriggeredEffect extends Effect {
+public class TriggeredEffect extends Effect {
     private final Trigger trigger;
     private final Effect effect;
 
