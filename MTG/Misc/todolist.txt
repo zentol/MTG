@@ -6,7 +6,6 @@ non-creature permanent tapable?
     YES!
 
 Milestones:
-    triggers
     combat
         
 check validity and costs when playing an ability
