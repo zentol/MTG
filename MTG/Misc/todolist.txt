@@ -3,20 +3,7 @@ rule check:
 is z triggered or activated?
 
 non-creature permanent tapable?
-
-rework effect.activate():
-    targets chosen inside (validated right away)
-        currently done in Action.Play.addEffectToStack
-        which is better? actions is more centric (choosing targets is an action performed for ALL targetCount spells)
-
-selectTargets():
-    when adding this action, the effects' conditions are not accessible
-        except when passing source
-        (int targetCount, Condition[] conditions)?
-            immediate validation makes target checks kind of unnecessary
-    "dumb" method, selects cards, validation afterwards, if activation fails redo selection
-    => requires activate to e called from method encapsuling select
-        well thats supported right now ;)
+    YES!
 
 Milestones:
     triggers
