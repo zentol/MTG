@@ -1,6 +1,7 @@
 package Effect.Trigger;
 
 import static Action.FireEvent.fireEvent;
+import static Action.PutIntoPlay.putIntoPlay;
 import static Card.Aspect.Permanent.Type.CreatureType.MYR;
 import static Card.Aspect.Permanent.Type.CreatureType.SOLDIER;
 import static Card.Color.Color.B;
@@ -19,6 +20,7 @@ import static Game.Game.battlefield;
 import static Game.Game.stack;
 import Trigger.TriggerEnterTheBattlefield;
 import org.junit.AfterClass;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
@@ -47,7 +49,16 @@ public class TestTrigger {
     }
 
     @Test
-    public void testTrigger() {
+    public void testActionFiresEvent() {
+        Permanent test = new Permanent(1, 2, 0, 1, "Footsoldier", "W", W, false);
+        test.addCreatureAspect(1, 1, new String[]{SOLDIER, MYR});
+        putIntoPlay(test);
+        stack.resolveStack();
+        assertEquals(1, battlefield.size());
+    }
+
+    @Test
+    public void testEventTriggersTrigger() {
         Event event = new EventEnterTheBattlefield(target);
         fireEvent(event);
         stack.resolveStack();
