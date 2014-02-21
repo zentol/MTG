@@ -21,4 +21,8 @@ public abstract class Effect {
 
     public abstract int getType();
 
+    public void setSource(Card source) {
+        this.source = source;
+    }
+
 }

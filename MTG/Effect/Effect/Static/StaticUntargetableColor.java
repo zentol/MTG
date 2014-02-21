@@ -9,8 +9,8 @@ import Condition.Condition;
 public class StaticUntargetableColor extends StaticEffect {
     private final int color;
 
-    public StaticUntargetableColor(Card source, int color, Condition[] conditions) {
-        super(0, source, conditions);
+    public StaticUntargetableColor(int color, Condition[] conditions) {
+        super(0, conditions);
         this.color = color;
     }
 

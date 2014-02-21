@@ -44,6 +44,11 @@ public abstract class Card {
         this.effects = new ArrayList();
         this.aspects = new ArrayList();
     }
+    
+    public void addEffect(Effect effect){
+        effects.add(effect);
+        effect.setSource(this);
+    }
 
 //Meta--------------------------------------------------------------------------
     public boolean isCard(int cardID) {

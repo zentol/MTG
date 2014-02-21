@@ -8,8 +8,8 @@ import Condition.Condition;
 
 public class StaticIndestructible extends StaticEffect {
 
-    public StaticIndestructible(Card source, Condition[] conditions) {
-        super(0, source, conditions);
+    public StaticIndestructible(Condition[] conditions) {
+        super(0, conditions);
     }
 
     @Override

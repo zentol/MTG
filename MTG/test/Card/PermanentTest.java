@@ -140,14 +140,15 @@ public class PermanentTest {
      */
     @Test
     public void testHasEffect() {
-        permanent.effects.add(new StaticIndestructible(permanent, new Condition[]{new ConditionInstance(new int[]{permanent.instanceID})}));
+        permanent.addEffect(new StaticIndestructible(new Condition[]{new ConditionInstance(new int[]{permanent.instanceID})}));
         assertTrue(permanent.hasEffect(StaticIndestructible.class));
         assertFalse(permanent.hasEffect(StaticInvulnerableColor.class));
     }
 
     @Test
     public void testHasModifier() {
-        new StaticIndestructible(permanent, new Condition[]{new ConditionInstance(new int[]{permanent.instanceID})}).execute();
+        permanent.addEffect(new StaticIndestructible(new Condition[]{new ConditionInstance(new int[]{permanent.instanceID})}));
+        permanent.effects.get(0).execute();
         assertTrue(permanent.hasModifier(ModifierIndestructible.class));
         assertFalse(permanent.hasModifier(ModifierInvulnerableColor.class));
     }

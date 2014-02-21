@@ -9,8 +9,8 @@ import Condition.Condition;
 public class StaticUntargetableAspect extends StaticEffect {
     private final int aspect;
 
-    public StaticUntargetableAspect(Card source, int aspect, Condition[] conditions) {
-        super(0, source, conditions);
+    public StaticUntargetableAspect(int aspect, Condition[] conditions) {
+        super(0, conditions);
         this.aspect = aspect;
     }
 

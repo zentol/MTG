@@ -9,8 +9,8 @@ import Condition.Condition;
 public class StaticUntargetableSubType extends StaticEffect {
     private final String[] subTypes;
 
-    public StaticUntargetableSubType(Card source, String[] subTypes, Condition[] conditions) {
-        super(0, source, conditions);
+    public StaticUntargetableSubType(String[] subTypes, Condition[] conditions) {
+        super(0, conditions);
         this.subTypes = subTypes;
     }
 

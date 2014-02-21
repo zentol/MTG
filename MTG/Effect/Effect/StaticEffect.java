@@ -10,9 +10,8 @@ import Game.InvalidTargetException;
 public abstract class StaticEffect extends Effect {
     protected final Condition[] conditions;
 
-    public StaticEffect(int targetCount, Card source, Condition[] conditions) {
+    public StaticEffect(int targetCount, Condition[] conditions) {
         super(targetCount);
-        this.source = source;
         this.conditions = conditions;
     }
 

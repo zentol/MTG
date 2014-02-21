@@ -9,8 +9,8 @@ import Condition.Condition;
 public class StaticInvulnerableColor extends StaticEffect {
     private final int color;
 
-    public StaticInvulnerableColor(Card source, Permanent target, int color, Condition[] conditions) {
-        super(0, source, conditions);
+    public StaticInvulnerableColor(Permanent target, int color, Condition[] conditions) {
+        super(0, conditions);
         this.color = color;
     }
 

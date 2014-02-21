@@ -43,7 +43,7 @@ public class TestTrigger {
         battlefield.add(target);
 
         Spell s = new Spell(1, 1, 1, 1, "Terror", "1B", B, false);
-        effect = new Terror(s);
+        s.addEffect(new Terror());
 
         target.effects.add(new TriggeredEffect(1, new TriggerEnterTheBattlefield(new Condition[]{new ConditionColorPositive(W)}), effect));
     }

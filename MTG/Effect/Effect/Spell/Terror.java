@@ -5,7 +5,6 @@ import static Action.Target.target;
 import Card.Card;
 import static Card.Color.Color.B;
 import Card.Permanent;
-import Card.Spell;
 import Condition.Card.ConditionColorNegative;
 import Condition.Condition;
 import static Condition.Condition.checkConditions;
@@ -16,9 +15,8 @@ public class Terror extends SpellEffect {
     private final Condition[] conditions;
     private Card target;
 
-    public Terror(Spell source) {
+    public Terror() {
         super(1);
-        this.source = source;
         conditions = new Condition[]{
             new ConditionColorNegative(B),
             new ConditionVulnerableColor(B)

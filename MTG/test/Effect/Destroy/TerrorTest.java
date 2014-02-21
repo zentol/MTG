@@ -55,7 +55,8 @@ public class TerrorTest {
         battlefield.add(target);
 
         Spell s = new Spell(1, 1, 1, 1, "Terror", "1B", B, false);
-        effect = new Terror(s);
+        effect = new Terror();
+        s.addEffect(effect);
 
     }
 
@@ -78,8 +79,9 @@ public class TerrorTest {
     }
 
     private void addTargetInvulnerability() {
-        target.effects.add(new StaticIndestructible(target, new Condition[]{new ConditionInstance(new int[]{target.instanceID})}));
-        target.effects.get(0).execute();
+        Effect e = new StaticIndestructible(new Condition[]{new ConditionInstance(new int[]{target.instanceID})});
+        target.addEffect(e);
+        e.execute();
     }
 
     private void activateAndExecuteEffect() {
