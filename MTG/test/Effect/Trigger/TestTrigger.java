@@ -18,18 +18,12 @@ import Game.Game;
 import static Game.Game.battlefield;
 import static Game.Game.stack;
 import Trigger.TriggerEnterTheBattlefield;
-import org.junit.After;
 import org.junit.AfterClass;
 import static org.junit.Assert.assertEquals;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class TestTrigger {
-
-    @BeforeClass
-    public static void setUpClass() {
-    }
 
     @AfterClass
     public static void tearDownClass() {
@@ -37,9 +31,6 @@ public class TestTrigger {
     private Game game;
     private Permanent target;
     private Effect effect;
-
-    public TestTrigger() {
-    }
 
     @Before
     public void setUp() {
@@ -53,10 +44,6 @@ public class TestTrigger {
         effect = new Terror(s);
 
         target.effects.add(new TriggeredEffect(1, new TriggerEnterTheBattlefield(new Condition[]{new ConditionColorPositive(W)}), effect));
-    }
-
-    @After
-    public void tearDown() {
     }
 
     @Test

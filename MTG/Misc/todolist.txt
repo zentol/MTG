@@ -2,9 +2,6 @@ rule check:
 "whenever x happens,you may pay y. if you do, do z."
 is z triggered or activated?
 
-non-creature permanent tapable?
-    YES!
-
 Milestones:
     combat
         
@@ -12,7 +9,7 @@ check validity and costs when playing an ability
 
 rework resolving of spells/permanents
     spells:
-        shoul work like effects?
+        should work like effects?
 
 turn
     phases
@@ -34,15 +31,13 @@ Effects
         extend from activated effect
         abstract method payCost()
     global effects
-    triggers
-        global triggers
     periodic effect validity checking
 
 Actions
     attack
     block
 
-Trigger
+Trigger/Event
     At the beginning of upkeep/combat/etc.
     enter the battlefield(conditions (green creature/etc.))
     card drawn/discarded
