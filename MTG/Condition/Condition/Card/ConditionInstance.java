@@ -14,7 +14,7 @@ public class ConditionInstance extends Condition<Card> {
     public boolean evaluate(Card target) {
         boolean instanceFound = false;
         for (int instanceID : instanceIDs) {
-            instanceFound |= target.isInstance(instanceID);
+            instanceFound |= target.equalsInstance(instanceID);
         }
         return instanceFound;
     }

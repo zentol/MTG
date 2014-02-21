@@ -3,11 +3,7 @@ package Card;
 import Card.Aspect.Aspect;
 import Card.Aspect.Permanent.PermanentAspect;
 import Card.Aspect.Spell.SpellAspect;
-import static Card.Color.Color.B;
-import static Card.Color.Color.G;
-import static Card.Color.Color.R;
-import static Card.Color.Color.U;
-import static Card.Color.Color.W;
+import static Card.Color.Color.*;
 import Effect.Effect;
 import Modifier.Modifier;
 import java.util.ArrayList;
@@ -23,13 +19,14 @@ public abstract class Card {
     public String cost;
     public int colors;
     public boolean legendary;
+    public int cardType;
 
     public ArrayList<Modifier> modifiers;
     public ArrayList<Effect> effects;
     public ArrayList<Aspect> aspects;
 
     public Card(int cardID, int instanceID, int ownerID, int controllerID,
-            String name, String cost, int colors, boolean legendary) {
+            String name, String cost, int colors, boolean legendary, int cardType) {
         this.cardID = cardID;
         this.instanceID = instanceID;
         this.ownerID = ownerID;
@@ -43,27 +40,29 @@ public abstract class Card {
         this.modifiers = new ArrayList();
         this.effects = new ArrayList();
         this.aspects = new ArrayList();
+
+        this.cardType = cardType;
     }
-    
-    public void addEffect(Effect effect){
+
+    public void addEffect(Effect effect) {
         effects.add(effect);
         effect.setSource(this);
     }
 
 //Meta--------------------------------------------------------------------------
-    public boolean isCard(int cardID) {
+    public boolean equalsCard(int cardID) {
         return this.cardID == cardID;
     }
 
-    public boolean isInstance(int instanceID) {
+    public boolean equalsInstance(int instanceID) {
         return this.instanceID == instanceID;
     }
 
-    public boolean isOwner(int ownerID) {
+    public boolean equalsOwner(int ownerID) {
         return this.ownerID == ownerID;
     }
 
-    public boolean isController(int controllerID) {
+    public boolean equalsController(int controllerID) {
         return this.controllerID == controllerID;
     }
 
@@ -76,11 +75,13 @@ public abstract class Card {
         return aspects.getClass().isInstance(SpellAspect.class);
     }
 
-    public abstract int getType();
+    public int getType() {
+        return cardType;
+    }
 
     public boolean hasAspect(int aspect) {
-        for (int x = 0; x < aspects.size(); x++) {
-            if (aspects.get(x).getKey() == aspect) {
+        for (Aspect a : aspects) {
+            if (a.getAspectType() == aspect) {
                 return true;
             }
         }
@@ -88,9 +89,9 @@ public abstract class Card {
     }
 
     public Aspect getAspect(int aspect) {
-        for (int x = 0; x < aspects.size(); x++) {
-            if (aspects.get(x).getKey() == aspect) {
-                return aspects.get(x);
+        for (Aspect a : aspects) {
+            if (a.getAspectType() == aspect) {
+                return a;
             }
         }
         return null;
@@ -100,7 +101,7 @@ public abstract class Card {
         int[] keys = new int[aspects.size() + 1];
         keys[0] = getType();
         for (int x = 1; x < keys.length; x++) {
-            keys[x] = aspects.get(x).getKey();
+            keys[x] = aspects.get(x).getAspectType();
         }
         return keys;
     }

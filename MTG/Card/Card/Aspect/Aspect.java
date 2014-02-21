@@ -16,10 +16,17 @@ public abstract class Aspect {
     public static final int KEY_ASPECT_SORCERY = 9;
 
     public ArrayList<String> subType;
+    public final int aspectType;
+
+    public Aspect(int aspectType) {
+        this.aspectType = aspectType;
+    }
 
     public boolean hasType(String type) {
         return subType.contains(type);
     }
 
-    public abstract int getKey();
+    public int getAspectType() {
+        return aspectType;
+    }
 }

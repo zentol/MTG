@@ -12,6 +12,6 @@ public class ConditionController extends Condition<Card> {
 
     @Override
     public boolean evaluate(Card target) {
-        return target.isController(controllerID);
+        return target.equalsController(controllerID);
     }
 }

@@ -12,6 +12,6 @@ public class ConditionOther extends Condition<Card> {
 
     @Override
     public boolean evaluate(Card target) {
-        return target.isInstance(instanceID);
+        return target.equalsInstance(instanceID);
     }
 }

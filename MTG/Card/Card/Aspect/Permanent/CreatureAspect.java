@@ -11,7 +11,7 @@ public class CreatureAspect extends PermanentAspect {
     public boolean blocked;
 
     public CreatureAspect(int attack, int defense, String[] types) {
-        super(types);
+        super(types, KEY_ASPECT_CREATURE);
         this.summoningSickness = true;
         this.attack = attack;
         this.defense = defense;
@@ -19,11 +19,6 @@ public class CreatureAspect extends PermanentAspect {
         this.attacking = false;
         this.blocking = false;
         this.blocked = false;
-    }
-
-    @Override
-    public int getKey() {
-        return KEY_ASPECT_CREATURE;
     }
 
     public void disableSummoningSickness() {

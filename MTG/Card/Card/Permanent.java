@@ -13,13 +13,8 @@ public class Permanent extends Card {
     private boolean untapped;
 
     public Permanent(int cardID, int instanceID, int ownerID, int controllerID, String name, String cost, int colors, boolean legendary) {
-        super(cardID, instanceID, ownerID, controllerID, name, cost, colors, legendary);
+        super(cardID, instanceID, ownerID, controllerID, name, cost, colors, legendary, KEY_ASPECT_PERMANENT);
         this.untapped = true;
-    }
-
-    @Override
-    public int getType() {
-        return KEY_ASPECT_PERMANENT;
     }
 
 //Aspect------------------------------------------------------------------------
