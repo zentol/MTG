@@ -10,7 +10,7 @@ public abstract class StaticEffect extends Effect {
     protected final Condition[] conditions;
 
     public StaticEffect(int targetCount, Condition[] conditions) {
-        super(targetCount);
+        super(targetCount, KEY_EFFECT_TYPE_STATIC);
         this.conditions = conditions;
     }
 
@@ -31,9 +31,4 @@ public abstract class StaticEffect extends Effect {
     }
 
     protected abstract void executeActions(Card target);
-
-    @Override
-    public int getType() {
-        return KEY_EFFECT_TYPE_STATIC;
-    }
 }

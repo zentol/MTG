@@ -10,14 +10,9 @@ public class TriggeredEffect extends Effect {
     private final Effect effect;
 
     public TriggeredEffect(int targetCount, Trigger trigger, Effect effect) {
-        super(effect.targetCount);
+        super(effect.targetCount, KEY_EFFECT_TYPE_TRIGGERED);
         this.trigger = trigger;
         this.effect = effect;
-    }
-
-    @Override
-    public int getType() {
-        return KEY_EFFECT_TYPE_TRIGGERED;
     }
 
     public void evaluateTrigger(Event event) {

@@ -1,5 +1,6 @@
 package Effect.Spell;
 
+import Effect.SpellEffect;
 import static Action.Destroy.destroyTarget;
 import static Action.Target.target;
 import Card.Card;

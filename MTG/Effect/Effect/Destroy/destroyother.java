@@ -13,7 +13,7 @@ public class destroyother extends Effect {
     private final Permanent source;
 
     public destroyother(Permanent source, int targetCount) {
-        super(targetCount);
+        super(targetCount,0);
         this.source = source;
     }
 
@@ -25,10 +25,4 @@ public class destroyother extends Effect {
     public void execute() {
         destroyAll(new Condition[]{new ConditionOther(source.instanceID), new ConditionSubType(new String[]{SOLDIER})}, null);
     }
-
-    @Override
-    public int getType() {
-        return 0;
-    }
-
 }
