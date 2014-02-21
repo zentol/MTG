@@ -21,7 +21,6 @@ import static Game.Game.stack;
 import Trigger.TriggerEnterTheBattlefield;
 import org.junit.AfterClass;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 

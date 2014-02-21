@@ -3,7 +3,6 @@ package Effect;
 import Card.Card;
 import Condition.Condition;
 import static Condition.Condition.checkConditions;
-import Effect.Effect;
 import static Game.Game.battlefield;
 import Game.InvalidTargetException;
 

@@ -5,11 +5,7 @@
  */
 package Card;
 
-import static Card.Aspect.Aspect.KEY_ASPECT_ARTIFACT;
-import static Card.Aspect.Aspect.KEY_ASPECT_CREATURE;
-import static Card.Aspect.Aspect.KEY_ASPECT_ENCHANTMENT;
-import static Card.Aspect.Aspect.KEY_ASPECT_LAND;
-import static Card.Aspect.Aspect.KEY_ASPECT_PLANESWALKER;
+import static Card.Aspect.Aspect.*;
 import Card.Aspect.Permanent.CreatureAspect;
 import static Card.Aspect.Permanent.Type.ArtifactType.EQUIPMENT;
 import static Card.Aspect.Permanent.Type.CreatureType.MYR;
@@ -17,8 +13,7 @@ import static Card.Aspect.Permanent.Type.CreatureType.SOLDIER;
 import static Card.Aspect.Permanent.Type.EnchantmentType.AURA;
 import static Card.Aspect.Permanent.Type.LandType.GATE;
 import static Card.Aspect.Permanent.Type.PlaneswalkerType.JACE;
-import static Card.Color.Color.B;
-import static Card.Color.Color.W;
+import static Card.Color.Color.*;
 import Condition.Card.ConditionInstance;
 import Condition.Condition;
 import Effect.Static.StaticIndestructible;

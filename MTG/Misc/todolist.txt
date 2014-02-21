@@ -2,10 +2,6 @@ rule check:
 "whenever x happens,you may pay y. if you do, do z."
 is z triggered or activated?
 
-enters tapped
-    add as boolean to perm. constructor?
-        using the tap action might will throw events
-
 Milestones:
     combat
         
