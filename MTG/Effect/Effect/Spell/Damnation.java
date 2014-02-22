@@ -3,13 +3,11 @@ package Effect.Spell;
 import Effect.SpellEffect;
 import static Action.Destroy.destroyAll;
 import Card.Card;
-import Card.Spell;
 import Condition.Condition;
 
 public class Damnation extends SpellEffect {
-    public Damnation(Spell source) {
+    public Damnation() {
         super(0);
-        this.source = source;
     }
 
     @Override
