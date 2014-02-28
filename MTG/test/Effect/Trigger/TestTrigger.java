@@ -2,7 +2,7 @@ package Effect.Trigger;
 
 import Ability.Ability;
 import static Ability.Ability.KEY_ABILITY_TYPE_TRIGGERED;
-import Ability.Effect.Destroy.TargetedDestruction;
+import Ability.Effect.Destroy.Destruction;
 import static Action.FireEvent.fireEvent;
 import static Action.PutIntoPlay.putIntoPlay;
 import static Card.Aspect.Aspect.KEY_ASPECT_ARTIFACT;
@@ -42,7 +42,7 @@ public class TestTrigger {
         target.addCreatureAspect(1, 1, new String[]{SOLDIER, MYR});
         battlefield.add(target);
 
-        effect = new TargetedDestruction(
+        effect = new Destruction(
                 1,
                 KEY_ABILITY_TYPE_TRIGGERED, 
                 new Condition[]{

@@ -8,7 +8,7 @@ package Effect.Destroy;
 import Ability.Ability;
 import static Ability.Ability.KEY_ABILITY_TYPE_SPELL;
 import static Ability.Ability.KEY_ABILITY_TYPE_STATIC;
-import Ability.Effect.Destroy.TargetedDestruction;
+import Ability.Effect.Destroy.Destruction;
 import Ability.Effect.Protection.AddIndestructible;
 import static Card.Aspect.Aspect.KEY_ASPECT_ARTIFACT;
 import static Card.Aspect.Permanent.Type.CreatureType.MYR;
@@ -60,7 +60,7 @@ public class TerrorTest {
         battlefield.add(target);
 
         Spell s = new Spell(1, 1, 1, 1, "Terror", "1B", B, false);
-        effect = new TargetedDestruction(
+        effect = new Destruction(
                 1,
                 KEY_ABILITY_TYPE_SPELL, 
                 new Condition[]{
