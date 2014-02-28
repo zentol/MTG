@@ -17,11 +17,7 @@ public class ResolvePermanent extends Resolve {
     }
 
     @Override
-    public void activate(Card[] targets) {
-    }
-
-    @Override
-    public void execute() {
+    protected void executeActions(Card ignored) {
         if (target.getClass().equals(Permanent.class)) {
             putIntoPlay((Permanent) target);
         }

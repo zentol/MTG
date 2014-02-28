@@ -5,6 +5,11 @@
  */
 package Effect.Destroy;
 
+import Ability.Ability;
+import static Ability.Ability.KEY_ABILITY_TYPE_SPELL;
+import static Ability.Ability.KEY_ABILITY_TYPE_STATIC;
+import Ability.Effect.Destroy.TargetedDestruction;
+import Ability.Effect.Protection.AddIndestructible;
 import static Card.Aspect.Aspect.KEY_ASPECT_ARTIFACT;
 import static Card.Aspect.Permanent.Type.CreatureType.MYR;
 import static Card.Aspect.Permanent.Type.CreatureType.SOLDIER;
@@ -17,9 +22,6 @@ import Condition.Card.ConditionAspect;
 import Condition.Card.ConditionColor;
 import Condition.Card.ConditionInstance;
 import Condition.Condition;
-import Ability.Ability;
-import Ability.Effect.Destroy.TargetedDestruction;
-import Ability.Effect.Static.StaticIndestructible;
 import Game.Game;
 import static Game.Game.battlefield;
 import org.junit.After;
@@ -58,10 +60,15 @@ public class TerrorTest {
         battlefield.add(target);
 
         Spell s = new Spell(1, 1, 1, 1, "Terror", "1B", B, false);
-        effect = new TargetedDestruction(1, new Condition[]{
-            new ConditionColor(B, false),
-            new ConditionAspect(KEY_ASPECT_ARTIFACT, false)
-        });
+        effect = new TargetedDestruction(
+                1,
+                KEY_ABILITY_TYPE_SPELL, 
+                new Condition[]{
+                    new ConditionColor(B, false),
+                    new ConditionAspect(KEY_ASPECT_ARTIFACT, false)
+                },
+                null,
+                null);
         s.addEffect(effect);
 
     }
@@ -85,7 +92,14 @@ public class TerrorTest {
     }
 
     private void addTargetInvulnerability() {
-        Ability e = new StaticIndestructible(new Condition[]{new ConditionInstance(new int[]{target.instanceID})});
+        Ability e = new AddIndestructible(
+                0,
+                KEY_ABILITY_TYPE_STATIC,
+                new Condition[]{
+                    new ConditionInstance(new int[]{target.instanceID})},
+                null,
+                null
+        );
         target.addEffect(e);
         e.execute();
     }

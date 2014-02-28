@@ -13,12 +13,7 @@ public class ResolveEffect extends Resolve {
     }
 
     @Override
-    public void activate(Card[] targets) {
-    }
-
-    @Override
-    public void execute() {
+    protected void executeActions(Card ignored) {
         target.execute();
     }
-
 }

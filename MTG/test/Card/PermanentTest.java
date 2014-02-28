@@ -1,5 +1,8 @@
 package Card;
 
+import static Ability.Ability.KEY_ABILITY_TYPE_STATIC;
+import Ability.Effect.Protection.AddIndestructible;
+import Ability.Effect.Protection.AddInvulnerableColor;
 import static Card.Aspect.Aspect.*;
 import Card.Aspect.Permanent.CreatureAspect;
 import static Card.Aspect.Permanent.Type.ArtifactType.EQUIPMENT;
@@ -11,8 +14,6 @@ import static Card.Aspect.Permanent.Type.PlaneswalkerType.JACE;
 import static Card.Color.Color.*;
 import Condition.Card.ConditionInstance;
 import Condition.Condition;
-import Ability.Effect.Static.StaticIndestructible;
-import Ability.Effect.Static.StaticInvulnerableColor;
 import Game.Game;
 import static Game.Game.battlefield;
 import Modifier.Damaging.ModifierIndestructible;
@@ -126,14 +127,26 @@ public class PermanentTest {
      */
     @Test
     public void testHasEffect() {
-        permanent.addEffect(new StaticIndestructible(new Condition[]{new ConditionInstance(new int[]{permanent.instanceID})}));
-        assertTrue(permanent.hasEffect(StaticIndestructible.class));
-        assertFalse(permanent.hasEffect(StaticInvulnerableColor.class));
+        permanent.addEffect(new AddIndestructible(
+                0,
+                KEY_ABILITY_TYPE_STATIC,
+                new Condition[]{
+                    new ConditionInstance(new int[]{permanent.instanceID})},
+                null,
+                null));
+        assertTrue(permanent.hasEffect(AddIndestructible.class));
+        assertFalse(permanent.hasEffect(AddInvulnerableColor.class));
     }
 
     @Test
     public void testHasModifier() {
-        permanent.addEffect(new StaticIndestructible(new Condition[]{new ConditionInstance(new int[]{permanent.instanceID})}));
+        permanent.addEffect(new AddIndestructible(
+                0,
+                KEY_ABILITY_TYPE_STATIC,
+                new Condition[]{
+                    new ConditionInstance(new int[]{permanent.instanceID})},
+                null,
+                null));
         permanent.effects.get(0).execute();
         assertTrue(permanent.hasModifier(ModifierIndestructible.class));
         assertFalse(permanent.hasModifier(ModifierInvulnerableColor.class));

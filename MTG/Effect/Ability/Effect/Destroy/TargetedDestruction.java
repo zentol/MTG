@@ -1,42 +1,26 @@
 package Ability.Effect.Destroy;
 
-import Ability.SpellAbility;
+import Ability.Ability;
+import Ability.Cost;
 import static Action.Destroy.destroyTarget;
-import static Action.Target.target;
 import Card.Card;
 import Card.Permanent;
 import Condition.Condition;
-import static Condition.Condition.checkConditions;
 import Game.InvalidTargetException;
+import Trigger.Trigger;
 
-public class TargetedDestruction extends SpellAbility {
-    private final Condition[] conditions;
-    private Card target;
+public class TargetedDestruction extends Ability {
 
-    public TargetedDestruction(int targets, Condition[] conditions) {
-        super(targets);
-        this.conditions=conditions;
+    public TargetedDestruction(int targets, int type, Condition[] conditions, Cost cost, Trigger trigger) {
+        super(targets, type, conditions, cost, trigger);
     }
 
     @Override
-    public void activate(Card[] targets) {
-        target = targets[0];
-        target(target, source);
-        if (!checkConditions((Permanent) target, conditions)) {
-            throw new InvalidTargetException();
-        }
-    }
-
-    @Override
-    public void execute() {
+    protected void executeActions(Card target) {
         try {
             destroyTarget((Permanent) target, conditions, source);
         } catch (InvalidTargetException ITE) {
             //counter(this);
         }
-    }
-
-    @Override
-    public void payCost() {
     }
 }

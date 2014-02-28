@@ -1,5 +1,6 @@
 package Ability.Resolve;
 
+import static Action.Select.select;
 import Card.Card;
 
 public class ResolveSpell extends Resolve {
@@ -13,10 +14,8 @@ public class ResolveSpell extends Resolve {
     }
 
     @Override
-    public void activate(Card[] targets) {
-    }
-
-    @Override
-    public void execute() {
+    protected void executeActions(Card target) {
+        target.effects.get(0).activate(select(target.effects.get(0).targetCount));
+        target.effects.get(0).execute();
     }
 }
