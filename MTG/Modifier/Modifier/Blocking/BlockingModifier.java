@@ -1,12 +1,12 @@
 package Modifier.Blocking;
 
 import Card.Card;
-import Effect.Effect;
+import Ability.Ability;
 import Modifier.Modifier;
 
 public abstract class BlockingModifier extends Modifier {
 
-    public BlockingModifier(Card target, Effect source) {
+    public BlockingModifier(Card target, Ability source) {
         super(target, source);
     }
 

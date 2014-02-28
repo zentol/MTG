@@ -1,12 +1,12 @@
-package Effect.Static;
+package Ability.Effect.Static;
 
-import Effect.StaticEffect;
+import Ability.StaticAbility;
 import static Action.Protection.addUntargetableColor;
 import Card.Card;
 import Card.Permanent;
 import Condition.Condition;
 
-public class StaticUntargetableColor extends StaticEffect {
+public class StaticUntargetableColor extends StaticAbility {
     private final int color;
 
     public StaticUntargetableColor(int color, Condition[] conditions) {

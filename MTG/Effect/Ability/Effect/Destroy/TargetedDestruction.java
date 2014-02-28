@@ -1,27 +1,21 @@
-package Effect.Spell;
+package Ability.Effect.Destroy;
 
-import Effect.SpellEffect;
+import Ability.SpellAbility;
 import static Action.Destroy.destroyTarget;
 import static Action.Target.target;
 import Card.Card;
-import static Card.Color.Color.B;
 import Card.Permanent;
-import Condition.Card.ConditionColorNegative;
 import Condition.Condition;
 import static Condition.Condition.checkConditions;
-import Condition.Permanent.ConditionVulnerableColor;
 import Game.InvalidTargetException;
 
-public class Terror extends SpellEffect {
+public class TargetedDestruction extends SpellAbility {
     private final Condition[] conditions;
     private Card target;
 
-    public Terror() {
-        super(1);
-        conditions = new Condition[]{
-            new ConditionColorNegative(B),
-            new ConditionVulnerableColor(B)
-        };
+    public TargetedDestruction(int targets, Condition[] conditions) {
+        super(targets);
+        this.conditions=conditions;
     }
 
     @Override
@@ -40,5 +34,9 @@ public class Terror extends SpellEffect {
         } catch (InvalidTargetException ITE) {
             //counter(this);
         }
+    }
+
+    @Override
+    public void payCost() {
     }
 }

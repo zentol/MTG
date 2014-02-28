@@ -4,7 +4,7 @@ import Card.Aspect.Aspect;
 import Card.Aspect.Permanent.PermanentAspect;
 import Card.Aspect.Spell.SpellAspect;
 import static Card.Color.Color.*;
-import Effect.Effect;
+import Ability.Ability;
 import Modifier.Modifier;
 import java.util.ArrayList;
 
@@ -22,7 +22,7 @@ public abstract class Card {
     public int cardType;
 
     public ArrayList<Modifier> modifiers;
-    public ArrayList<Effect> effects;
+    public ArrayList<Ability> effects;
     public ArrayList<Aspect> aspects;
 
     public Card(int cardID, int instanceID, int ownerID, int controllerID,
@@ -44,7 +44,7 @@ public abstract class Card {
         this.cardType = cardType;
     }
 
-    public void addEffect(Effect effect) {
+    public void addEffect(Ability effect) {
         effects.add(effect);
         effect.setSource(this);
     }

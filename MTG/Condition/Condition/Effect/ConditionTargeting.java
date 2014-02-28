@@ -1,14 +1,14 @@
 package Condition.Effect;
 
 import Condition.Condition;
-import Effect.Effect;
+import Ability.Ability;
 
-public class ConditionTargeting extends Condition<Effect> {
+public class ConditionTargeting extends Condition<Ability> {
     public ConditionTargeting() {
     }
 
     @Override
-    public boolean evaluate(Effect target) {
+    public boolean evaluate(Ability target) {
         return target.targetCount > 0;
     }
 

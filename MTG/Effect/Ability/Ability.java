@@ -1,18 +1,18 @@
-package Effect;
+package Ability;
 
 import Card.Card;
 
-public abstract class Effect {
+public abstract class Ability {
     public Card source;
     public final int targetCount;
     public final int type;
 
-    public static final int KEY_EFFECT_TYPE_STATIC = 1;
-    public static final int KEY_EFFECT_TYPE_ACTIVATED = 2;
-    public static final int KEY_EFFECT_TYPE_TRIGGERED = 3;
-    public static final int KEY_EFFECT_TYPE_SPELL = 4;
+    public static final int KEY_ABILITY_TYPE_STATIC = 1;
+    public static final int KEY_ABILITY_TYPE_ACTIVATED = 2;
+    public static final int KEY_ABILITY_TYPE_TRIGGERED = 3;
+    public static final int KEY_ABILITY_TYPE_SPELL = 4;
 
-    public Effect(int targetCount, int type) {
+    public Ability(int targetCount, int type) {
         this.targetCount = targetCount;
         this.type = type;
     }
@@ -21,6 +21,8 @@ public abstract class Effect {
 
     public abstract void execute();
 
+    public abstract void payCost();
+
     public int getType() {
         return type;
     }
@@ -28,5 +30,4 @@ public abstract class Effect {
     public void setSource(Card source) {
         this.source = source;
     }
-
 }

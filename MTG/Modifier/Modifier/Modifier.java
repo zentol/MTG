@@ -1,14 +1,14 @@
 package Modifier;
 
 import Card.Card;
-import Effect.Effect;
+import Ability.Ability;
 import Game.InvalidTargetException;
 
 public abstract class Modifier {
     public final Card target;
-    public final Effect source;
+    public final Ability source;
 
-    public Modifier(Card target, Effect source) {
+    public Modifier(Card target, Ability source) {
         this.target = target;
         this.source = source;
     }

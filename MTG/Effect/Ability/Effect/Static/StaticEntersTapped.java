@@ -1,11 +1,11 @@
-package Effect.Static;
+package Ability.Effect.Static;
 
 import Card.Card;
 import Card.Permanent;
 import Condition.Condition;
-import Effect.StaticEffect;
+import Ability.StaticAbility;
 
-public class StaticEntersTapped extends StaticEffect {
+public class StaticEntersTapped extends StaticAbility {
 
     public StaticEntersTapped(Condition[] conditions) {
         super(0, conditions);

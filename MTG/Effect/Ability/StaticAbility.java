@@ -1,4 +1,4 @@
-package Effect;
+package Ability;
 
 import Card.Card;
 import Condition.Condition;
@@ -6,11 +6,11 @@ import static Condition.Condition.checkConditions;
 import static Game.Game.battlefield;
 import Game.InvalidTargetException;
 
-public abstract class StaticEffect extends Effect {
+public abstract class StaticAbility extends Ability {
     protected final Condition[] conditions;
 
-    public StaticEffect(int targetCount, Condition[] conditions) {
-        super(targetCount, KEY_EFFECT_TYPE_STATIC);
+    public StaticAbility(int targetCount, Condition[] conditions) {
+        super(targetCount, KEY_ABILITY_TYPE_STATIC);
         this.conditions = conditions;
     }
 
@@ -31,4 +31,8 @@ public abstract class StaticEffect extends Effect {
     }
 
     protected abstract void executeActions(Card target);
+
+    @Override
+    public void payCost() {
+    }
 }

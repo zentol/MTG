@@ -1,16 +1,16 @@
-package Effect;
+package Ability;
 
 import static Action.Play.playAbility;
 import Card.Card;
 import Event.Event;
 import Trigger.Trigger;
 
-public class TriggeredEffect extends Effect {
+public class TriggeredAbility extends Ability {
     private final Trigger trigger;
-    private final Effect effect;
+    private final Ability effect;
 
-    public TriggeredEffect(int targetCount, Trigger trigger, Effect effect) {
-        super(effect.targetCount, KEY_EFFECT_TYPE_TRIGGERED);
+    public TriggeredAbility(int targetCount, Trigger trigger, Ability effect) {
+        super(effect.targetCount, KEY_ABILITY_TYPE_TRIGGERED);
         this.trigger = trigger;
         this.effect = effect;
     }
@@ -29,5 +29,10 @@ public class TriggeredEffect extends Effect {
     @Override
     public void execute() {
         effect.execute();
+    }
+    
+    @Override
+    public void payCost(){
+        effect.payCost();
     }
 }

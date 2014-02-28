@@ -6,7 +6,7 @@ import Card.Aspect.Permanent.CreatureAspect;
 import Card.Aspect.Permanent.EnchantmentAspect;
 import Card.Aspect.Permanent.LandAspect;
 import Card.Aspect.Permanent.PlaneswalkerAspect;
-import Effect.Effect;
+import Ability.Ability;
 import Modifier.Modifier;
 
 public class Permanent extends Card {
@@ -52,7 +52,7 @@ public class Permanent extends Card {
     }
 
 //------------------------------------------------------------------------------
-    public boolean hasEffect(Class<? extends Effect> effect) {
+    public boolean hasEffect(Class<? extends Ability> effect) {
         for (int x = 0; x < effects.size(); x++) {
             if (effects.get(x).getClass().equals(effect)) {
                 return true;

@@ -1,12 +1,12 @@
-package Effect.Static;
+package Ability.Effect.Static;
 
-import Effect.StaticEffect;
+import Ability.StaticAbility;
 import static Action.Protection.addInvulnerablityColor;
 import Card.Card;
 import Card.Permanent;
 import Condition.Condition;
 
-public class StaticInvulnerableColor extends StaticEffect {
+public class StaticInvulnerableColor extends StaticAbility {
     private final int color;
 
     public StaticInvulnerableColor(Permanent target, int color, Condition[] conditions) {

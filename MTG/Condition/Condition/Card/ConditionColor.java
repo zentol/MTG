@@ -3,24 +3,26 @@ package Condition.Card;
 import Card.Card;
 import Condition.Condition;
 
-public class ConditionColorPositive extends Condition<Card> {
+public class ConditionColor extends Condition<Card> {
     private final int colors;
+    private final boolean mode;
 
-    public ConditionColorPositive(int colors) {
+    public ConditionColor(int colors, boolean mode) {
         this.colors = colors;
+        this.mode = mode;
     }
 
     @Override
     public boolean evaluate(Card target) {
         if (colors == 0) {
-            return target.isColorless();
+            return mode==target.isColorless();
         }
         for (int x = 1; x < 6; x++) {
             if ((colors & x) == x && !target.isColor(x)) {
-                return false;
+                return mode==false;
             }
         }
-        return true;
+        return mode==true;
     }
 
 }

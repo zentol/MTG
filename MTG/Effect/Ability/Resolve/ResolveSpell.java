@@ -1,4 +1,4 @@
-package Effect.Resolve;
+package Ability.Resolve;
 
 import Card.Card;
 

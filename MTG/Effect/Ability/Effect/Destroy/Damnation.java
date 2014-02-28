@@ -1,11 +1,11 @@
-package Effect.Spell;
+package Ability.Effect.Destroy;
 
-import Effect.SpellEffect;
+import Ability.SpellAbility;
 import static Action.Destroy.destroyAll;
 import Card.Card;
 import Condition.Condition;
 
-public class Damnation extends SpellEffect {
+public class Damnation extends SpellAbility {
     public Damnation() {
         super(0);
     }
@@ -18,5 +18,9 @@ public class Damnation extends SpellEffect {
     @Override
     public void execute() {
         destroyAll(new Condition[0], source);
+    }
+
+    @Override
+    public void payCost() {
     }
 }

@@ -1,12 +1,12 @@
 package Modifier.Targeting;
 
 import Card.Card;
-import Effect.Effect;
+import Ability.Ability;
 
 public class ModifierUntargetableAspect extends TargetingModifier {
     private final int aspect;
 
-    public ModifierUntargetableAspect(Card target, Effect source, int aspect) {
+    public ModifierUntargetableAspect(Card target, Ability source, int aspect) {
         super(target, source);
         this.aspect = aspect;
     }

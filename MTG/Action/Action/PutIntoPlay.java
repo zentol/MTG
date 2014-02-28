@@ -2,16 +2,16 @@ package Action;
 
 import static Action.FireEvent.fireEvent;
 import Card.Permanent;
-import Effect.Effect;
-import static Effect.Effect.KEY_EFFECT_TYPE_STATIC;
+import Ability.Ability;
+import static Ability.Ability.KEY_ABILITY_TYPE_STATIC;
 import Event.EventEnterTheBattlefield;
 import static Game.Game.battlefield;
 
 public class PutIntoPlay {
     public static void putIntoPlay(Permanent target) {
         battlefield.add(target);
-        for(Effect effect:target.effects){
-            if(effect.getType()==KEY_EFFECT_TYPE_STATIC){
+        for(Ability effect:target.effects){
+            if(effect.getType()==KEY_ABILITY_TYPE_STATIC){
                 effect.execute();
             }
         }

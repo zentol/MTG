@@ -2,12 +2,12 @@ package Modifier.Targeting;
 
 import Card.Aspect.Aspect;
 import Card.Card;
-import Effect.Effect;
+import Ability.Ability;
 
 public class ModifierUntargetableSubType extends TargetingModifier {
     private final String[] subTypes;
 
-    public ModifierUntargetableSubType(Card target, Effect source, String[] subTypes) {
+    public ModifierUntargetableSubType(Card target, Ability source, String[] subTypes) {
         super(target, source);
         this.subTypes = subTypes;
     }

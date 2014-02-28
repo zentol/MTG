@@ -1,12 +1,12 @@
-package Effect.Static;
+package Ability.Effect.Static;
 
-import Effect.StaticEffect;
+import Ability.StaticAbility;
 import static Action.Protection.addUntargetableSubType;
 import Card.Card;
 import Card.Permanent;
 import Condition.Condition;
 
-public class StaticUntargetableSubType extends StaticEffect {
+public class StaticUntargetableSubType extends StaticAbility {
     private final String[] subTypes;
 
     public StaticUntargetableSubType(String[] subTypes, Condition[] conditions) {

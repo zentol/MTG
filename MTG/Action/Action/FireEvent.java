@@ -1,17 +1,17 @@
 package Action;
 
-import Effect.Effect;
-import static Effect.Effect.KEY_EFFECT_TYPE_TRIGGERED;
-import Effect.TriggeredEffect;
+import Ability.Ability;
+import static Ability.Ability.KEY_ABILITY_TYPE_TRIGGERED;
+import Ability.TriggeredAbility;
 import Event.Event;
 import static Game.Game.battlefield;
 
 public class FireEvent {
     public static void fireEvent(Event event) {
         for (int x = 0; x < battlefield.size(); x++) {
-            for (Effect effect : battlefield.get(x).effects) {
-                if (effect.getType() == KEY_EFFECT_TYPE_TRIGGERED) {
-                    ((TriggeredEffect) effect).evaluateTrigger(event);
+            for (Ability effect : battlefield.get(x).effects) {
+                if (effect.getType() == KEY_ABILITY_TYPE_TRIGGERED) {
+                    ((TriggeredAbility) effect).evaluateTrigger(event);
                 }
             }
         }

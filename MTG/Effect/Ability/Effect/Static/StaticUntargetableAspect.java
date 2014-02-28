@@ -1,12 +1,12 @@
-package Effect.Static;
+package Ability.Effect.Static;
 
-import Effect.StaticEffect;
+import Ability.StaticAbility;
 import static Action.Protection.addUntargetableColor;
 import Card.Card;
 import Card.Permanent;
 import Condition.Condition;
 
-public class StaticUntargetableAspect extends StaticEffect {
+public class StaticUntargetableAspect extends StaticAbility {
     private final int aspect;
 
     public StaticUntargetableAspect(int aspect, Condition[] conditions) {

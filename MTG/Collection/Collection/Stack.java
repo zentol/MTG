@@ -1,8 +1,8 @@
 package Collection;
 
-import Effect.Effect;
+import Ability.Ability;
 
-public class Stack extends Collection<Effect> {
+public class Stack extends Collection<Ability> {
 
     public void resolveStack() {
         while (collection.size() > 0) {

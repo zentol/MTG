@@ -11,7 +11,7 @@ import Collection.Hand;
 import Collection.Library;
 import Collection.Manapool;
 import Collection.Stack;
-import Effect.Effect;
+import Ability.Ability;
 import static Game.Phase.Beginning.phaseBeginning;
 import static Game.Phase.Combat.phaseCombat;
 import static Game.Phase.Ending.phaseEnding;
@@ -28,7 +28,7 @@ public class Game {
     public static ArrayList<Integer> lifepoints;
     public static Battlefield battlefield;
     public static Stack stack;
-    public static ArrayList<Effect> effects;
+    public static ArrayList<Ability> effects;
 
     public static int activePlayer = 0;
 

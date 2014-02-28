@@ -1,10 +1,10 @@
-package Effect.Resolve;
+package Ability.Resolve;
 
 import static Action.PutIntoPlay.putIntoPlay;
 import Card.Card;
 import Card.Permanent;
 import Card.Spell;
-import Effect.Effect;
+import Ability.Ability;
 
 public class ResolvePermanent extends Resolve {
     private final int ownerID;
@@ -26,7 +26,7 @@ public class ResolvePermanent extends Resolve {
             putIntoPlay((Permanent) target);
         }
         if (target.getClass().equals(Spell.class)) {
-            for (Effect effect : target.effects) {
+            for (Ability effect : target.effects) {
                 effect.execute();
             }
             target.resetModifiers();

@@ -5,7 +5,7 @@
  */
 package Effect.Destroy;
 
-import Effect.Spell.Terror;
+import static Card.Aspect.Aspect.KEY_ASPECT_ARTIFACT;
 import static Card.Aspect.Permanent.Type.CreatureType.MYR;
 import static Card.Aspect.Permanent.Type.CreatureType.SOLDIER;
 import Card.Card;
@@ -13,10 +13,13 @@ import static Card.Color.Color.B;
 import static Card.Color.Color.W;
 import Card.Permanent;
 import Card.Spell;
+import Condition.Card.ConditionAspect;
+import Condition.Card.ConditionColor;
 import Condition.Card.ConditionInstance;
 import Condition.Condition;
-import Effect.Effect;
-import Effect.Static.StaticIndestructible;
+import Ability.Ability;
+import Ability.Effect.Destroy.TargetedDestruction;
+import Ability.Effect.Static.StaticIndestructible;
 import Game.Game;
 import static Game.Game.battlefield;
 import org.junit.After;
@@ -41,7 +44,7 @@ public class TerrorTest {
     }
     private Game game;
     private Permanent target;
-    private Effect effect;
+    private Ability effect;
 
     public TerrorTest() {
     }
@@ -55,7 +58,10 @@ public class TerrorTest {
         battlefield.add(target);
 
         Spell s = new Spell(1, 1, 1, 1, "Terror", "1B", B, false);
-        effect = new Terror();
+        effect = new TargetedDestruction(1, new Condition[]{
+            new ConditionColor(B, false),
+            new ConditionAspect(KEY_ASPECT_ARTIFACT, false)
+        });
         s.addEffect(effect);
 
     }
@@ -79,7 +85,7 @@ public class TerrorTest {
     }
 
     private void addTargetInvulnerability() {
-        Effect e = new StaticIndestructible(new Condition[]{new ConditionInstance(new int[]{target.instanceID})});
+        Ability e = new StaticIndestructible(new Condition[]{new ConditionInstance(new int[]{target.instanceID})});
         target.addEffect(e);
         e.execute();
     }

@@ -3,9 +3,9 @@ package Action;
 import static Action.Pay.payMana;
 import static Action.Select.select;
 import Card.Card;
-import Effect.Effect;
-import Effect.Resolve.ResolvePermanent;
-import Effect.Resolve.ResolveSpell;
+import Ability.Ability;
+import Ability.Resolve.ResolvePermanent;
+import Ability.Resolve.ResolveSpell;
 import static Game.Game.activePlayer;
 import static Game.Game.manapool;
 import static Game.Game.stack;
@@ -23,13 +23,13 @@ public abstract class Play {
         }
     }
 
-    public static void playAbility(Effect effect) {
+    public static void playAbility(Ability effect) {
         //if valid play
         //if cost paid
         addEffectToStack(effect);
     }
 
-    private static void addEffectToStack(Effect effect) {
+    private static void addEffectToStack(Ability effect) {
         if (effect.targetCount > 0) {
 
             Card[] targets = select(1);
