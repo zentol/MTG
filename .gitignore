@@ -28,9 +28,6 @@ local.properties
 # PDT-specific
 .buildpath
 
-*.mf
-*.xml
-*.properties
 *.class
 #################
 ## Visual Studio
