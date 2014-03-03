@@ -55,11 +55,33 @@ public class TerrorTest {
     public void setUp() {
         game = new Game(2);
 
-        target = new Permanent(1, 1, 0, 1, "Footsoldier", "W", W, false);
-        target.addCreatureAspect(1, 1, new String[]{SOLDIER, MYR});
+        target = new Permanent(1, 
+                1, 
+                0, 
+                1, 
+                "Footsoldier", 
+                "W", 
+                W, 
+                false
+        );
+        target.addCreatureAspect(1,
+                1, 
+                new String[]{
+                    SOLDIER, 
+                    MYR}
+        );
         battlefield.add(target);
 
-        Spell s = new Spell(1, 1, 1, 1, "Terror", "1B", B, false);
+        Spell s = new Spell(
+                1, 
+                1, 
+                1, 
+                1, 
+                "Terror", 
+                "1B", 
+                B, 
+                false
+        );
         effect = new Destruction(
                 1,
                 KEY_ABILITY_TYPE_SPELL, 
@@ -68,7 +90,8 @@ public class TerrorTest {
                     new ConditionAspect(KEY_ASPECT_ARTIFACT, false)
                 },
                 null,
-                null);
+                null
+        );
         s.addEffect(effect);
 
     }
@@ -96,7 +119,7 @@ public class TerrorTest {
                 0,
                 KEY_ABILITY_TYPE_STATIC,
                 new Condition[]{
-                    new ConditionInstance(new int[]{target.instanceID})},
+                    new ConditionInstance(target.instanceID)},
                 null,
                 null
         );

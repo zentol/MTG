@@ -6,6 +6,10 @@ import Condition.Condition;
 public class ConditionInstance extends Condition<Card> {
     private final int[] instanceIDs;
 
+    public ConditionInstance(int instanceID) {
+        this.instanceIDs = new int[]{instanceID};
+    }
+
     public ConditionInstance(int[] instanceIDs) {
         this.instanceIDs = instanceIDs;
     }
