@@ -12,6 +12,9 @@ import Modifier.Modifier;
 public class Permanent extends Card {
     private boolean untapped;
 
+    public Permanent() {
+    }
+
     public Permanent(int cardID, int instanceID, int ownerID, int controllerID, String name, String cost, int colors, boolean legendary) {
         super(cardID, instanceID, ownerID, controllerID, name, cost, colors, legendary, KEY_ASPECT_PERMANENT);
         this.untapped = true;
@@ -68,5 +71,57 @@ public class Permanent extends Card {
             }
         }
         return false;
+    }
+
+    public static final class PermanentBuilder {
+        Permanent target;
+
+        public PermanentBuilder(Permanent target) {
+            this.target = target;
+        }
+
+        public PermanentBuilder setCardID(int id) {
+            target.cardID = id;
+            return this;
+        }
+
+        public PermanentBuilder setInstanceID(int id) {
+            target.instanceID = id;
+            return this;
+        }
+
+        public PermanentBuilder setOwnerID(int id) {
+            target.ownerID = id;
+            return this;
+        }
+
+        public PermanentBuilder setControllerID(int id) {
+            target.controllerID = id;
+            return this;
+        }
+
+        public PermanentBuilder setName(String name) {
+            target.name = name;
+            return this;
+        }
+
+        public PermanentBuilder setCost(String cost) {
+            target.cost = cost;
+            return this;
+        }
+
+        public PermanentBuilder setColors(int colors) {
+            target.colors = colors;
+            return this;
+        }
+
+        public PermanentBuilder setLegendary(boolean legendary) {
+            target.legendary = legendary;
+            return this;
+        }
+    }
+
+    public static PermanentBuilder buildPermanent(Permanent target) {
+        return new PermanentBuilder(target);
     }
 }

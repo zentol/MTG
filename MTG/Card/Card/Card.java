@@ -10,9 +10,9 @@ import java.util.ArrayList;
 
 public abstract class Card {
 
-    public final int cardID;
-    public final int instanceID;
-    public final int ownerID;
+    public int cardID;
+    public int instanceID;
+    public int ownerID;
     public int controllerID;
 
     public String name;
@@ -24,6 +24,9 @@ public abstract class Card {
     public ArrayList<Modifier> modifiers;
     public ArrayList<Ability> effects;
     public ArrayList<Aspect> aspects;
+
+    public Card() {
+    }
 
     public Card(int cardID, int instanceID, int ownerID, int controllerID,
             String name, String cost, int colors, boolean legendary, int cardType) {

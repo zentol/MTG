@@ -39,7 +39,16 @@ public class PermanentTest {
     @Before
     public void setUp() {
         Game game = new Game(2);
-        permanent = new Permanent(1, 1, 0, 1, "Footsoldier", "W", W, false);
+        permanent = new Permanent();
+        Permanent.buildPermanent(permanent)
+                .setCardID(1)
+                .setInstanceID(1)
+                .setOwnerID(0)
+                .setControllerID(0)
+                .setName("Footsoldier")
+                .setCost("W")
+                .setColors(W)
+                .setLegendary(false);
         battlefield.add(permanent);
 
     }
