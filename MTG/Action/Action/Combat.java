@@ -17,9 +17,9 @@ public class Combat {
 
     public static void block(Card blocker, Card attacker) {
     }
-    
-    public static void fight(Permanent combatant1, Permanent combatant2){
-        dealDamageToPermanent(((CreatureAspect)combatant1.getAspect(KEY_ASPECT_CREATURE)).getAttack(),combatant2);
-        dealDamageToPermanent(((CreatureAspect)combatant2.getAspect(KEY_ASPECT_CREATURE)).getAttack(),combatant1);
+
+    public static void fight(Permanent combatant1, Permanent combatant2) {
+        dealDamageToPermanent(((CreatureAspect) combatant1.getAspect(KEY_ASPECT_CREATURE)).getAttack(), combatant2);
+        dealDamageToPermanent(((CreatureAspect) combatant2.getAspect(KEY_ASPECT_CREATURE)).getAttack(), combatant1);
     }
 }

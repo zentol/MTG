@@ -38,7 +38,7 @@ public abstract class Ability {
         }
     }
 
-    public void activate(Card[] targets) {
+    public void activate(Card... targets) {
         this.targets = targets;
         payCost();
         for (Card target : targets) {

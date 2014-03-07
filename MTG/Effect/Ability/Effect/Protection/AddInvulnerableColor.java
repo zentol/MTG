@@ -13,7 +13,7 @@ public class AddInvulnerableColor extends Ability {
 
     public AddInvulnerableColor(int color, int targets, int type, Cost cost, Trigger trigger, Condition... conditions) {
         super(targets, type, conditions, cost, trigger);
-        this.color=color;
+        this.color = color;
     }
 
     @Override

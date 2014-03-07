@@ -13,7 +13,6 @@ import static Card.Color.Color.W;
 import Card.Permanent;
 import Condition.Card.ConditionAspect;
 import Condition.Card.ConditionColor;
-import Condition.Condition;
 import Event.Event;
 import Event.EventEnterTheBattlefield;
 import Game.Game;

@@ -13,7 +13,6 @@ import static Card.Aspect.Permanent.Type.LandType.GATE;
 import static Card.Aspect.Permanent.Type.PlaneswalkerType.JACE;
 import static Card.Color.Color.*;
 import Condition.Card.ConditionInstance;
-import Condition.Condition;
 import Game.Game;
 import static Game.Game.battlefield;
 import Modifier.Damaging.ModifierIndestructible;
@@ -132,7 +131,7 @@ public class PermanentTest {
                 KEY_ABILITY_TYPE_STATIC,
                 null,
                 null,
-                new ConditionInstance(new int[]{permanent.instanceID})));
+                new ConditionInstance(true, permanent.instanceID)));
         assertTrue(permanent.hasEffect(AddIndestructible.class));
         assertFalse(permanent.hasEffect(AddInvulnerableColor.class));
     }
@@ -144,7 +143,7 @@ public class PermanentTest {
                 KEY_ABILITY_TYPE_STATIC,
                 null,
                 null,
-                new ConditionInstance(new int[]{permanent.instanceID})));
+                new ConditionInstance(true, permanent.instanceID)));
         permanent.effects.get(0).execute();
         assertTrue(permanent.hasModifier(ModifierIndestructible.class));
         assertFalse(permanent.hasModifier(ModifierInvulnerableColor.class));

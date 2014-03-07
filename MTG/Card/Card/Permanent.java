@@ -53,8 +53,8 @@ public class Permanent extends Card {
 
 //------------------------------------------------------------------------------
     public boolean hasEffect(Class<? extends Ability> effect) {
-        for (int x = 0; x < effects.size(); x++) {
-            if (effects.get(x).getClass().equals(effect)) {
+        for (Ability effect1 : effects) {
+            if (effect1.getClass().equals(effect)) {
                 return true;
             }
         }
@@ -62,8 +62,8 @@ public class Permanent extends Card {
     }
 
     public boolean hasModifier(Class<? extends Modifier> modifier) {
-        for (int x = 0; x < modifiers.size(); x++) {
-            if (modifiers.get(x).getClass().equals(modifier)) {
+        for (Modifier modifier1 : modifiers) {
+            if (modifier1.getClass().equals(modifier)) {
                 return true;
             }
         }

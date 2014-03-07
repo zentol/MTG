@@ -6,8 +6,10 @@ import Card.Permanent;
 import Condition.Condition;
 
 public class ConditionBlocking extends Condition<Permanent> {
+    private final boolean mode;
 
-    public ConditionBlocking() {
+    public ConditionBlocking(boolean mode) {
+        this.mode = mode;
     }
 
     @Override
@@ -15,7 +17,7 @@ public class ConditionBlocking extends Condition<Permanent> {
         if (!target.hasAspect(KEY_ASPECT_CREATURE)) {
             return false;
         }
-        return ((CreatureAspect) target.getAspect(KEY_ASPECT_CREATURE)).blocking;
+        return mode == ((CreatureAspect) target.getAspect(KEY_ASPECT_CREATURE)).blocking;
     }
 
 }

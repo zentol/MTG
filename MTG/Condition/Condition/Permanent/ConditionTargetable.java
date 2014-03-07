@@ -6,9 +6,11 @@ import Modifier.Targeting.TargetingModifier;
 
 public class ConditionTargetable extends Condition<Card> {
     private Card source;
+    private final boolean mode;
 
-    public ConditionTargetable(Card source) {
+    public ConditionTargetable(boolean mode, Card source) {
         this.source = source;
+        this.mode = mode;
     }
 
     @Override
@@ -19,6 +21,6 @@ public class ConditionTargetable extends Condition<Card> {
                 targetConditionsMet &= !((TargetingModifier) target.modifiers.get(x)).preventsTargeting(source);
             }
         }
-        return targetConditionsMet;
+        return mode == targetConditionsMet;
     }
 }

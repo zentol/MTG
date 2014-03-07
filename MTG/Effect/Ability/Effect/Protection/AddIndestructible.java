@@ -16,8 +16,8 @@ public class AddIndestructible extends Ability {
 
     @Override
     protected void executeActions(Card target) {
-        if(targetCount==0){
-            target=this.source;
+        if (targetCount == 0) {
+            target = this.source;
         }
         addIndestructible(this, (Permanent) target);
     }

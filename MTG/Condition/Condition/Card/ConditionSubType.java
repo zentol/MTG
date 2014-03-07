@@ -16,7 +16,6 @@ public class ConditionSubType extends Condition<Card> {
             return false;
         }
         for (String subType : subTypes) {
-            target.hasType(subType);
             if (!target.hasType(subType)) {
                 return false;
             }

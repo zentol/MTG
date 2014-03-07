@@ -13,7 +13,7 @@ public class AddUntargetableAspect extends Ability {
 
     public AddUntargetableAspect(int aspect, int targets, int type, Cost cost, Trigger trigger, Condition... conditions) {
         super(targets, type, conditions, cost, trigger);
-        this.aspect=aspect;
+        this.aspect = aspect;
     }
 
     @Override

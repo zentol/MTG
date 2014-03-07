@@ -13,7 +13,6 @@ import Ability.Effect.Protection.AddIndestructible;
 import static Card.Aspect.Aspect.KEY_ASPECT_ARTIFACT;
 import static Card.Aspect.Permanent.Type.CreatureType.MYR;
 import static Card.Aspect.Permanent.Type.CreatureType.SOLDIER;
-import Card.Card;
 import static Card.Color.Color.B;
 import static Card.Color.Color.W;
 import Card.Permanent;
@@ -21,7 +20,6 @@ import Card.Spell;
 import Condition.Card.ConditionAspect;
 import Condition.Card.ConditionColor;
 import Condition.Card.ConditionInstance;
-import Condition.Condition;
 import Game.Game;
 import static Game.Game.battlefield;
 import org.junit.After;
@@ -118,15 +116,15 @@ public class TerrorTest {
                 KEY_ABILITY_TYPE_STATIC,
                 null,
                 null,
-                new ConditionInstance(target.instanceID)
-    );
-        target.addEffect (e);
+                new ConditionInstance(true, target.instanceID)
+        );
+        target.addEffect(e);
 
-    e.execute ();
-}
+        e.execute();
+    }
 
-private void activateAndExecuteEffect() {
-        effect.activate(new Card[]{target});
+    private void activateAndExecuteEffect() {
+        effect.activate(target);
         effect.execute();
     }
 

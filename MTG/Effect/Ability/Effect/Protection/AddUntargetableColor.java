@@ -13,7 +13,7 @@ public class AddUntargetableColor extends Ability {
 
     public AddUntargetableColor(int color, int targets, int type, Cost cost, Trigger trigger, Condition... conditions) {
         super(targets, type, conditions, cost, trigger);
-        this.color=color;
+        this.color = color;
     }
 
     @Override

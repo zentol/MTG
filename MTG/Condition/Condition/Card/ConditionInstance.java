@@ -5,13 +5,15 @@ import Condition.Condition;
 
 public class ConditionInstance extends Condition<Card> {
     private final int[] instanceIDs;
+    private final boolean mode;
 
-    public ConditionInstance(int instanceID) {
-        this.instanceIDs = new int[]{instanceID};
+    public ConditionInstance(boolean mode, int instanceID) {
+        this(mode, new int[]{instanceID});
     }
 
-    public ConditionInstance(int[] instanceIDs) {
+    public ConditionInstance(boolean mode, int[] instanceIDs) {
         this.instanceIDs = instanceIDs;
+        this.mode = mode;
     }
 
     @Override
@@ -20,6 +22,6 @@ public class ConditionInstance extends Condition<Card> {
         for (int instanceID : instanceIDs) {
             instanceFound |= target.equalsInstance(instanceID);
         }
-        return instanceFound;
+        return mode == instanceFound;
     }
 }

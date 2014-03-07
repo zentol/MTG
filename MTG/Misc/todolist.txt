@@ -1,4 +1,6 @@
 add mode to most(all?) conditions
+    really necessary?
+        yes, on the assumption that ! cant e freely used
 
 rule check:
 "whenever x happens,you may pay y. if you do, do z."

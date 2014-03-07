@@ -5,13 +5,15 @@ import Condition.Condition;
 
 public class ConditionType extends Condition<Card> {
     private final int type;
+    private boolean mode;
 
-    public ConditionType(int type) {
+    public ConditionType(boolean mode, int type) {
         this.type = type;
+        this.mode = mode;
     }
 
     @Override
     public boolean evaluate(Card target) {
-        return target.getType() == type;
+        return mode == (target.getType() == type);
     }
 }

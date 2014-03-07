@@ -6,6 +6,6 @@ import Condition.Condition;
 public abstract class Resolve extends Ability {
 
     public Resolve() {
-        super(0, 0,new Condition[0],null,null);
+        super(0, 0, new Condition[0], null, null);
     }
 }

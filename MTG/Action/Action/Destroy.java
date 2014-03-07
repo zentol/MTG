@@ -9,7 +9,7 @@ import static Game.Game.battlefield;
 import static Game.Game.graveyard;
 
 public abstract class Destroy {
-    private static final ConditionDestructible destructible = new ConditionDestructible();
+    private static final ConditionDestructible destructible = new ConditionDestructible(true);
 
     /**
      Destroys every permanent for whom ALL conditions are met.

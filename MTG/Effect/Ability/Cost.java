@@ -1,4 +1,3 @@
-
 package Ability;
 
 public abstract class Cost {

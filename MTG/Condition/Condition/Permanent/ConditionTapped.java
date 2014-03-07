@@ -4,19 +4,15 @@ import Card.Permanent;
 import Condition.Condition;
 
 public class ConditionTapped extends Condition<Permanent> {
-    private final boolean tapped;
+    private final boolean mode;
 
-    public ConditionTapped(boolean tapped) {
-        this.tapped = tapped;
+    public ConditionTapped(boolean mode) {
+        this.mode = mode;
     }
 
     @Override
     public boolean evaluate(Permanent target) {
-        if (tapped) {
-            return target.isTapped();
-        } else {
-            return !target.isTapped();
-        }
+        return mode == target.isTapped();
     }
 
 }

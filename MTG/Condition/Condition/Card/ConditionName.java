@@ -5,13 +5,15 @@ import Condition.Condition;
 
 public class ConditionName extends Condition<Card> {
     private final String name;
+    private final boolean mode;
 
-    public ConditionName(String name) {
+    public ConditionName(boolean mode, String name) {
         this.name = name;
+        this.mode = mode;
     }
 
     @Override
     public boolean evaluate(Card target) {
-        return name.compareTo(target.name) == 0;
+        return mode == (name.compareTo(target.name) == 0);
     }
 }

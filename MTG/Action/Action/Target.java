@@ -21,7 +21,7 @@ public class Target {
     }
 
     private static void targetCondition(Card target, Card source) {
-        targetable = new ConditionTargetable(source);
+        targetable = new ConditionTargetable(true, source);
         boolean targetConditionsMet = true;
         targetConditionsMet &= targetable.evaluate(target);
         if (!targetConditionsMet) {

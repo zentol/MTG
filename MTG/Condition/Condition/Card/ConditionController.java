@@ -4,16 +4,24 @@ import Card.Card;
 import Condition.Condition;
 
 public class ConditionController extends Condition<Card> {
-    private final int controllerID;
+    private final int[] controllerIDs;
     private final boolean mode;
 
-    public ConditionController(int controllerID, boolean mode) {
-        this.controllerID = controllerID;
+    public ConditionController(boolean mode, int controllerID) {
+        this(mode, new int[]{controllerID});
+    }
+
+    public ConditionController(boolean mode, int... controllerIDs) {
+        this.controllerIDs = controllerIDs;
         this.mode = mode;
     }
 
     @Override
     public boolean evaluate(Card target) {
-        return mode == target.equalsController(controllerID);
+        boolean result = false;
+        for (int id : controllerIDs) {
+            result |= target.equalsController(id);
+        }
+        return mode == result;
     }
 }
