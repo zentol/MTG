@@ -76,8 +76,8 @@ public class Permanent extends Card {
     public static final class PermanentBuilder {
         Permanent target;
 
-        public PermanentBuilder(Permanent target) {
-            this.target = target;
+        public PermanentBuilder() {
+            this.target = new Permanent();
         }
 
         public PermanentBuilder setCardID(int id) {
@@ -119,9 +119,13 @@ public class Permanent extends Card {
             target.legendary = legendary;
             return this;
         }
+        
+        public Permanent finish(){
+            return target;
+        }
     }
 
-    public static PermanentBuilder buildPermanent(Permanent target) {
-        return new PermanentBuilder(target);
+    public static PermanentBuilder buildPermanent() {
+        return new PermanentBuilder();
     }
 }
