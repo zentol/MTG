@@ -41,7 +41,7 @@ public class PermanentTest {
         Game game = new Game(2);
         permanent = new Permanent();
         battlefield.add(
-        Permanent.buildPermanent()
+                Permanent.buildPermanent()
                 .setCardID(1)
                 .setInstanceID(1)
                 .setOwnerID(0)

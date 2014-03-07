@@ -140,4 +140,31 @@ public abstract class Card {
         this.modifiers.clear();
     }
 
+    public static abstract class CardBuilder<T extends CardBuilder, C extends Card> {
+        C target;
+
+        public T setCardID(int id) {
+            target.cardID = id;
+            return (T) this;
+        }
+
+        public T setInstanceID(int id) {
+            target.instanceID = id;
+            return (T) this;
+        }
+
+        public T setOwnerID(int id) {
+            target.ownerID = id;
+            return (T) this;
+        }
+
+        public T setControllerID(int id) {
+            target.controllerID = id;
+            return (T) this;
+        }
+
+        public C finish() {
+            return target;
+        }
+    }
 }

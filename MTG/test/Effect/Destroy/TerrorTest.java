@@ -53,21 +53,17 @@ public class TerrorTest {
     public void setUp() {
         game = new Game(2);
 
-        target = new Permanent(1,
-                1,
-                0,
-                1,
-                "Footsoldier",
-                "W",
-                W,
-                false
-        );
-        target.addCreatureAspect(1,
-                1,
-                new String[]{
-                    SOLDIER,
-                    MYR}
-        );
+        target = Permanent.buildPermanent()
+                .setCardID(1)
+                .setInstanceID(0)
+                .setOwnerID(0)
+                .setControllerID(0)
+                .setName("Footsoldier")
+                .setCost("W")
+                .setColors(W)
+                .setLegendary(false)
+                .addCreatureAspect(1, 2, SOLDIER, MYR)
+                .finish();
         battlefield.add(target);
 
         Spell s = new Spell(

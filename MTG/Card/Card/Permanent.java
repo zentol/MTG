@@ -73,31 +73,9 @@ public class Permanent extends Card {
         return false;
     }
 
-    public static final class PermanentBuilder {
-        Permanent target;
-
+    public static final class PermanentBuilder extends CardBuilder<PermanentBuilder, Permanent> {
         public PermanentBuilder() {
             this.target = new Permanent();
-        }
-
-        public PermanentBuilder setCardID(int id) {
-            target.cardID = id;
-            return this;
-        }
-
-        public PermanentBuilder setInstanceID(int id) {
-            target.instanceID = id;
-            return this;
-        }
-
-        public PermanentBuilder setOwnerID(int id) {
-            target.ownerID = id;
-            return this;
-        }
-
-        public PermanentBuilder setControllerID(int id) {
-            target.controllerID = id;
-            return this;
         }
 
         public PermanentBuilder setName(String name) {
@@ -119,10 +97,32 @@ public class Permanent extends Card {
             target.legendary = legendary;
             return this;
         }
-        
-        public Permanent finish(){
-            return target;
+
+        public PermanentBuilder addArtifactAspect(String... types) {
+            target.addArtifactAspect(types);
+            return this;
         }
+
+        public PermanentBuilder addCreatureAspect(int attack, int defense, String... types) {
+            target.addCreatureAspect(attack, defense, types);
+            return this;
+        }
+
+        public PermanentBuilder addEnchantmentAspect(String... types) {
+            target.addEnchantmentAspect(types);
+            return this;
+        }
+
+        public PermanentBuilder addLandAspect(String... types) {
+            target.addLandAspect(types);
+            return this;
+        }
+
+        public PermanentBuilder addPlaneswalkerAspect(int loyalty, String... types) {
+            target.addPlaneswalkerAspect(loyalty, types);
+            return this;
+        }
+
     }
 
     public static PermanentBuilder buildPermanent() {
