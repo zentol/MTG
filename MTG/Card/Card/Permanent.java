@@ -18,23 +18,23 @@ public class Permanent extends Card {
     }
 
 //Aspect------------------------------------------------------------------------
-    public void addArtifactAspect(String[] types) {
+    public void addArtifactAspect(String... types) {
         aspects.add(new ArtifactAspect(types));
     }
 
-    public void addCreatureAspect(int attack, int defense, String[] types) {
+    public void addCreatureAspect(int attack, int defense, String... types) {
         aspects.add(new CreatureAspect(attack, defense, types));
     }
 
-    public void addEnchantmentAspect(String[] types) {
+    public void addEnchantmentAspect(String... types) {
         aspects.add(new EnchantmentAspect(types));
     }
 
-    public void addLandAspect(String[] types) {
+    public void addLandAspect(String... types) {
         aspects.add(new LandAspect(types));
     }
 
-    public void addPlaneswalkerAspect(String[] types, int loyalty) {
+    public void addPlaneswalkerAspect(int loyalty, String... types) {
         aspects.add(new PlaneswalkerAspect(types, loyalty));
     }
 

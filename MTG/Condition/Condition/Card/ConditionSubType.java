@@ -6,7 +6,7 @@ import Condition.Condition;
 public class ConditionSubType extends Condition<Card> {
     private final String[] subTypes;
 
-    public ConditionSubType(String[] subTypes) {
+    public ConditionSubType(String... subTypes) {
         this.subTypes = subTypes;
     }
 

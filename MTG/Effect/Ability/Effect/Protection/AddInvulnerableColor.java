@@ -11,7 +11,7 @@ import Trigger.Trigger;
 public class AddInvulnerableColor extends Ability {
     private final int color;
 
-    public AddInvulnerableColor(int color, int targets, int type, Condition[] conditions, Cost cost, Trigger trigger) {
+    public AddInvulnerableColor(int color, int targets, int type, Cost cost, Trigger trigger, Condition... conditions) {
         super(targets, type, conditions, cost, trigger);
         this.color=color;
     }

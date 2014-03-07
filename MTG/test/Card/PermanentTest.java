@@ -105,7 +105,7 @@ public class PermanentTest {
     @Test
     public void testPlaneswalkerAspect() {
         String[] types = {JACE};
-        permanent.addPlaneswalkerAspect(types, 3);
+        permanent.addPlaneswalkerAspect(3, types);
         assertTrue(permanent.hasAspect(KEY_ASPECT_PLANESWALKER));
         assertTrue(permanent.getAspect(KEY_ASPECT_PLANESWALKER).hasType(JACE));
     }
@@ -130,10 +130,9 @@ public class PermanentTest {
         permanent.addEffect(new AddIndestructible(
                 0,
                 KEY_ABILITY_TYPE_STATIC,
-                new Condition[]{
-                    new ConditionInstance(new int[]{permanent.instanceID})},
                 null,
-                null));
+                null,
+                new ConditionInstance(new int[]{permanent.instanceID})));
         assertTrue(permanent.hasEffect(AddIndestructible.class));
         assertFalse(permanent.hasEffect(AddInvulnerableColor.class));
     }
@@ -143,10 +142,9 @@ public class PermanentTest {
         permanent.addEffect(new AddIndestructible(
                 0,
                 KEY_ABILITY_TYPE_STATIC,
-                new Condition[]{
-                    new ConditionInstance(new int[]{permanent.instanceID})},
                 null,
-                null));
+                null,
+                new ConditionInstance(new int[]{permanent.instanceID})));
         permanent.effects.get(0).execute();
         assertTrue(permanent.hasModifier(ModifierIndestructible.class));
         assertFalse(permanent.hasModifier(ModifierInvulnerableColor.class));

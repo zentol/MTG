@@ -7,13 +7,13 @@ public class ConditionAspect extends Condition<Card> {
     private final int[] aspectKeys;
     private final boolean mode;
 
-    public ConditionAspect(int aspectKey, boolean mode) {
+    public ConditionAspect(boolean mode, int aspectKey) {
         this.aspectKeys = new int[]{aspectKey};
         this.mode = mode;
     }
 
-    public ConditionAspect(int[] aspectKey, boolean mode) {
-        this.aspectKeys = aspectKey;
+    public ConditionAspect(boolean mode, int... aspectKeys) {
+        this.aspectKeys = aspectKeys;
         this.mode = mode;
     }
 

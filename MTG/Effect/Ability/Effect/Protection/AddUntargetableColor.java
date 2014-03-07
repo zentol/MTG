@@ -11,7 +11,7 @@ import Trigger.Trigger;
 public class AddUntargetableColor extends Ability {
     private final int color;
 
-    public AddUntargetableColor(int color, int targets, int type, Condition[] conditions, Cost cost, Trigger trigger) {
+    public AddUntargetableColor(int color, int targets, int type, Cost cost, Trigger trigger, Condition... conditions) {
         super(targets, type, conditions, cost, trigger);
         this.color=color;
     }

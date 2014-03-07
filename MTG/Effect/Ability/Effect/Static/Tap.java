@@ -10,7 +10,7 @@ import Trigger.Trigger;
 
 public class Tap extends Ability {
 
-    public Tap(int targets, int type, Condition[] conditions, Cost cost, Trigger trigger) {
+    public Tap(int targets, int type, Cost cost, Trigger trigger, Condition... conditions) {
         super(targets, type, conditions, cost, trigger);
     }
 

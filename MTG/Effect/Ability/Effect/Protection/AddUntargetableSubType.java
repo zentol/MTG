@@ -11,7 +11,7 @@ import Trigger.Trigger;
 public class AddUntargetableSubType extends Ability {
     private final String[] subTypes;
 
-    public AddUntargetableSubType(String[] subTypes, int targets, int type, Condition[] conditions, Cost cost, Trigger trigger) {
+    public AddUntargetableSubType(String[] subTypes, int targets, int type, Cost cost, Trigger trigger, Condition... conditions) {
         super(targets, type, conditions, cost, trigger);
         this.subTypes = subTypes;
     }

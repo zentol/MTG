@@ -9,7 +9,7 @@ import Event.EventEnterTheBattlefield;
 public class TriggerEnterTheBattlefield extends Trigger {
     private Condition[] conditions;
 
-    public TriggerEnterTheBattlefield(Condition[] conditions) {
+    public TriggerEnterTheBattlefield(Condition... conditions) {
         this.conditions = conditions;
     }
 

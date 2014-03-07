@@ -10,7 +10,7 @@ import Trigger.Trigger;
 
 public class AddIndestructible extends Ability {
 
-    public AddIndestructible(int targetCount, int type, Condition[] conditions, Cost cost, Trigger trigger) {
+    public AddIndestructible(int targetCount, int type, Cost cost, Trigger trigger, Condition... conditions) {
         super(targetCount, type, conditions, cost, trigger);
     }
 

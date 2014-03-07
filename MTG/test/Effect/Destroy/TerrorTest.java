@@ -55,42 +55,40 @@ public class TerrorTest {
     public void setUp() {
         game = new Game(2);
 
-        target = new Permanent(1, 
-                1, 
-                0, 
-                1, 
-                "Footsoldier", 
-                "W", 
-                W, 
+        target = new Permanent(1,
+                1,
+                0,
+                1,
+                "Footsoldier",
+                "W",
+                W,
                 false
         );
         target.addCreatureAspect(1,
-                1, 
+                1,
                 new String[]{
-                    SOLDIER, 
+                    SOLDIER,
                     MYR}
         );
         battlefield.add(target);
 
         Spell s = new Spell(
-                1, 
-                1, 
-                1, 
-                1, 
-                "Terror", 
-                "1B", 
-                B, 
+                1,
+                1,
+                1,
+                1,
+                "Terror",
+                "1B",
+                B,
                 false
         );
         effect = new Destruction(
                 1,
-                KEY_ABILITY_TYPE_SPELL, 
-                new Condition[]{
-                    new ConditionColor(B, false),
-                    new ConditionAspect(KEY_ASPECT_ARTIFACT, false)
-                },
+                KEY_ABILITY_TYPE_SPELL,
                 null,
-                null
+                null,
+                new ConditionColor(false, B),
+                new ConditionAspect(false, KEY_ASPECT_ARTIFACT)
         );
         s.addEffect(effect);
 
@@ -118,16 +116,16 @@ public class TerrorTest {
         Ability e = new AddIndestructible(
                 0,
                 KEY_ABILITY_TYPE_STATIC,
-                new Condition[]{
-                    new ConditionInstance(target.instanceID)},
                 null,
-                null
-        );
-        target.addEffect(e);
-        e.execute();
-    }
+                null,
+                new ConditionInstance(target.instanceID)
+    );
+        target.addEffect (e);
 
-    private void activateAndExecuteEffect() {
+    e.execute ();
+}
+
+private void activateAndExecuteEffect() {
         effect.activate(new Card[]{target});
         effect.execute();
     }

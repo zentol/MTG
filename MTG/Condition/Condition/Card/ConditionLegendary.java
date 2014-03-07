@@ -4,13 +4,15 @@ import Card.Permanent;
 import Condition.Condition;
 
 public class ConditionLegendary extends Condition<Permanent> {
+    private final boolean mode;
 
-    public ConditionLegendary() {
+    public ConditionLegendary(boolean mode) {
+        this.mode = mode;
     }
 
     @Override
     public boolean evaluate(Permanent target) {
-        return target.legendary;
+        return mode == target.legendary;
     }
 
 }

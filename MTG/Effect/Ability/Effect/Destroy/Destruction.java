@@ -12,7 +12,7 @@ import Trigger.Trigger;
 
 public class Destruction extends Ability {
 
-    public Destruction(int targetCount, int type, Condition[] conditions, Cost cost, Trigger trigger) {
+    public Destruction(int targetCount, int type, Cost cost, Trigger trigger, Condition... conditions) {
         super(targetCount, type, conditions, cost, trigger);
     }
 

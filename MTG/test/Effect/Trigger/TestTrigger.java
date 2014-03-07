@@ -39,20 +39,17 @@ public class TestTrigger {
         game = new Game(2);
 
         target = new Permanent(1, 1, 0, 1, "Footsoldier", "W", W, false);
-        target.addCreatureAspect(1, 1, new String[]{SOLDIER, MYR});
+        target.addCreatureAspect(1, 1, SOLDIER, MYR);
         battlefield.add(target);
 
         effect = new Destruction(
                 1,
-                KEY_ABILITY_TYPE_TRIGGERED, 
-                new Condition[]{
-                    new ConditionColor(B, false),
-                    new ConditionAspect(KEY_ASPECT_ARTIFACT, false)
-                },
+                KEY_ABILITY_TYPE_TRIGGERED,
                 null,
                 new TriggerEnterTheBattlefield(
-                        new Condition[]{
-                            new ConditionColor(W, true)})
+                        new ConditionColor(true, W)),
+                new ConditionColor(false, B),
+                new ConditionAspect(false, KEY_ASPECT_ARTIFACT)
         );
         target.effects.add(effect);
     }
@@ -60,7 +57,7 @@ public class TestTrigger {
     @Test
     public void testActionFiresEvent() {
         Permanent test = new Permanent(1, 2, 0, 1, "Footsoldier", "W", W, false);
-        test.addCreatureAspect(1, 1, new String[]{SOLDIER, MYR});
+        test.addCreatureAspect(1, 1, SOLDIER, MYR);
         putIntoPlay(test);
         stack.resolveStack();
         assertEquals(1, battlefield.size());

@@ -8,7 +8,7 @@ public class ConditionCostTotal extends Condition<Card> {
     private final int costTotal;
     private final int mode;
 
-    public ConditionCostTotal(int costTotal, int mode) {
+    public ConditionCostTotal(int mode, int costTotal) {
         this.costTotal = costTotal;
         this.mode = mode;
     }
