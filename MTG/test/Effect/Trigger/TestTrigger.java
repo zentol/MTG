@@ -37,7 +37,17 @@ public class TestTrigger {
     public void setUp() {
         game = new Game(2);
 
-        target = new Permanent(1, 1, 0, 1, "Footsoldier", "W", W, false);
+        target = Permanent.buildPermanent()
+                .setCardID(1)
+                .setInstanceID(0)
+                .setOwnerID(0)
+                .setControllerID(0)
+                .setName("Footsoldier")
+                .setCost("W")
+                .setColors(W)
+                .setLegendary(false)
+                .addCreatureAspect(1, 2, SOLDIER, MYR)
+                .finish();
         target.addCreatureAspect(1, 1, SOLDIER, MYR);
         battlefield.add(target);
 
@@ -55,7 +65,17 @@ public class TestTrigger {
 
     @Test
     public void testActionFiresEvent() {
-        Permanent test = new Permanent(1, 2, 0, 1, "Footsoldier", "W", W, false);
+        Permanent test = Permanent.buildPermanent()
+                .setCardID(2)
+                .setInstanceID(1)
+                .setOwnerID(0)
+                .setControllerID(0)
+                .setName("Footsoldier")
+                .setCost("W")
+                .setColors(W)
+                .setLegendary(false)
+                .addCreatureAspect(1, 2, SOLDIER, MYR)
+                .finish();
         test.addCreatureAspect(1, 1, SOLDIER, MYR);
         putIntoPlay(test);
         stack.resolveStack();

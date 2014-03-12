@@ -25,26 +25,11 @@ public abstract class Card {
     public ArrayList<Ability> abilities;
     public ArrayList<Aspect> aspects;
 
-    public Card() {
-    }
-
-    public Card(int cardID, int instanceID, int ownerID, int controllerID,
-            String name, String cost, int colors, boolean legendary, int cardType) {
-        this.cardID = cardID;
-        this.instanceID = instanceID;
-        this.ownerID = ownerID;
-        this.controllerID = controllerID;
-
-        this.name = name;
-        this.cost = cost;
-        this.colors = colors;
-        this.legendary = legendary;
-
+    public Card(int type) {
         this.modifiers = new ArrayList();
         this.abilities = new ArrayList();
         this.aspects = new ArrayList();
-
-        this.cardType = cardType;
+        this.cardType = type;
     }
 
     public void addAbility(Ability ability) {
@@ -163,7 +148,7 @@ public abstract class Card {
             return (T) this;
         }
 
-        public T addAbility(Ability ability){            
+        public T addAbility(Ability ability) {
             target.addAbility(ability);
             return (T) this;
         }

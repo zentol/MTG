@@ -1,3 +1,5 @@
+rethink cardbuilders. nice for initial start, but cards have to support later modifications.
+
 add mode to most(all?) conditions
     really necessary?
         yes, on the assumption that ! cant e freely used

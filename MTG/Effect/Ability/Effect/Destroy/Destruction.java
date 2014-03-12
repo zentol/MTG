@@ -11,7 +11,10 @@ import Game.InvalidTargetException;
 import Trigger.Trigger;
 
 public class Destruction extends Ability {
-
+    
+    public Destruction(){
+    super();}
+    
     public Destruction(int targetCount, int type, Cost cost, Trigger trigger, Condition... conditions) {
         super(targetCount, type, conditions, cost, trigger);
     }

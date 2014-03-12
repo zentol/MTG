@@ -39,9 +39,7 @@ public class PermanentTest {
     @Before
     public void setUp() {
         Game game = new Game(2);
-        permanent = new Permanent();
-        battlefield.add(
-                Permanent.buildPermanent()
+        permanent = Permanent.buildPermanent()
                 .setCardID(1)
                 .setInstanceID(1)
                 .setOwnerID(0)
@@ -50,8 +48,8 @@ public class PermanentTest {
                 .setCost("W")
                 .setColors(W)
                 .setLegendary(false)
-                .finish()
-        );
+                .finish();
+        battlefield.add(permanent);
     }
 
     @After

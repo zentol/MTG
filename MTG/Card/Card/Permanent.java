@@ -13,11 +13,8 @@ public class Permanent extends Card {
     private boolean untapped;
 
     public Permanent() {
-    }
-
-    public Permanent(int cardID, int instanceID, int ownerID, int controllerID, String name, String cost, int colors, boolean legendary) {
-        super(cardID, instanceID, ownerID, controllerID, name, cost, colors, legendary, KEY_ASPECT_PERMANENT);
-        this.untapped = true;
+        super(KEY_ASPECT_PERMANENT);
+        untapped = true;
     }
 
 //Aspect------------------------------------------------------------------------
@@ -73,6 +70,10 @@ public class Permanent extends Card {
         return false;
     }
 
+    public static PermanentBuilder buildPermanent() {
+        return new PermanentBuilder();
+    }
+
     public static final class PermanentBuilder extends CardBuilder<PermanentBuilder, Permanent> {
         public PermanentBuilder() {
             this.target = new Permanent();
@@ -125,7 +126,4 @@ public class Permanent extends Card {
 
     }
 
-    public static PermanentBuilder buildPermanent() {
-        return new PermanentBuilder();
-    }
 }

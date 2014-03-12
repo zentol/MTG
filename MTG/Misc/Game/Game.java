@@ -74,9 +74,9 @@ public class Game {
     }
 
     public static void dummyLoadLibrary() {
-        Permanent card;
+        Permanent card;/*
         for (int x = 0; x < 25; x++) {
-            card = new Permanent(1, 1, 0, 1, "Footsoldier", "W", W, false);
+            card = Permanent.buildPermanent()new Permanent(1, 1, 0, 1, "Footsoldier", "W", W, false);
             card.addCreatureAspect(1, 1, new String[]{SOLDIER, MYR});
             library.get(0).add(card);
         }
@@ -84,7 +84,7 @@ public class Game {
             card = new Permanent(1, 1, 0, 1, "Footsoldier", "W", W, false);
             card.addCreatureAspect(1, 1, new String[]{SOLDIER, MYR});
             library.get(1).add(card);
-        }
+        }*/
     }
 
     public static void initGame() {
