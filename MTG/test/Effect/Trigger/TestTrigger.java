@@ -50,7 +50,7 @@ public class TestTrigger {
                 new ConditionColor(false, B),
                 new ConditionAspect(false, KEY_ASPECT_ARTIFACT)
         );
-        target.effects.add(effect);
+        target.abilities.add(effect);
     }
 
     @Test

@@ -54,9 +54,9 @@ public class Permanent extends Card {
         untapped = true;
     }
 
-//------------------------------------------------------------------------------
+//------------------------------------------------------------------------------    
     public boolean hasEffect(Class<? extends Ability> effect) {
-        for (Ability effect1 : effects) {
+        for (Ability effect1 : abilities) {
             if (effect1.getClass().equals(effect)) {
                 return true;
             }

@@ -22,7 +22,7 @@ public class ResolvePermanent extends Resolve {
             putIntoPlay((Permanent) target);
         }
         if (target.getClass().equals(Spell.class)) {
-            for (Ability effect : target.effects) {
+            for (Ability effect : target.abilities) {
                 effect.execute();
             }
             target.resetModifiers();

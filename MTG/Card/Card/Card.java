@@ -1,10 +1,10 @@
 package Card;
 
+import Ability.Ability;
 import Card.Aspect.Aspect;
 import Card.Aspect.Permanent.PermanentAspect;
 import Card.Aspect.Spell.SpellAspect;
 import static Card.Color.Color.*;
-import Ability.Ability;
 import Modifier.Modifier;
 import java.util.ArrayList;
 
@@ -22,7 +22,7 @@ public abstract class Card {
     public int cardType;
 
     public ArrayList<Modifier> modifiers;
-    public ArrayList<Ability> effects;
+    public ArrayList<Ability> abilities;
     public ArrayList<Aspect> aspects;
 
     public Card() {
@@ -41,15 +41,15 @@ public abstract class Card {
         this.legendary = legendary;
 
         this.modifiers = new ArrayList();
-        this.effects = new ArrayList();
+        this.abilities = new ArrayList();
         this.aspects = new ArrayList();
 
         this.cardType = cardType;
     }
 
-    public void addEffect(Ability effect) {
-        effects.add(effect);
-        effect.setSource(this);
+    public void addAbility(Ability ability) {
+        abilities.add(ability);
+        ability.setSource(this);
     }
 
 //Meta--------------------------------------------------------------------------
@@ -160,6 +160,11 @@ public abstract class Card {
 
         public T setControllerID(int id) {
             target.controllerID = id;
+            return (T) this;
+        }
+
+        public T addAbility(Ability ability){            
+            target.addAbility(ability);
             return (T) this;
         }
 

@@ -9,12 +9,14 @@ import static Condition.Condition.checkConditions;
 import Event.Event;
 import Game.InvalidTargetException;
 import Trigger.Trigger;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public abstract class Ability {
     public Card source;
-    public final int targetCount;
-    public final int type;
-    public final Condition[] conditions;
+    public int targetCount;
+    public int type;
+    public Condition[] conditions;
     public Card[] targets;
     public Trigger trigger;
     public Cost cost;
@@ -23,6 +25,14 @@ public abstract class Ability {
     public static final int KEY_ABILITY_TYPE_ACTIVATED = 2;
     public static final int KEY_ABILITY_TYPE_TRIGGERED = 3;
     public static final int KEY_ABILITY_TYPE_SPELL = 4;
+
+    public Ability() {
+        targetCount = 0;
+        type = 0;
+        conditions = null;
+        cost = null;
+        trigger = null;
+    }
 
     public Ability(int targetCount, int type, Condition[] conditions, Cost cost, Trigger trigger) {
         this.targetCount = targetCount;
@@ -74,5 +84,51 @@ public abstract class Ability {
 
     public void setSource(Card source) {
         this.source = source;
+    }
+    
+    public static class AbilityBuilder {
+        Ability ability;
+
+        public AbilityBuilder(Class<? extends Ability> clazz) throws InstantiationException, IllegalAccessException {
+            this.ability = clazz.newInstance();
+        }
+        
+        public AbilityBuilder setConditions(Condition ... conditions){
+            ability.conditions=conditions;
+            return this;
+        }
+        
+        public AbilityBuilder setCost(Cost cost){
+            ability.cost=cost;
+            return this;
+        }
+        
+        public AbilityBuilder setTargetCount(int targetCount){
+            ability.targetCount=targetCount;
+            return this;
+        }
+        
+        public AbilityBuilder setTrigger(Trigger trigger){
+            ability.trigger=trigger;
+            return this;
+        }
+        
+        public AbilityBuilder setType(int type){
+            ability.type=type;
+            return this;
+        }
+        
+        public Ability finish(){
+            return ability;
+        }
+    }
+    
+        public static AbilityBuilder buildAbility(Class<? extends Ability> clazz) {
+        try {
+            return new AbilityBuilder(clazz);
+        } catch (InstantiationException ex) {
+        } catch (IllegalAccessException ex) {
+        }
+        return null;
     }
 }

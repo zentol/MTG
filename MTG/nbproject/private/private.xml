@@ -8,43 +8,15 @@
             <file>file:/M:/Users/Zento/Documents/GitHub/MTG/MTG/test/Effect/Destroy/TerrorTest.java</file>
         </group>
         <group name="stratosphere">
-            <file>file:/C:/Git/MTG/MTG/Condition/Condition/Condition.java</file>
-            <file>file:/C:/Git/MTG/MTG/Condition/Condition/Card/ConditionAspect.java</file>
-            <file>file:/C:/Git/MTG/MTG/Condition/Condition/Card/ConditionInstance.java</file>
-            <file>file:/C:/Git/MTG/MTG/test/Effect/Destroy/TerrorTest.java</file>
-            <file>file:/C:/Git/MTG/MTG/Condition/Condition/Card/ConditionColor.java</file>
-            <file>file:/C:/Git/MTG/MTG/Condition/Condition/Card/ConditionController.java</file>
-            <file>file:/C:/Git/MTG/MTG/Condition/Condition/Card/ConditionCostTotal.java</file>
-            <file>file:/C:/Git/MTG/MTG/Condition/Condition/Card/ConditionLegendary.java</file>
-            <file>file:/C:/Git/MTG/MTG/Condition/Condition/Card/ConditionMulticolored.java</file>
-            <file>file:/C:/Git/MTG/MTG/Condition/Condition/Card/ConditionName.java</file>
-            <file>file:/C:/Git/MTG/MTG/Condition/Condition/Card/ConditionOther.java</file>
-            <file>file:/C:/Git/MTG/MTG/Condition/Condition/Card/ConditionOwner.java</file>
-            <file>file:/C:/Git/MTG/MTG/Condition/Condition/Card/ConditionSubType.java</file>
-            <file>file:/C:/Git/MTG/MTG/Condition/Condition/Card/ConditionType.java</file>
-            <file>file:/C:/Git/MTG/MTG/Condition/Condition/Creature/ConditionAttack.java</file>
-            <file>file:/C:/Git/MTG/MTG/Condition/Condition/Creature/ConditionAttacking.java</file>
-            <file>file:/C:/Git/MTG/MTG/Condition/Condition/Creature/ConditionBlocked.java</file>
-            <file>file:/C:/Git/MTG/MTG/Condition/Condition/Creature/ConditionBlocking.java</file>
-            <file>file:/C:/Git/MTG/MTG/Condition/Condition/Creature/ConditionDefense.java</file>
-            <file>file:/C:/Git/MTG/MTG/Condition/Condition/Effect/ConditionTargeting.java</file>
-            <file>file:/C:/Git/MTG/MTG/Misc/todolist.txt</file>
-            <file>file:/C:/Git/MTG/MTG/test/Effect/Trigger/TestTrigger.java</file>
-            <file>file:/C:/Git/MTG/MTG/Card/Card/Aspect/Permanent/CreatureAspect.java</file>
-            <file>file:/C:/Git/MTG/MTG/Card/Card/Card.java</file>
+            <file>file:/C:/Git/MTG/MTG/Card/Card/Aspect/Spell/InstantAspect.java</file>
+            <file>file:/C:/Git/MTG/MTG/Card/Card/Aspect/Spell/SorceryAspect.java</file>
+            <file>file:/C:/Git/MTG/MTG/Card/Card/Aspect/Spell/SpellAspect.java</file>
             <file>file:/C:/Git/MTG/MTG/Card/Card/Permanent.java</file>
-            <file>file:/C:/Git/MTG/MTG/Card/Card/Spell.java</file>
             <file>file:/C:/Git/MTG/MTG/test/Card/PermanentTest.java</file>
-            <file>file:/C:/Git/MTG/MTG/Effect/Ability/Ability.java</file>
-            <file>file:/C:/Git/MTG/MTG/Effect/Ability/Effect/Destroy/Destruction.java</file>
-            <file>file:/C:/Git/MTG/MTG/Effect/Ability/Effect/Protection/AddIndestructible.java</file>
-            <file>file:/C:/Git/MTG/MTG/Effect/Ability/Effect/Protection/AddUntargetableAspect.java</file>
-            <file>file:/C:/Git/MTG/MTG/Effect/Ability/Effect/Protection/AddInvulnerableColor.java</file>
-            <file>file:/C:/Git/MTG/MTG/Effect/Ability/Effect/Protection/AddUntargetableColor.java</file>
-            <file>file:/C:/Git/MTG/MTG/Effect/Ability/Effect/Protection/AddUntargetableSubType.java</file>
-            <file>file:/C:/Git/MTG/MTG/Effect/Ability/Effect/Static/Tap.java</file>
-            <file>file:/C:/Git/MTG/MTG/Effect/Ability/Resolve/Resolve.java</file>
-            <file>file:/C:/Git/MTG/MTG/Trigger/Trigger/TriggerEnterTheBattlefield.java</file>
+            <file>file:/C:/Git/MTG/MTG/Card/Card/Card.java</file>
+            <file>file:/C:/Git/MTG/MTG/Card/Card/Aspect/Aspect.java</file>
+            <file>file:/C:/Git/MTG/MTG/Card/Card/Aspect/Permanent/ArtifactAspect.java</file>
+            <file>file:/C:/Git/MTG/MTG/test/Effect/Destroy/TerrorTest.java</file>
         </group>
     </open-files>
 </project-private>

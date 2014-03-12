@@ -136,7 +136,7 @@ public class PermanentTest {
      */
     @Test
     public void testHasEffect() {
-        permanent.addEffect(new AddIndestructible(
+        permanent.addAbility(new AddIndestructible(
                 0,
                 KEY_ABILITY_TYPE_STATIC,
                 null,
@@ -148,13 +148,13 @@ public class PermanentTest {
 
     @Test
     public void testHasModifier() {
-        permanent.addEffect(new AddIndestructible(
+        permanent.addAbility(new AddIndestructible(
                 0,
                 KEY_ABILITY_TYPE_STATIC,
                 null,
                 null,
                 new ConditionInstance(true, permanent.instanceID)));
-        permanent.effects.get(0).execute();
+        permanent.abilities.get(0).execute();
         assertTrue(permanent.hasModifier(ModifierIndestructible.class));
         assertFalse(permanent.hasModifier(ModifierInvulnerableColor.class));
     }

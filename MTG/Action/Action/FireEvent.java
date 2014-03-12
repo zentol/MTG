@@ -8,7 +8,7 @@ import static Game.Game.battlefield;
 public class FireEvent {
     public static void fireEvent(Event event) {
         for (int x = 0; x < battlefield.size(); x++) {
-            for (Ability effect : battlefield.get(x).effects) {
+            for (Ability effect : battlefield.get(x).abilities) {
                 if (effect.getType() == KEY_ABILITY_TYPE_TRIGGERED) {
                     effect.evaluateTrigger(event);
                 }

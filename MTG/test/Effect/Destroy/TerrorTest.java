@@ -66,25 +66,26 @@ public class TerrorTest {
                 .finish();
         battlefield.add(target);
 
-        Spell s = new Spell(
-                1,
-                1,
-                1,
-                1,
-                "Terror",
-                "1B",
-                B,
-                false
-        );
-        effect = new Destruction(
-                1,
-                KEY_ABILITY_TYPE_SPELL,
-                null,
-                null,
-                new ConditionColor(false, B),
-                new ConditionAspect(false, KEY_ASPECT_ARTIFACT)
-        );
-        s.addEffect(effect);
+        Spell s = Spell.buildSpell()
+                .setCardID(1)
+                .setInstanceID(1)
+                .setOwnerID(1)
+                .setControllerID(1)
+                .setName("Terror")
+                .setCost("1B")
+                .setColors(B)
+                .setLegendary(false)
+                .finish();
+        
+        effect = Ability.buildAbility(Destruction.class)
+                .setTargetCount(1)
+                .setType(KEY_ABILITY_TYPE_SPELL)
+                .setConditions(
+                        new ConditionColor(false, B),
+                        new ConditionAspect(false, KEY_ASPECT_ARTIFACT))
+                .finish();
+
+        s.addAbility(effect);
 
     }
 
@@ -114,7 +115,7 @@ public class TerrorTest {
                 null,
                 new ConditionInstance(true, target.instanceID)
         );
-        target.addEffect(e);
+        target.addAbility(e);
 
         e.execute();
     }

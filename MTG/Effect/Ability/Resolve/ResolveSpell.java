@@ -15,7 +15,7 @@ public class ResolveSpell extends Resolve {
 
     @Override
     protected void executeActions(Card target) {
-        target.effects.get(0).activate(select(target.effects.get(0).targetCount));
-        target.effects.get(0).execute();
+        target.abilities.get(0).activate(select(target.abilities.get(0).targetCount));
+        target.abilities.get(0).execute();
     }
 }
